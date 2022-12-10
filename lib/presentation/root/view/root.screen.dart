@@ -1,16 +1,9 @@
-import 'dart:developer';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:music_app/infrastructure/helper/asset_helper.dart';
-import 'package:music_app/infrastructure/theme/app_colors.dart';
-import '../controllers/root.controller.dart';
+import 'package:music_app/imports_bindings.dart';
 
 class RootScreen extends GetView<RootController> {
   const RootScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    log(context.isDarkMode.toString());
     return Obx(
       () => Scaffold(
         appBar: AppBar(

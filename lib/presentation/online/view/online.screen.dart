@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'controllers/online.controller.dart';
+import 'package:music_app/imports_bindings.dart';
 
 class OnlineScreen extends GetView<OnlineController> {
   const OnlineScreen({Key? key}) : super(key: key);
@@ -9,8 +6,7 @@ class OnlineScreen extends GetView<OnlineController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('OnlineScreen',style: context.textTheme.headline1),
-        centerTitle: true,
+        title: const PopularArtists(),
       ),
       body: Center(
         child: Text(

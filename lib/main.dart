@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:music_app/infrastructure/theme/app_theme.dart';
-import 'infrastructure/navigation/navigation.dart';
-import 'infrastructure/navigation/routes.dart';
+import 'package:music_app/imports_bindings.dart';
 
 void main() async {
   var initialRoute = await Routes.initialRoute;
@@ -21,7 +16,7 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: initialRoute,
         getPages: Nav.routes,
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
       ),

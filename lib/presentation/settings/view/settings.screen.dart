@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'controllers/settings.controller.dart';
+import 'package:music_app/imports_bindings.dart';
 
 class SettingsScreen extends GetView<SettingsController> {
   const SettingsScreen({Key? key}) : super(key: key);

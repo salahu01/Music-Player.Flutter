@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:music_app/infrastructure/widgets/song_tile.dart';
-import 'package:music_app/presentation/offline/controllers/offline.controller.dart';
+import 'package:music_app/imports_bindings.dart';
 
 class SongsTab extends GetView<OfflineController> {
   const SongsTab({required this.scrollController, Key? key}) : super(key: key);

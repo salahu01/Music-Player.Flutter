@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
-import '../controllers/offline.controller.dart';
+import 'package:music_app/imports_bindings.dart';
 
 class OfflineScreen extends GetView<OfflineController> {
   const OfflineScreen({Key? key}) : super(key: key);
