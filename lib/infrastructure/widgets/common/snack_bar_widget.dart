@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:music_app/infrastructure/theme/app_colors.dart';
-import '../extensions/extensions.dart';
+
+
+import 'package:music_app/imports_bindings.dart';
 
 class SnackbarWidget extends StatelessWidget {
   const SnackbarWidget({super.key, required this.title, required this.message});

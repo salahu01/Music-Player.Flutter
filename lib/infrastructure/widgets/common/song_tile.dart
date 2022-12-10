@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:music_app/infrastructure/helper/asset_helper.dart';
-import 'package:music_app/infrastructure/theme/app_colors.dart';
+import 'package:music_app/imports_bindings.dart';
 
 class SongTile extends StatelessWidget {
   SongTile({Key? key, required this.index, required selectedIndex})
@@ -25,9 +21,7 @@ class SongTile extends StatelessWidget {
               ? context.isDarkMode
                   ? AssetHelper.darkIcon
                   : AssetHelper.lightIcon
-              : context.isDarkMode
-                  ? AssetHelper.lightIcon
-                  : AssetHelper.darkIcon,
+              : appIcon ,
           height: 35.h,
         ),
       ),
@@ -44,7 +38,7 @@ class SongTile extends StatelessWidget {
               color: isSelected
                   ? context.theme.colorScheme.background
                   : context.theme.colorScheme.primary)),
-      subtitle: Text('Hey salahu',
+      subtitle: Text('How are you salahu',
           style: context.textTheme.headline2!.copyWith(
               color: isSelected
                   ? context.theme.colorScheme.background

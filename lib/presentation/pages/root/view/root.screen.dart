@@ -13,16 +13,9 @@ class RootScreen extends GetView<RootController> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(8.r),
-                child: Image.asset(
-                  context.isDarkMode
-                      ? AssetHelper.lightIcon
-                      : AssetHelper.darkIcon,
-                  height: 35.h,
-                ),
+                child: Image.asset(appIcon, height: 35.h),
               ).paddingOnly(right: 10.r),
-              Text('Musician',
-                  style: context.textTheme.headline1!
-                      .copyWith(fontWeight: FontWeight.bold))
+              Text('Musician', style: context.textTheme.headline1!.copyWith(fontWeight: FontWeight.bold))
             ],
           ),
           actions: [
@@ -34,11 +27,7 @@ class RootScreen extends GetView<RootController> {
                 )),
             ClipRRect(
               borderRadius: BorderRadius.circular(800),
-              child: Image.asset(
-                context.iconColor == AppColors.primary
-                    ? AssetHelper.lightIcon
-                    : AssetHelper.darkIcon,
-              ),
+              child: Image.asset(appIcon),
             ).paddingSymmetric(horizontal: 8.r, vertical: 8.r),
           ],
         ),
