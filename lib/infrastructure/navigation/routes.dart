@@ -11,4 +11,5 @@ class Routes {
   static const playlist = '/playlist';
   static const root = '/root';
   static const settings = '/settings';
+  static const auth = '/auth';
 }

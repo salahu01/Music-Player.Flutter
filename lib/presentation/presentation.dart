@@ -1,4 +1,5 @@
-export './offline/offline.dart';
-export './online/online.dart';
-export './root/root.dart';
-export './settings/settings.dart';
+export 'pages/offline/offline.dart';
+export 'pages/online/online.dart';
+export 'pages/root/root.dart';
+export 'pages/settings/settings.dart';
+export './auth/auth.dart';

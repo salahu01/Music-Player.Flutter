@@ -22,5 +22,10 @@ class Nav {
       page: () => const SettingsScreen(),
       binding: SettingsControllerBinding(),
     ),
+    GetPage(
+      name: Routes.auth,
+      page: () => const AuthScreen(),
+      binding: AuthControllerBinding(),
+    ),
   ];
 }
