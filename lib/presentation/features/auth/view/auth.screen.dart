@@ -10,7 +10,14 @@ class AuthScreen extends GetView<AuthController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text('AuthScreen is working', style: context.textTheme.headline1),
+        child: Button.loading(
+          onPressed: () {},
+          text: 'Continue',
+          isLoading: true,
+          height: 40.h,
+          width: 280.w,
+          loadingSize: 25.r,
+        ),
       ),
     );
   }

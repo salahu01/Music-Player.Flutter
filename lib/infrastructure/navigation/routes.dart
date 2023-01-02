@@ -1,6 +1,6 @@
 class Routes {
   static Future<String> get initialRoute async {
-    return root;
+    return auth;
   }
 
   static const details = '/details';
