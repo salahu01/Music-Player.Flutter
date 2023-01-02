@@ -7,7 +7,15 @@ class OthersTab extends GetView<OfflineController> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const [],
+          children: [
+            // GridView.builder(
+            //   itemCount: 5,
+            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            //   itemBuilder: (BuildContext context, int index) {
+            
+            //   },
+            // ),
+          ],
         ),
       ),
     );

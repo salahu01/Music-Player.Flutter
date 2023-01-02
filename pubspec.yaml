@@ -12,7 +12,8 @@ dependencies:
   flutter_screenutil: ^5.5.4
   get: 4.6.5
   google_fonts: ^3.0.1
-  google_nav_bar: ^5.0.6
+  on_audio_query: ^2.6.1
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_lints: 2.0.1

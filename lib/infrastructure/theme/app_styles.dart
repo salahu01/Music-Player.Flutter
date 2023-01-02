@@ -14,6 +14,17 @@ abstract class AppStyles {
     height: calculateHeight(11, 9),
     fontStyle: FontStyle.normal,
   );
+  static TextStyle trueMusition = GoogleFonts.pacifico(
+    fontSize: 16.sp,
+    height: calculateHeight(11, 9),
+    fontStyle: FontStyle.normal,
+  );
+  static TextStyle headlineLarge = GoogleFonts.pacifico(
+    fontSize: 35.sp,
+    fontWeight: FontWeight.bold,
+    height: calculateHeight(11, 9),
+    fontStyle: FontStyle.normal,
+  );
   //unselected tabBar style
   static TextStyle unSelectdeTabBarText = GoogleFonts.roboto(
     fontSize: 13.sp,

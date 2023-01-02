@@ -15,5 +15,8 @@ class RootControllerBinding extends Bindings {
     Get.lazyPut<SettingsController>(
       () => SettingsController(),
     );
+    Get.lazyPut<LocalAudioServices>(
+      () => LocalAudioServices(),
+    );
   }
 }

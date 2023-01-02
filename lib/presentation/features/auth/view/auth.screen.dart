@@ -5,18 +5,40 @@ class AuthScreen extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AuthScreen', style: context.textTheme.headline1),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Button.loading(
-          onPressed: () {},
-          text: 'Continue',
-          isLoading: true,
-          height: 40.h,
-          width: 280.w,
-          loadingSize: 25.r,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: SizedBox(
+            height: Get.height,
+            child: Column(
+              children: [
+                const Spacer(flex: 3,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(32.r),
+                  child: Image.asset(appIcon, height: 140.h),
+                ),
+                Text('The true musician',style: AppStyles.trueMusition).paddingSymmetric(vertical: 4.r),
+                const Spacer(flex: 2,),
+                Text('Enjoy free musics from Musician', style: context.textTheme.headlineLarge).paddingSymmetric(horizontal: 16.r),
+                const Spacer(flex: 3,),
+                TextFormField(
+                  decoration: const InputDecoration(hintText: 'user name ?'),
+                  style: AppStyles.headline1.copyWith(color: context.theme.scaffoldBackgroundColor),
+                  cursorColor: context.theme.backgroundColor,
+                ).paddingSymmetric(vertical:  16.r , horizontal: 16.r),
+                Button.loading(
+                  onPressed: () {
+                    Get.offAndToNamed(Routes.root);
+                  },
+                  text: 'Continue',
+                  isLoading: false,
+                  height: 40.h,
+                  width: double.maxFinite,
+                  loadingSize: 25.r,
+                ).paddingSymmetric(horizontal: 16.r),
+                const Spacer(flex: 2),
+              ],
+            ),
+          ),
         ),
       ),
     );

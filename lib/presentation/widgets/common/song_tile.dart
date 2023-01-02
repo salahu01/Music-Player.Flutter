@@ -1,19 +1,21 @@
 import 'package:music_app/imports_bindings.dart';
 
 class SongTile extends StatelessWidget {
-  SongTile({Key? key, required this.index, required selectedIndex})
-      : super(key: key) {
+  SongTile({
+    super.key,
+    required index,
+    required selectedIndex,
+    required this.songModel,
+  }) {
     isSelected = index == selectedIndex;
   }
-  final int index;
   late final bool isSelected;
+  final SongModel songModel;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      tileColor: isSelected
-          ? context.theme.colorScheme.primary
-          : AppColors.transparent,
+      tileColor: isSelected ? context.theme.colorScheme.primary : AppColors.transparent,
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(8.r),
         child: Image.asset(
@@ -21,7 +23,7 @@ class SongTile extends StatelessWidget {
               ? context.isDarkMode
                   ? AssetHelper.darkIcon
                   : AssetHelper.lightIcon
-              : appIcon ,
+              : appIcon,
           height: 35.h,
         ),
       ),
@@ -33,16 +35,12 @@ class SongTile extends StatelessWidget {
                 color: context.theme.colorScheme.background,
               ))
           : null,
-      title: Text('Hey salahu',
-          style: context.textTheme.headline2!.copyWith(
-              color: isSelected
-                  ? context.theme.colorScheme.background
-                  : context.theme.colorScheme.primary)),
-      subtitle: Text('How are you salahu',
-          style: context.textTheme.headline2!.copyWith(
-              color: isSelected
-                  ? context.theme.colorScheme.background
-                  : context.theme.colorScheme.primary)),
+      title: Text(
+        songModel.title,
+        style: context.textTheme.headline2!.copyWith(color: isSelected ? context.theme.colorScheme.background : context.theme.colorScheme.primary, overflow: TextOverflow.ellipsis),
+        maxLines: 1,
+      ),
+      subtitle: Text(songModel.artist ?? 'unknown', style: context.textTheme.headline2!.copyWith(color: isSelected ? context.theme.colorScheme.background : context.theme.colorScheme.primary)),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
     ).paddingSymmetric(horizontal: 16.r);
   }
