@@ -18,7 +18,7 @@ class OfflineController extends GetxController with StateMixin {
 
   void getSongs() async {
     change(null, status: RxStatus.loading());
-    final localAudioServices = Get.find<LocalAudioServices>();
+    final localAudioServices = Get.find<LocalAudios>();
     albums = await localAudioServices.getSongs(sortType: SongSortType.ALBUM);
     songs = await localAudioServices.getSongs(sortType: SongSortType.TITLE);
     change(null, status: RxStatus.success());
