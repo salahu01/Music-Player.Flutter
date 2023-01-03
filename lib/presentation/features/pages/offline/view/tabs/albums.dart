@@ -10,11 +10,16 @@ class AlbumsTab extends GetView<OfflineController> {
         onLoading: Center(child: CircularProgressIndicator(color: context.iconColor)),
         (state) {
           return ListView.builder(
-              itemCount: 50,
-              shrinkWrap: true,
-              controller: scrollController,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) => SongTile(index: index, selectedIndex: 5, songModel: controller.albums[index])).paddingSymmetric(vertical: 8.r);
+            itemCount: 50,
+            shrinkWrap: true,
+            controller: scrollController,
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
+                  isSelected: controller.isSelected(index: index, isSongs: false),
+                  onTap: () => controller.playSong(isSongs: false, index: index),
+                  songModel: controller.albums[index],
+                )),
+          ).paddingSymmetric(vertical: 8.r);
         },
       ),
     );
