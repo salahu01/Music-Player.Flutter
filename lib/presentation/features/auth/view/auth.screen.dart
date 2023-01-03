@@ -12,9 +12,12 @@ class AuthScreen extends GetView<AuthController> {
             child: Column(
               children: [
                 const Spacer(flex: 3,),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(32.r),
-                  child: Image.asset(appIcon, height: 140.h),
+                Hero(
+                  tag: HeroTags.trueMusicianTag,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(32.r),
+                    child: Image.asset(appIcon, height: 140.h),
+                  ),
                 ),
                 Text('The true musician',style: AppStyles.trueMusition).paddingSymmetric(vertical: 4.r),
                 const Spacer(flex: 2,),

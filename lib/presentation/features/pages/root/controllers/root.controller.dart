@@ -10,7 +10,9 @@ class RootController extends GetxController {
   //pages
   final screens = const [OfflineScreen(), OnlineScreen(), SettingsScreen()];
   //pages curresponding icons for bottomnav
-  final icons = const [Icons.download_for_offline_outlined, Icons.podcasts, Icons.settings];
+  final icons = const [Icons.download_for_offline_outlined, Icons.podcasts, Icons.settings_outlined];
+  //pages curresponding selected icons for bottomnav
+  final selectedIcons = const [Icons.download_for_offline, Icons.podcasts, Icons.settings];
   //bottomnav current index
   final currentIndex = 0.obs;
   //chnage page currespondinfg bottom nav

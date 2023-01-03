@@ -9,7 +9,7 @@ class OthersTab extends GetView<OfflineController> {
         child: Column(
           children: [
             GridView.builder(
-              itemCount: 2,
+              itemCount: AppData.offlineOters.length,
               primary: false,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -23,17 +23,16 @@ class OthersTab extends GetView<OfflineController> {
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
                   child: Center(
                     child: Text(
-                      _list[index],
+                      AppData.offlineOters[index],
                       style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor),
                     ),
                   ),
                 );
               },
-            ),
+            ).paddingSymmetric(vertical: 8.r, horizontal: 4.r),
           ],
         ),
       ),
     );
   }
-  final List<String> _list = ['Liked Songs' , 'Play List'];
 }

@@ -11,10 +11,13 @@ class RootScreen extends GetView<RootController> {
           leadingWidth: 0,
           title: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8.r),
-                child: Image.asset(appIcon, height: 35.h),
-              ).paddingOnly(right: 10.r),
+              Hero(
+                tag: HeroTags.trueMusicianTag,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.r),
+                  child: Image.asset(appIcon, height: 35.h),
+                ).paddingOnly(right: 10.r),
+              ),
               Text('Musician', style: context.textTheme.headline1!.copyWith(fontWeight: FontWeight.bold))
             ],
           ),
@@ -38,7 +41,7 @@ class RootScreen extends GetView<RootController> {
               (index) => GestureDetector(
                 onTap: () => controller.changeIndex(index),
                 child: Icon(
-                  controller.icons[index],
+                  index == controller.currentIndex.value ? controller.selectedIcons[index] : controller.icons[index],
                   size: controller.visibleBottom.value ? 25 : 0,
                 ),
               ),

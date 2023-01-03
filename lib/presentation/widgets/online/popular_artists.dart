@@ -12,7 +12,7 @@ class PopularArtists extends GetView {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) => CircleAvatar(
-          backgroundColor: AppColors.primarySwatch,
+          backgroundColor: context.iconColor,
           radius: 25.h,
         ).paddingSymmetric(horizontal: 5.w),
       ),
