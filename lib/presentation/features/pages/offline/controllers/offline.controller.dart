@@ -13,7 +13,7 @@ class OfflineController extends GetxController with StateMixin {
   final tabViews = [
     SongsTab(scrollController: Get.find<RootController>().offlineSongsController.value),
     AlbumsTab(scrollController: Get.find<RootController>().offlineAlbumCotroller.value),
-    const OthersTab()
+    OthersTab()
   ];
 
   void getSongs() async {
@@ -21,7 +21,6 @@ class OfflineController extends GetxController with StateMixin {
     final localAudioServices = Get.find<LocalAudioServices>();
     albums = await localAudioServices.getSongs(sortType: SongSortType.ALBUM);
     songs = await localAudioServices.getSongs(sortType: SongSortType.TITLE);
-    write(songs.toString());
     change(null, status: RxStatus.success());
   }
 }

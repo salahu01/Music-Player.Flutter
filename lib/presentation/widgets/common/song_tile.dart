@@ -15,7 +15,9 @@ class SongTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      tileColor: isSelected ? context.theme.colorScheme.primary : AppColors.transparent,
+      selected: isSelected,
+      tileColor: AppColors.transparent,
+      selectedTileColor: context.theme.colorScheme.primary,
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(8.r),
         child: Image.asset(
@@ -27,14 +29,10 @@ class SongTile extends StatelessWidget {
           height: 35.h,
         ),
       ),
-      trailing: isSelected
-          ? IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.pause,
-                color: context.theme.colorScheme.background,
-              ))
-          : null,
+      trailing: Visibility(
+        visible: isSelected,
+        child: IconButton(onPressed: () {}, icon: Icon(Icons.pause, color: context.theme.scaffoldBackgroundColor)),
+      ),
       title: Text(
         songModel.title,
         style: context.textTheme.headline2!.copyWith(color: isSelected ? context.theme.colorScheme.background : context.theme.colorScheme.primary, overflow: TextOverflow.ellipsis),

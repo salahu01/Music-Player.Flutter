@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,15 +21,23 @@ class AppTheme {
     useMaterial3: true,
     dividerTheme: const DividerThemeData(color: AppColors.primary, thickness: 5, space: 0),
     fontFamily: GoogleFonts.roboto().fontFamily,
-    colorScheme: ColorScheme.fromSeed(brightness: Brightness.light, background: AppColors.primary, seedColor: AppColors.primary, primary: AppColors.darkPrimary),
-    appBarTheme: AppBarTheme(
+    colorScheme: ColorScheme.fromSeed(
+      brightness: Brightness.light,
+      background: AppColors.primary,
+      seedColor: AppColors.primary,
+      primary: AppColors.darkPrimary,
+    ),
+    appBarTheme: const AppBarTheme(
       elevation: 0,
       backgroundColor: AppColors.transparent,
       surfaceTintColor: AppColors.primary,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: AppColors.primary,
-        statusBarBrightness: Platform.isAndroid ? Brightness.dark : Brightness.light,
-        statusBarIconBrightness: Platform.isAndroid ? Brightness.dark : Brightness.light,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: AppColors.primary,
+        systemNavigationBarDividerColor: AppColors.primary,
+        systemNavigationBarIconBrightness: Brightness.dark,
         systemNavigationBarContrastEnforced: true,
       ),
     ),
@@ -100,15 +106,23 @@ class AppTheme {
     ),
     useMaterial3: true,
     fontFamily: GoogleFonts.roboto().fontFamily,
-    colorScheme: ColorScheme.fromSeed(brightness: Brightness.dark, background: AppColors.darkPrimary, seedColor: AppColors.primarySwatch, primary: AppColors.primary),
-    appBarTheme: AppBarTheme(
+    colorScheme: ColorScheme.fromSeed(
+      brightness: Brightness.dark,
+      background: AppColors.darkPrimary,
+      seedColor: AppColors.primarySwatch,
+      primary: AppColors.primary,
+    ),
+    appBarTheme: const AppBarTheme(
       elevation: 0,
       backgroundColor: AppColors.transparent,
       surfaceTintColor: AppColors.darkPrimary,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: AppColors.darkPrimary,
-        statusBarBrightness: Platform.isAndroid ? Brightness.dark : Brightness.light,
-        statusBarIconBrightness: Platform.isAndroid ? Brightness.dark : Brightness.light,
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: AppColors.darkPrimary,
+        systemNavigationBarDividerColor: AppColors.darkPrimary,
+        systemNavigationBarIconBrightness: Brightness.light,
         systemNavigationBarContrastEnforced: true,
       ),
     ),
@@ -129,7 +143,6 @@ class AppTheme {
       ),
     ),
     splashColor: AppColors.transparent,
-    
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
       contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
