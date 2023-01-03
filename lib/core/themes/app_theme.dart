@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app/infrastructure/extensions/typography_extension.dart';
-import 'package:music_app/infrastructure/theme/app_colors.dart';
-import 'package:music_app/infrastructure/theme/app_styles.dart';
+import 'package:music_app/core/extensions/typography_extension.dart';
+import 'package:music_app/core/themes/app_colors.dart';
+import 'package:music_app/core/themes/app_styles.dart';
 
 class AppTheme {
   AppTheme._();

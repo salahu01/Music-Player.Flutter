@@ -1,8 +1,10 @@
 //*================[ app sources ]=============================//
 
 export 'main.dart';
-export './infrastructure/infrastructure.dart';
-export './presentation/presentation.dart';
+export 'infrastructure/infrastructure.dart';
+export 'core/core.dart';
+export 'presentation/presentation.dart';
+export 'domain/domain.dart';
 
 //*================[ internel packages  ]=============================//
 

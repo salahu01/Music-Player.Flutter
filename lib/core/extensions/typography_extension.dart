@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/infrastructure/theme/app_colors.dart';
+import 'package:music_app/core/themes/app_colors.dart';
 
 extension TypographyExtension on TextStyle {
   TextStyle get darkPrimary => copyWith(color: AppColors.darkPrimary);
