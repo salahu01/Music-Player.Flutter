@@ -26,7 +26,7 @@ class AuthScreen extends GetView<AuthController> {
                 TextFormField(
                   decoration: const InputDecoration(hintText: 'user name ?'),
                   style: AppStyles.headline1.copyWith(color: context.theme.scaffoldBackgroundColor),
-                  cursorColor: context.theme.backgroundColor,
+                  cursorColor: context.theme.scaffoldBackgroundColor,
                 ).paddingSymmetric(vertical:  16.r , horizontal: 16.r),
                 Button.loading(
                   onPressed: () {
