@@ -3,7 +3,7 @@ import 'package:music_app/imports_bindings.dart';
 
 class RootController extends GetxController {
   //scroll controller for hiding bottom nav
-  Rx<ScrollController> offlineSongsController = ScrollController().obs;
+  Rx<ScrollController> offlineTracksController = ScrollController().obs;
   Rx<ScrollController> offlineAlbumCotroller = ScrollController().obs;
   //initail bottom bar height
   RxBool visibleBottom = true.obs;
@@ -30,7 +30,7 @@ class RootController extends GetxController {
 
   @override
   void onInit() {
-    hideBottomNav(offlineSongsController.value);
+    hideBottomNav(offlineTracksController.value);
     hideBottomNav(offlineAlbumCotroller.value);
     super.onInit();
   }

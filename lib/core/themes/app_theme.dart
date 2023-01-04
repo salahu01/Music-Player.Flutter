@@ -57,6 +57,10 @@ class AppTheme {
         ),
       ),
     ),
+    popupMenuTheme: PopupMenuThemeData(
+      color: AppColors.darkPrimary,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+    ),
     splashColor: AppColors.transparent,
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
@@ -141,6 +145,10 @@ class AppTheme {
           ),
         ),
       ),
+    ),
+    popupMenuTheme: PopupMenuThemeData(
+      color: AppColors.primary,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
     ),
     splashColor: AppColors.transparent,
     inputDecorationTheme: InputDecorationTheme(

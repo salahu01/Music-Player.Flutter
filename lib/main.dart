@@ -21,7 +21,7 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: initialRoute,
         getPages: Nav.routes,
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
       ),

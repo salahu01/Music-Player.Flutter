@@ -9,12 +9,8 @@ class OfflineScreen extends GetView<OfflineController> {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 0,
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'Songs'),
-              Tab(text: 'Albums'),
-              Tab(text: 'Others'),
-            ],
+          bottom: TabBar(
+            tabs: AppData.offlineTabs.map((e) => Tab(text: e)).toList(),
           ),
         ),
         body: TabBarView(children: controller.tabViews),

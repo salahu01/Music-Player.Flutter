@@ -20,4 +20,25 @@ class Button {
               : Text(text, style: Get.textTheme.headline1!.copyWith(color: Get.theme.scaffoldBackgroundColor)),
         ),
       );
+
+  static Widget label({
+    required String label,
+    required IconData icon,
+    Color? iconColor,
+    Color? labelColor,
+    double? iconSize,
+    double? labelSize,
+    double? spacing,
+  }) =>
+      Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: iconSize ?? 20.sp, color: iconColor),
+          SizedBox(width: spacing ?? 5.w),
+          Text(
+            label,
+            style: Get.textTheme.headline2!.copyWith(fontSize: labelSize, color: labelColor),
+          )
+        ],
+      );
 }

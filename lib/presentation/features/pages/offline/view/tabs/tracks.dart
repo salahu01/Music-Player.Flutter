@@ -1,12 +1,11 @@
 import 'package:music_app/imports_bindings.dart';
 
-class AlbumsTab extends GetView<OfflineController> {
-  const AlbumsTab({required this.scrollController, Key? key}) : super(key: key);
+class TracksTab extends GetView<OfflineController> {
+  const TracksTab({required this.scrollController, Key? key}) : super(key: key);
   final ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Scaffold(
+    return Obx(() => Scaffold(
         appBar: AppBar(
           toolbarHeight: 0,
           bottom: PreferredSize(
@@ -15,9 +14,9 @@ class AlbumsTab extends GetView<OfflineController> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 PopupMenuButton<SortTypeModel>(
-                    initialValue: controller.albumsSortType.value,
-                    child: Button.label(label: controller.albumsSortType.value.label, icon: controller.albumsSortType.value.icon),
-                    onSelected: (sortType) => controller.sortSongs(sortTypeModel: sortType, isAlbum: true),
+                    initialValue: controller.tracksSortType.value,
+                    child: Button.label(label: controller.tracksSortType.value.label, icon: controller.tracksSortType.value.icon),
+                    onSelected: (sortType) => controller.sortSongs(sortTypeModel: sortType, isAlbum: false),
                     itemBuilder: (context) => AppData.sortTypeOptions
                         .map((e) => PopupMenuItem<SortTypeModel>(
                             value: e, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
@@ -25,7 +24,7 @@ class AlbumsTab extends GetView<OfflineController> {
                 PopupMenuButton<SortOrderModel>(
                     initialValue: controller.tracksSortOrder.value,
                     child: Button.label(label: controller.tracksSortOrder.value.label, icon: controller.tracksSortOrder.value.icon),
-                    onSelected: (sortOrder) => controller.sortSongs(sortOrderModel: sortOrder, isAlbum: true),
+                    onSelected: (sortOrder) => controller.sortSongs(sortOrderModel: sortOrder,isAlbum:  false),
                     itemBuilder: (context) => AppData.sortOrderOPtions
                         .map((e) => PopupMenuItem<SortOrderModel>(
                             value: e, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
@@ -34,26 +33,21 @@ class AlbumsTab extends GetView<OfflineController> {
             ).paddingSymmetric(horizontal: 24.r),
           ),
         ),
-        body: controller.obx(
-          onLoading: Center(child: CircularProgressIndicator(color: context.iconColor)),
-          (state) {
-            if (controller.tracks.isEmpty) {
-              return Center(child: Text('No albums found !', style: context.textTheme.headline1));
-            }
-            return ListView.builder(
-              itemCount: 50,
-              shrinkWrap: true,
-              controller: scrollController,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                    isSelected: controller.isSelected(index: index, isSongs: false),
-                    onTap: () => controller.playSong(isSongs: false, index: index),
-                    songModel: controller.albums[index],
-                  )),
-            ).paddingSymmetric(vertical: 8.r);
-          },
-        ),
-      ),
-    );
+        body: controller.obx(onLoading: Center(child: CircularProgressIndicator(color: context.iconColor)), (state) {
+          if (controller.tracks.isEmpty) {
+            return Center(child: Text('No songs found !', style: context.textTheme.headline1));
+          }
+          return ListView.builder(
+            itemCount: controller.tracks.length,
+            shrinkWrap: true,
+            controller: scrollController,
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
+                  isSelected: controller.isSelected(index: index, isSongs: true),
+                  onTap: () => controller.playSong(isSongs: true, index: index),
+                  songModel: controller.tracks[index],
+                )),
+          ).paddingSymmetric(vertical: 8.r);
+        })));
   }
 }
