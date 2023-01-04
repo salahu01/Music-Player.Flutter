@@ -22,7 +22,7 @@ class RootScreen extends GetView<RootController> {
             ],
           ),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.search, color: context.iconColor)),
+            IconButton(onPressed: () => Get.toNamed(Routes.search), icon: Icon(Icons.search, color: context.iconColor)),
             ClipRRect(
               borderRadius: BorderRadius.circular(800),
               child: Image.asset(appIcon),
