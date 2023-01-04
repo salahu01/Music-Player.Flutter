@@ -27,5 +27,15 @@ class Nav {
       page: () => const AuthScreen(),
       binding: AuthControllerBinding(),
     ),
+    GetPage(
+      name: Routes.search,
+      page: () => const SearchScreen(),
+      binding: SearchControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.playerScreen,
+      page: () => const PlayerScreen(),
+      binding: PlayerControllerBinding(),
+    ),
   ];
 }

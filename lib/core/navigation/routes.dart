@@ -12,4 +12,6 @@ class Routes {
   static const root = '/root';
   static const settings = '/settings';
   static const auth = '/auth';
+  static const search = '/search';
+  static const playerScreen = '/player-screen';
 }

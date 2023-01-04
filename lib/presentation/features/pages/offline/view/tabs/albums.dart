@@ -9,6 +9,9 @@ class AlbumsTab extends GetView<OfflineController> {
       body: controller.obx(
         onLoading: Center(child: CircularProgressIndicator(color: context.iconColor)),
         (state) {
+          if (controller.songs.isEmpty) {
+            return Center(child: Text('No albums found !', style: context.textTheme.headline1));
+          }
           return ListView.builder(
             itemCount: 50,
             shrinkWrap: true,
