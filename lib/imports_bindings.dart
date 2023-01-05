@@ -22,6 +22,7 @@ export 'package:hive/hive.dart';
 export 'package:hive_flutter/hive_flutter.dart';
 export 'package:just_audio/just_audio.dart';
 export 'package:just_audio_background/just_audio_background.dart';
+export 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
 //*================[ Methords ]=====================================//
 

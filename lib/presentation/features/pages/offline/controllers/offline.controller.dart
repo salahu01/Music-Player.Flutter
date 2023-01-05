@@ -47,12 +47,12 @@ class OfflineController extends GetxController with StateMixin {
   }
 
   //* This methord using to play current selected song
-  void playSong({required bool isSongs, required int index}) async {
-    var songsModels = isSongs ? tracks : albums;
+  void playSong({required bool isTracks, required int index}) async {
+    var songsModels = isTracks ? tracks : albums;
     await _playerServices.play(songModels: songsModels, index: index);
     selectedSong.value = songsModels[index];
-    _playerServices.player.currentIndexStream.listen((currentIndex) {
-      selectedSong.value = songsModels[currentIndex ?? 0];
+    _playerServices.playingSongModel.addListener(() {
+      selectedSong.value = _playerServices.playingSongModel.value;
     });
   }
 

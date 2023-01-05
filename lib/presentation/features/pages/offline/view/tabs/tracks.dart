@@ -24,7 +24,7 @@ class TracksTab extends GetView<OfflineController> {
                 PopupMenuButton<SortOrderModel>(
                     initialValue: controller.tracksSortOrder.value,
                     child: Button.label(label: controller.tracksSortOrder.value.label, icon: controller.tracksSortOrder.value.icon),
-                    onSelected: (sortOrder) => controller.sortSongs(sortOrderModel: sortOrder,isAlbum:  false),
+                    onSelected: (sortOrder) => controller.sortSongs(sortOrderModel: sortOrder, isAlbum: false),
                     itemBuilder: (context) => AppData.sortOrderOPtions
                         .map((e) => PopupMenuItem<SortOrderModel>(
                             value: e, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
@@ -44,7 +44,9 @@ class TracksTab extends GetView<OfflineController> {
             physics: const BouncingScrollPhysics(),
             itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
                   isSelected: controller.isSelected(index: index, isSongs: true),
-                  onTap: () => controller.playSong(isSongs: true, index: index),
+                  onTap: () => controller.selectedSong.value?.id == controller.tracks[index].id
+                      ? Get.toNamed(Routes.playerScreen, arguments: {'song_model': controller.tracks[index]})
+                      : controller.playSong(isTracks: true, index: index),
                   songModel: controller.tracks[index],
                 )),
           ).paddingSymmetric(vertical: 8.r);

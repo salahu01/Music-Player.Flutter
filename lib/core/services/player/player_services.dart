@@ -18,12 +18,19 @@ class PlayerServices {
   AudioPlayer get player => _player;
   //* This varible using to PlayList of songs ( create a playlist )
   ConcatenatingAudioSource? _playlist;
+  //* This variable for store current selected song
+  ValueNotifier<SongModel?> playingSongModel = ValueNotifier(null);
 
   //* This methord using play a song
   Future<void> play({required List<SongModel> songModels, required int index}) async {
     createSongPlayList(songModels: songModels);
     await _player.setAudioSource(_playlist!, initialIndex: index);
     _player.play();
+    _player.currentIndexStream.listen((index) {
+      if (index != null) {
+        playingSongModel.value = songModels[index];
+      }
+    });
   }
 
   //* This methord using play next song
