@@ -74,6 +74,11 @@ class PlayerServices {
     _player.setVolume(volume);
   }
 
+  //* This methord using for change current playing song position
+  void changePosition({required Duration position}) {
+    _player.seek(position);
+  }
+
   //* This methord using create playlist
   void createSongPlayList({required List<SongModel> songModels}) {
     _playlist = ConcatenatingAudioSource(

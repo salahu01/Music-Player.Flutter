@@ -17,14 +17,17 @@ class OthersTab extends GetView<OfflineController> {
               ),
               shrinkWrap: true,
               itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  color: context.iconColor,
-                  margin: EdgeInsets.all(16.r),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-                  child: Center(
-                    child: Text(
-                      AppData.offlineOters[index],
-                      style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor),
+                return InkWell(
+                  onTap: AppData.offlineOters[index].onTap,
+                  child: Card(
+                    color: context.iconColor,
+                    margin: EdgeInsets.all(16.r),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+                    child: Center(
+                      child: Text(
+                        AppData.offlineOters[index].otherName,
+                        style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor),
+                      ),
                     ),
                   ),
                 );

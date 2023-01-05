@@ -4,7 +4,10 @@ class AppData {
   //*This variable contains offline tab titles
   static const offlineTabs = ['Tracks', 'Albums', 'Others'];
   //*This variable contains offline other screen options
-  static const List<String> offlineOters = ['Liked Songs', 'Play Lists'];
+  static final List<OfflineOtherModel> offlineOters = [
+    OfflineOtherModel(onTap: () => Get.toNamed(Routes.likedSongs), otherName: 'Liked Songs'),
+    OfflineOtherModel(onTap: () => Get.toNamed(Routes.playList), otherName: 'Play Lists')
+  ];
   //*This variable contains offline screen sorting model datas
   static const List<SortTypeModel> sortTypeOptions = [
     SortTypeModel(label: 'Title', icon: Icons.sort, sortType: SongSortType.TITLE),

@@ -10,12 +10,12 @@ class OfflineController extends GetxController with StateMixin {
     super.onInit();
   }
 
-  //* This variable using for store all albums from local internal storage
+  //* This variable using for store all albums from local internal storage 💿
   late List<SongModel> albums;
-  //* This variable using for store all tracks ( all songs ) from local internal storage
+  //* This variable using for store all tracks ( all songs ) from local internal storage 🎶
   late List<SongModel> tracks;
 
-  //*This Variable using to store current playing Or current Selected song creadential Or Datas
+  //*This Variable using to store current playing Or current Selected song creadential Or Datas ⛏️
   Rx<SongModel?> selectedSong = Rx(null);
 
   //* This variable using to store current tracks ( all songs ) sort type (eg : date added , title , size)

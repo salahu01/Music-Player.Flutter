@@ -8,10 +8,11 @@ class Routes {
   static const home = '/home';
   static const offline = '/offline';
   static const online = '/online';
-  static const playlist = '/playlist';
   static const root = '/root';
   static const settings = '/settings';
   static const auth = '/auth';
   static const search = '/search';
   static const playerScreen = '/player-screen';
+  static const playList = '/playlist';
+  static const likedSongs = '/liked-songs';
 }

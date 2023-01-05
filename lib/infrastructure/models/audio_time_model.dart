@@ -3,17 +3,17 @@ import 'package:music_app/imports_bindings.dart';
 
 @immutable
 class AudioTimeModel {
-  final num total;
-  final num buffred;
-  final num current; 
+  final Duration total;
+  final Duration buffred;
+  final Duration position; 
   const AudioTimeModel({
     required this.total,
     required this.buffred,
-    required this.current,
+    required this.position,
   });
 
   @override
-  String toString() => 'DuartionModel(total: $total, buffred: $buffred, current: $current)';
+  String toString() => 'DuartionModel(total: $total, buffred: $buffred, current: $position)';
 
   @override
   bool operator ==(covariant AudioTimeModel other) {
@@ -22,9 +22,21 @@ class AudioTimeModel {
     return 
       other.total == total &&
       other.buffred == buffred &&
-      other.current == current;
+      other.position == position;
   }
 
   @override
-  int get hashCode => total.hashCode ^ buffred.hashCode ^ current.hashCode;
+  int get hashCode => total.hashCode ^ buffred.hashCode ^ position.hashCode;
+
+  AudioTimeModel copyWith({
+    Duration? total,
+    Duration? buffred,
+    Duration? current,
+  }) {
+    return AudioTimeModel(
+      total: total ?? this.total,
+      buffred: buffred ?? this.buffred,
+      position: current ?? this.position,
+    );
+  }
 }

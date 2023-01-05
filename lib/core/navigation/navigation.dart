@@ -37,5 +37,15 @@ class Nav {
       page: () => const PlayerScreen(),
       binding: PlayerControllerBinding(),
     ),
+    GetPage(
+      name: Routes.playList,
+      page: () => const PlalistScreen(),
+      binding: PlalistControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.likedSongs,
+      page: () => const LikedSongsScreen(),
+      binding: LikedSongsControllerBinding(),
+    ),
   ];
 }
