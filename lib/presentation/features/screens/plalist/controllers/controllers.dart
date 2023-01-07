@@ -1,1 +1,0 @@
-export 'plalist.controller.dart';

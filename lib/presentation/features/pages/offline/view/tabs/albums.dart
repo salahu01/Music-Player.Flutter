@@ -41,15 +41,15 @@ class AlbumsTab extends GetView<OfflineController> {
               return Center(child: Text('No albums found !', style: context.textTheme.headline1));
             }
             return ListView.builder(
-              itemCount: 50,
+              itemCount: controller.albums.length,
               shrinkWrap: true,
               controller: scrollController,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                    isSelected: controller.isSelected(index: index, isSongs: false),
+                    isSelected: controller.isSelected(index: index, isTracks: false),
                     onTap: () => controller.selectedSong.value?.id == controller.albums[index].id
-                      ? Get.toNamed(Routes.playerScreen, arguments: {'song_model': controller.albums[index]})
-                      : controller.playSong(isTracks: false, index: index),
+                      ? Get.toNamed(Routes.playerScreen)
+                      : controller.playSong(songsModels: controller.albums, index: index),
                     songModel: controller.albums[index],
                   )),
             ).paddingSymmetric(vertical: 8.r);

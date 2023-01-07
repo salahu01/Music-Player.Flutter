@@ -38,7 +38,7 @@ class PlayerController extends GetxController {
   void changeCurrentSong() {
     _playerServices.playingSongModel.addListener(() {
       selectedSong.value = _playerServices.playingSongModel.value;
-      checkFavouriteExist();
+      checkFavouriteExist(); //*This call for current song exist in favourites 
     });
     _playerServices.player.playingStream.listen((playing) {
       isPlaying.value = playing;

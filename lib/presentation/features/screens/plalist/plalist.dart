@@ -1,2 +1,2 @@
-export 'controllers/controllers.dart';
+export 'controllers/plalist.controller.dart';
 export 'view/view.dart';

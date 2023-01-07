@@ -43,10 +43,10 @@ class TracksTab extends GetView<OfflineController> {
             controller: scrollController,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                  isSelected: controller.isSelected(index: index, isSongs: true),
+                  isSelected: controller.isSelected(index: index, isTracks: true),
                   onTap: () => controller.selectedSong.value?.id == controller.tracks[index].id
-                      ? Get.toNamed(Routes.playerScreen, arguments: {'song_model': controller.tracks[index]})
-                      : controller.playSong(isTracks: true, index: index),
+                      ? Get.toNamed(Routes.playerScreen)
+                      : controller.playSong(songsModels: controller.tracks, index: index),
                   songModel: controller.tracks[index],
                 )),
           ).paddingSymmetric(vertical: 8.r);

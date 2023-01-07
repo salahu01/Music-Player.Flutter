@@ -1,2 +1,2 @@
-export 'controllers/controllers.dart';
+export 'controllers/liked_songs.controller.dart';
 export 'view/view.dart';

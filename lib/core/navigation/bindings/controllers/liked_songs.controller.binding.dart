@@ -8,5 +8,8 @@ class LikedSongsControllerBinding extends Bindings {
     Get.lazyPut<LikedSongsController>(
       () => LikedSongsController(),
     );
+    Get.lazyPut<OfflineController>(
+      () => OfflineController(),
+    );
   }
 }

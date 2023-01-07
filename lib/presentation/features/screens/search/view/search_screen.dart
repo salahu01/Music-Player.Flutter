@@ -12,6 +12,7 @@ class SearchScreen extends GetView<SearchController> {
           title: TextField(
             style: AppStyles.headline1.copyWith(color: context.iconColor),
             cursorColor: context.iconColor,
+            onChanged: controller.searchFieldCangeed,
             decoration: InputDecoration(
               fillColor: context.theme.scaffoldBackgroundColor,
               filled: true,
@@ -25,7 +26,7 @@ class SearchScreen extends GetView<SearchController> {
           ),
           leading: const SizedBox(),
           leadingWidth: 0,
-          bottom: const TabBar(
+          bottom:  const TabBar(
             tabs: [
               Tab(text: 'Online'),
               Tab(text: 'Offline'),
