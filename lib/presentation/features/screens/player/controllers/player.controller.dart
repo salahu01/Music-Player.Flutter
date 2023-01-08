@@ -46,6 +46,9 @@ class PlayerController extends GetxController {
   //* This variable using change favourite add && remove button
   Rx<bool> isFavourite = Rx(false);
 
+  //*This varaible for store loop mode
+  Rx<LoopMode> loopMode = Rx(LoopMode.off);
+
   //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
   bool isSelected({required int index, required List<SongModel> songModels}) {
     if (selectedSong.value == null) {
@@ -74,6 +77,11 @@ class PlayerController extends GetxController {
     });
   }
 
+  //* This methord using change player loop mode
+  void changeLoopMode() {
+    _playerServices.loopMode();
+  }
+
   // * This methord using change player screen when changing the current song 🔃
   void changeProgressBarTime() {
     _playerServices.player
@@ -82,6 +90,9 @@ class PlayerController extends GetxController {
       })
       ..positionStream.listen((position) {
         progressBarTime.value = progressBarTime.value?.copyWith(position: position);
+      })
+      ..loopModeStream.listen((isLoopMode) {
+        loopMode.value = isLoopMode;
       });
   }
 
@@ -119,5 +130,14 @@ class PlayerController extends GetxController {
   //* This methord for play previous song ⏭️
   void skipToPrevious() {
     _playerServices.previousPlay();
+  }
+
+  //* This methord for make action based on user dragging
+  void drargAction(DragEndDetails dragDownDetails) {
+    if (dragDownDetails.primaryVelocity! < 0) {
+      skipToNext();
+    } else if (dragDownDetails.primaryVelocity! > 0) {
+      skipToPrevious();
+    }
   }
 }

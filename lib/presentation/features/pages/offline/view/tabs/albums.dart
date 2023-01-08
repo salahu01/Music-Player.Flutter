@@ -23,8 +23,8 @@ class AlbumsTab extends GetView<OfflineController> {
                             value: e, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
                         .toList()).paddingSymmetric(horizontal: 8.r),
                 PopupMenuButton<SortOrderModel>(
-                    initialValue: controller.tracksSortOrder.value,
-                    child: Button.label(label: controller.tracksSortOrder.value.label, icon: controller.tracksSortOrder.value.icon),
+                    initialValue: controller.albumsSortOrder.value,
+                    child: Button.label(label: controller.albumsSortOrder.value.label, icon: controller.tracksSortOrder.value.icon),
                     onSelected: (sortOrder) => controller.sortSongs(sortOrderModel: sortOrder, isAlbum: true),
                     itemBuilder: (context) => AppData.sortOrderOPtions
                         .map((e) => PopupMenuItem<SortOrderModel>(

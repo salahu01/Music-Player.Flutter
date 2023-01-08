@@ -15,18 +15,21 @@ class PlayerScreen extends GetView<PlayerController> {
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(Get.width * 10.r),
-                child: SizedBox(
-                  height: Get.width * 0.7,
-                  width: Get.width * 0.7,
-                  child: FutureBuilder(
-                    future: OnAudioQuery.platform.queryArtwork(controller.selectedSong.value!.id, ArtworkType.AUDIO),
-                    builder: (context, snapshot) {
-                      if (snapshot.data == null || (snapshot.data?.isEmpty ?? false)) {
-                        return Image.asset(appIcon, fit: BoxFit.cover);
-                      } else {
-                        return Image.memory(snapshot.data!, fit: BoxFit.cover);
-                      }
-                    },
+                child: GestureDetector(
+                  onHorizontalDragEnd: controller.drargAction,
+                  child: SizedBox(
+                    height: Get.width * 0.7,
+                    width: Get.width * 0.7,
+                    child: FutureBuilder(
+                      future: OnAudioQuery.platform.queryArtwork(controller.selectedSong.value!.id, ArtworkType.AUDIO),
+                      builder: (context, snapshot) {
+                        if (snapshot.data == null || (snapshot.data?.isEmpty ?? false)) {
+                          return Image.asset(appIcon, fit: BoxFit.cover);
+                        } else {
+                          return Image.memory(snapshot.data!, fit: BoxFit.cover);
+                        }
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -49,7 +52,7 @@ class PlayerScreen extends GetView<PlayerController> {
                 progress: controller.progressBarTime.value?.position ?? Duration.zero, total: controller.progressBarTime.value?.total ?? Duration.zero, onSeek: controller.changeProgressPosition)),
             const Spacer(),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.repeat_one, color: context.iconColor, size: 20.sp)),
+              IconButton(onPressed: controller.changeLoopMode, icon: Icon(repeateIcon(controller.loopMode.value), color: context.iconColor, size: 20.sp)),
               IconButton(onPressed: controller.skipToPrevious, icon: Icon(Icons.skip_previous, color: context.iconColor, size: 50.sp)),
               Obx(() =>
                   IconButton(onPressed: controller.playOrPause, icon: Icon(controller.isPlaying.value ? Icons.pause_circle_filled : Icons.play_circle_fill, color: context.iconColor, size: 60.sp))),
@@ -59,5 +62,16 @@ class PlayerScreen extends GetView<PlayerController> {
             const Spacer(),
           ])).paddingAll(16.r),
     );
+  }
+
+  IconData repeateIcon(LoopMode loopMode) {
+    switch (loopMode) {
+      case LoopMode.one:
+        return Icons.repeat_one;
+      case LoopMode.off:
+        return Icons.repeat;
+      default:
+        return Icons.all_inclusive;
+    }
   }
 }

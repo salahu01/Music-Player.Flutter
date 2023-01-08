@@ -78,6 +78,7 @@ class OfflineController extends GetxController with StateMixin {
         break;
       default:
     }
+    write(sortOrderModel.toString());
     sortTypeModel != null ? (isAlbum ? albumsSortType : tracksSortType).value = sortTypeModel : null;
     sortOrderModel != null ? (isAlbum ? albumsSortOrder : tracksSortOrder).value = sortOrderModel : null;
   }
