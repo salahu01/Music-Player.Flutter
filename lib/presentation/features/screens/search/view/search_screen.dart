@@ -12,7 +12,9 @@ class SearchScreen extends GetView<SearchController> {
           title: TextField(
             style: AppStyles.headline1.copyWith(color: context.iconColor),
             cursorColor: context.iconColor,
-            onChanged: controller.searchFieldCangeed,
+            onChanged: (text) {
+              controller.searchFieldCangeed(text);
+            },
             decoration: InputDecoration(
               fillColor: context.theme.scaffoldBackgroundColor,
               filled: true,

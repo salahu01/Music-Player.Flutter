@@ -6,23 +6,23 @@ class OfflineSearchView extends GetView<SearchController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemBuilder: (context, index) => Obx(
-          () => Obx(
-            () => ListView.builder(
-              itemCount: controller.seachedSongs.value.length,
-              shrinkWrap: true,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) => SongTile(
-                isSelected: controller.playerController.isSelected(index: index, songModels: controller.seachedSongs.value),
-                onTap: () => controller.playerController.isSelected(index: index, songModels: controller.seachedSongs.value)
-                    ? Get.toNamed(Routes.playerScreen)
-                    : controller.playerController.playSong(songsModels: controller.seachedSongs.value, index: index),
-                songModel: controller.seachedSongs.value[index],
-              ),
+      body: controller.obx(
+        onLoading: Center(child: Kwidgets.isEmpty),
+        onEmpty: Center(child: Kwidgets.isEmpty),
+        (state) =>  ListView.builder(
+          itemCount: controller.searchedSongs.length,
+          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) => Obx(
+            () => SongTile(
+              isSelected: controller.playerController.isSelected(index: index, songModels: controller.searchedSongs),
+              onTap: () => controller.playerController.isSelected(index: index, songModels: controller.searchedSongs)
+                  ? Get.toNamed(Routes.playerScreen)
+                  : controller.playerController.playSong(songsModels: controller.searchedSongs, index: index),
+              songModel: controller.searchedSongs[index],
             ),
           ),
-        ).paddingSymmetric(vertical: 8.r),
+        ).paddingSymmetric(vertical: 16.r),
       ),
     );
   }

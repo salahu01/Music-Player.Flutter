@@ -1,6 +1,6 @@
 import 'package:music_app/imports_bindings.dart';
 
-class SearchController extends GetxController {
+class SearchController extends GetxController with StateMixin {
   //* This constructor body for creating singleton widget
   factory SearchController() {
     _searchController == null ? {_searchController = SearchController._internel()} : null;
@@ -33,11 +33,15 @@ class SearchController extends GetxController {
   final OfflineController _offlineController = Get.put(OfflineController());
 
   //* This variable for store searched songs results
-  Rx<List<SongModel>> seachedSongs = Rx<List<SongModel>>([]);
+  List<SongModel> searchedSongs = [];
 
   //* This methor for search song depended user intraction
   void searchFieldCangeed(String? text) {
-    seachedSongs.value = [];
-    seachedSongs.value.addAll(text == null || text.isEmpty ? _offlineController.tracks : _offlineController.tracks.where((e) => e.title.toLowerCase() == text.toLowerCase()));
+    change(null, status: RxStatus.loading());
+    searchedSongs.clear();
+    text == null || text.isEmpty
+        ? searchedSongs.addAll(_offlineController.tracks)
+        : searchedSongs.addAll(_offlineController.tracks.where((e) => e.title.toLowerCase().contains(text.toLowerCase())).toList());
+    searchedSongs.isEmpty ? change(null, status: RxStatus.empty()) : change(null, status: RxStatus.success());
   }
 }
