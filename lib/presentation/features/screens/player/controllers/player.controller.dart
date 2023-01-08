@@ -1,6 +1,18 @@
 import 'package:music_app/imports_bindings.dart';
 
 class PlayerController extends GetxController {
+  //* This constructor body for creating singleton widget
+  factory PlayerController() {
+    _playerController == null ? {_playerController = PlayerController._internel()} : null;
+    return _playerController!;
+  }
+
+  //* This named constructor for create object for this class
+  PlayerController._internel();
+
+  //* This variable for store this class object globally
+  static PlayerController? _playerController;
+
   //*The onInit() is a method that is called when an object for OfflineController is created and inserted inside the widget tree
   @override
   void onInit() {
@@ -34,11 +46,28 @@ class PlayerController extends GetxController {
   //* This variable using change favourite add && remove button
   Rx<bool> isFavourite = Rx(false);
 
+  //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
+  bool isSelected({required int index, required List<SongModel> songModels}) {
+    if (selectedSong.value == null) {
+      return false;
+    }
+    return songModels[index].id == selectedSong.value!.id;
+  }
+
+  //* This methord using to play current selected song
+  void playSong({required List<SongModel> songsModels, required int index}) async {
+    await _playerServices.play(songModels: songsModels, index: index);
+    selectedSong.value = songsModels[index];
+    _playerServices.playingSongModel.listen((playingSongModel) {
+      selectedSong.value = playingSongModel;
+    });
+  }
+
   //* This methord using change player screen when changing the current song 🎧
   void changeCurrentSong() {
     _playerServices.playingSongModel.listen((playingSongModel) {
       selectedSong.value = playingSongModel;
-      checkFavouriteExist(); //*This call for current song exist in favourites 
+      checkFavouriteExist(); //*This call for current song exist in favourites
     });
     _playerServices.player.playingStream.listen((playing) {
       isPlaying.value = playing;
@@ -52,7 +81,7 @@ class PlayerController extends GetxController {
         progressBarTime.value = progressBarTime.value?.copyWith(total: duration ?? Duration.zero) ?? AudioTimeModel(total: duration ?? Duration.zero, buffred: Duration.zero, position: Duration.zero);
       })
       ..positionStream.listen((position) {
-        progressBarTime.value = progressBarTime.value?.copyWith(current: position);
+        progressBarTime.value = progressBarTime.value?.copyWith(position: position);
       });
   }
 

@@ -46,10 +46,10 @@ class AlbumsTab extends GetView<OfflineController> {
               controller: scrollController,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                    isSelected: controller.isSelected(index: index, songModels: controller.albums),
-                    onTap: () => controller.selectedSong.value?.id == controller.albums[index].id
+                    isSelected: controller.playerController.isSelected(index: index, songModels: controller.albums),
+                    onTap: () => controller.playerController.selectedSong.value?.id == controller.albums[index].id
                       ? Get.toNamed(Routes.playerScreen)
-                      : controller.playSong(songsModels: controller.albums, index: index),
+                      : controller.playerController.playSong(songsModels: controller.albums, index: index),
                     songModel: controller.albums[index],
                   )),
             ).paddingSymmetric(vertical: 8.r);

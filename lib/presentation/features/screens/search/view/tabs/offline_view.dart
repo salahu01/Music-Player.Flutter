@@ -10,14 +10,14 @@ class OfflineSearchView extends GetView<SearchController> {
         itemBuilder: (context, index) => Obx(
           () => Obx(
             () => ListView.builder(
-              itemCount: 50,
+              itemCount: controller.seachedSongs.value.length,
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) => SongTile(
-                isSelected: controller.offlineController.selectedSong.value?.id == controller.seachedSongs.value[index].id,
-                onTap: () => controller.offlineController.selectedSong.value?.id == controller.offlineController.albums[index].id
+                isSelected: controller.playerController.isSelected(index: index, songModels: controller.seachedSongs.value),
+                onTap: () => controller.playerController.isSelected(index: index, songModels: controller.seachedSongs.value)
                     ? Get.toNamed(Routes.playerScreen)
-                    : controller.offlineController.playSong(songsModels: controller.seachedSongs.value, index: index),
+                    : controller.playerController.playSong(songsModels: controller.seachedSongs.value, index: index),
                 songModel: controller.seachedSongs.value[index],
               ),
             ),

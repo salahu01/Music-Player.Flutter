@@ -1,22 +1,33 @@
 import 'package:music_app/imports_bindings.dart';
 
 class OfflineController extends GetxController with StateMixin {
+  //* This constructor body for creating singleton widget
+  factory OfflineController() {
+    _offlineController == null ? {_offlineController = OfflineController._internel()} : null;
+    return _offlineController!;
+  }
+
+  //* This named constructor for create object for this class
+  OfflineController._internel();
+
+  //* This variable for store this class object globally
+  static OfflineController? _offlineController;
+
   //*The onInit() is a method that is called when an object for OfflineController is created and inserted inside the widget tree
   @override
   void onInit() {
     //* This methord using for fetch local song when user open the screen
     getSongs();
-    _playerServices = PlayerServices();
     super.onInit();
   }
+
+  //* This variable for store player controller instace for getting player fuction
+  PlayerController playerController = Get.put(PlayerController());
 
   //* This variable using for store all albums from local internal storage 💿
   late List<SongModel> albums;
   //* This variable using for store all tracks ( all songs ) from local internal storage 🎶
   late List<SongModel> tracks;
-
-  //*This Variable using to store current playing Or current Selected song creadential Or Datas ⛏️
-  Rx<SongModel?> selectedSong = Rx(null);
 
   //* This variable using to store current tracks ( all songs ) sort type (eg : date added , title , size)
   Rx<SortTypeModel> tracksSortType = Rx(AppData.sortTypeOptions[0]);
@@ -26,9 +37,6 @@ class OfflineController extends GetxController with StateMixin {
   Rx<SortOrderModel> tracksSortOrder = Rx(AppData.sortOrderOPtions[0]);
   //* This variable using to store current albums sort order ( eg : A - Z , Z - A )
   Rx<SortOrderModel> albumsSortOrder = Rx(AppData.sortOrderOPtions[0]);
-
-  //* This variable using to store player services object ( for creating instance of PlayerServices classes instance )
-  late PlayerServices _playerServices;
 
   //* This variable using to store offline screens tabbar views Or screens
   final tabViews = [
@@ -44,23 +52,6 @@ class OfflineController extends GetxController with StateMixin {
     albums = await localAudioServices.getSongs(sortType: SongSortType.ALBUM);
     tracks = await localAudioServices.getSongs(sortType: SongSortType.TITLE);
     change(null, status: RxStatus.success());
-  }
-
-  //* This methord using to play current selected song
-  void playSong({required List<SongModel> songsModels, required int index}) async {
-    await _playerServices.play(songModels: songsModels, index: index);
-    selectedSong.value = songsModels[index];
-    _playerServices.playingSongModel.listen((playingSongModel) {
-      selectedSong.value = playingSongModel;
-    });
-  }
-
-  //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
-  bool isSelected({required int index, required List<SongModel> songModels}) {
-    if (selectedSong.value == null) {
-      return false;
-    }
-    return songModels[index].id == selectedSong.value!.id;
   }
 
   //* This methord using sort songs ( It contains ablums sorting && tracks sorting )

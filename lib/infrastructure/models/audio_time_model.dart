@@ -31,12 +31,12 @@ class AudioTimeModel {
   AudioTimeModel copyWith({
     Duration? total,
     Duration? buffred,
-    Duration? current,
+    Duration? position,
   }) {
     return AudioTimeModel(
       total: total ?? this.total,
       buffred: buffred ?? this.buffred,
-      position: current ?? this.position,
+      position: position ?? this.position,
     );
   }
 }

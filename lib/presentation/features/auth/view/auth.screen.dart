@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:music_app/imports_bindings.dart';
 
 class AuthScreen extends GetView<AuthController> {

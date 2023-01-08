@@ -16,10 +16,10 @@ class LikedSongsScreen extends GetView<LikedSongsController> {
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                isSelected: controller.offlineController.isSelected(index: index, songModels: controller.likedSongs),
-                onTap: () => controller.offlineController.isSelected(index: index, songModels: controller.likedSongs)
+                isSelected: controller.playerController.isSelected(index: index, songModels: controller.likedSongs),
+                onTap: () => controller.playerController.isSelected(index: index, songModels: controller.likedSongs)
                     ? Get.toNamed(Routes.playerScreen)
-                    : controller.offlineController.playSong(songsModels: controller.likedSongs, index: index),
+                    : controller.playerController.playSong(songsModels: controller.likedSongs, index: index),
                 songModel: controller.likedSongs[index],
               )),
         ).paddingSymmetric(vertical: 8.r),
