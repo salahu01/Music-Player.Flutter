@@ -67,7 +67,13 @@ class SongTile extends StatelessWidget {
                 color: context.theme.scaffoldBackgroundColor,
               ),
             )
-          : const Icon(Icons.more_vert),
+          : PopupMenuButton<String>(
+              child: const Icon(Icons.more_vert),
+              onSelected: (value) {},
+              itemBuilder: (context) => AppData.offlineSongMore
+                  .map((e) => PopupMenuItem<String>(
+                      value: e.label, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
+                  .toList()).paddingSymmetric(horizontal: 8.r),
     );
   }
 }

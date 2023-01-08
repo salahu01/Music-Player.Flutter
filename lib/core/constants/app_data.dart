@@ -19,4 +19,12 @@ class AppData {
     SortOrderModel(label: 'Normal', icon: Icons.arrow_drop_down, isNormal: true),
     SortOrderModel(label: 'Reversed', icon: Icons.arrow_drop_up, isNormal: false),
   ];
+  //*This variable contains offline song tile more datas
+  static const List<IconTitleModel> offlineSongMore = [
+    IconTitleModel(icon: Icons.favorite, label: 'Liked'),
+    IconTitleModel(icon: Icons.edit, label: 'Rename'),
+    IconTitleModel(icon: Icons.delete, label: 'Delete'),
+    IconTitleModel(icon: Icons.description_sharp, label: 'Details'),
+    IconTitleModel(icon: Icons.favorite_border, label: 'UnLike'),
+  ];
 }
