@@ -1,6 +1,8 @@
+import 'dart:async';
+
 import 'package:music_app/imports_bindings.dart';
 
-class OfflineSongsStorage {
+class OfflineSongsStorage with ChangeNotifier{
   //* This constructor body for creating singleton widget
   factory OfflineSongsStorage() {
     _offlineSongsStorage == null ? {_offlineSongsStorage = OfflineSongsStorage._internel()} : null;
@@ -9,7 +11,7 @@ class OfflineSongsStorage {
 
   //* This named constructor for create object for this class
   OfflineSongsStorage._internel() {
-    Hive.openBox<num>(StorageKeys.offlineFavouriteKey).then((_) => _favoriteStorageBox = _);
+    Hive.openBox<num>(StorageKeys.offlineFavouriteKey).then((_) => {_favoriteStorageBox = _, getAllLikedSongs()});
     Hive.openBox<Map<String, dynamic>>(StorageKeys.offlinePlayListKey).then((_) => _playListsStorageBox = _);
   }
 
@@ -22,24 +24,30 @@ class OfflineSongsStorage {
   //* This variable for store offline playlist storage box from HIVE
   late Box<Map> _playListsStorageBox;
 
+  //* This variable for store liked songIds
+  final ValueNotifier<List<num>> likedIds = ValueNotifier([]);
+
   //* This methord for check favourite song
-   checkFavouriteSong({required num id}) {
+  checkFavouriteSong({required num id}) {
     return _favoriteStorageBox.values.contains(id);
   }
 
   //* This methord for get all liked songs
-  List<num> getAllLikedSongs(){
-    return _favoriteStorageBox.values.toList();
+  void getAllLikedSongs() {
+    likedIds.value..clear()..addAll(_favoriteStorageBox.values.toList().toSet().toList());
+    likedIds.notifyListeners();
   }
 
   //* This methord for store favourite songs to loacl storage
   Future<void> storeFavouriteSong({required num id}) async {
-    _favoriteStorageBox.add(id);
+    await _favoriteStorageBox.add(id);
+    getAllLikedSongs();
   }
 
   //* This methord for remove song from favourite storage
-  Future<void> removeSongFromFavourite({num? id, int? index}) async {
-    id != null ? _favoriteStorageBox.deleteAt(_favoriteStorageBox.values.toList().indexWhere((e) => e == id)) : _favoriteStorageBox.deleteAt(index!);
+  void removeSongFromFavourite({num? id, int? index}) {
+     id != null ? _favoriteStorageBox.deleteAt(_favoriteStorageBox.values.toList().indexWhere((e) => e == id)) : _favoriteStorageBox.deleteAt(index!);
+    getAllLikedSongs();
   }
 
   //* This methord for store play lists to loacl storage

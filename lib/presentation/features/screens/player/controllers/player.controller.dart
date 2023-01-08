@@ -36,8 +36,8 @@ class PlayerController extends GetxController {
 
   //* This methord using change player screen when changing the current song 🎧
   void changeCurrentSong() {
-    _playerServices.playingSongModel.addListener(() {
-      selectedSong.value = _playerServices.playingSongModel.value;
+    _playerServices.playingSongModel.listen((playingSongModel) {
+      selectedSong.value = playingSongModel;
       checkFavouriteExist(); //*This call for current song exist in favourites 
     });
     _playerServices.player.playingStream.listen((playing) {
@@ -64,7 +64,7 @@ class PlayerController extends GetxController {
   //* This methord for store and remove song from favourite
   void addOrRemoveFavourite() async {
     if (isFavourite.value == true) {
-      await _offlineSongsStorage.removeSongFromFavourite(id: selectedSong.value!.id);
+      _offlineSongsStorage.removeSongFromFavourite(id: selectedSong.value!.id);
       isFavourite.value = false;
     } else {
       await _offlineSongsStorage.storeFavouriteSong(id: selectedSong.value!.id);

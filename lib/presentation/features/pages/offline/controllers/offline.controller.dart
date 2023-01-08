@@ -50,17 +50,17 @@ class OfflineController extends GetxController with StateMixin {
   void playSong({required List<SongModel> songsModels, required int index}) async {
     await _playerServices.play(songModels: songsModels, index: index);
     selectedSong.value = songsModels[index];
-    _playerServices.playingSongModel.addListener(() {
-      selectedSong.value = _playerServices.playingSongModel.value;
+    _playerServices.playingSongModel.listen((playingSongModel) {
+      selectedSong.value = playingSongModel;
     });
   }
 
   //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
-  bool isSelected({required int index, required bool isTracks}) {
+  bool isSelected({required int index, required List<SongModel> songModels}) {
     if (selectedSong.value == null) {
       return false;
     }
-    return isTracks ? tracks[index].id == selectedSong.value!.id : albums[index].id == selectedSong.value!.id;
+    return songModels[index].id == selectedSong.value!.id;
   }
 
   //* This methord using sort songs ( It contains ablums sorting && tracks sorting )

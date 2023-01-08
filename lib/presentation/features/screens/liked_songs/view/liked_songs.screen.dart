@@ -9,18 +9,21 @@ class LikedSongsScreen extends GetView<LikedSongsController> {
         title: Text('Liked Songs', style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: controller.likedSongs.length,
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-              isSelected: controller.offlineController.selectedSong.value?.id == controller.likedSongs[index].id,
-              onTap: () => controller.offlineController.selectedSong.value?.id == controller.likedSongs[index].id
-                  ? Get.toNamed(Routes.playerScreen)
-                  : controller.offlineController.playSong(songsModels: controller.likedSongs, index: index),
-              songModel: controller.likedSongs[index],
-            )),
-      ).paddingSymmetric(vertical: 8.r),
+      body: controller.obx(
+        onLoading: Center(child: Kwidgets.loading),
+        (state) => ListView.builder(
+          itemCount: controller.likedSongs.length,
+          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
+                isSelected: controller.offlineController.isSelected(index: index, songModels: controller.likedSongs),
+                onTap: () => controller.offlineController.isSelected(index: index, songModels: controller.likedSongs)
+                    ? Get.toNamed(Routes.playerScreen)
+                    : controller.offlineController.playSong(songsModels: controller.likedSongs, index: index),
+                songModel: controller.likedSongs[index],
+              )),
+        ).paddingSymmetric(vertical: 8.r),
+      ),
     );
   }
 }

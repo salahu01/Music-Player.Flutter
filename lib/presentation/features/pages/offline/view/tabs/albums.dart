@@ -35,10 +35,10 @@ class AlbumsTab extends GetView<OfflineController> {
           ),
         ),
         body: controller.obx(
-          onLoading: Center(child: CircularProgressIndicator(color: context.iconColor)),
+        onLoading: Center(child: Kwidgets.loading),
           (state) {
             if (controller.tracks.isEmpty) {
-              return Center(child: Text('No albums found !', style: context.textTheme.headline1));
+              return Center(child: Kwidgets.isEmpty);
             }
             return ListView.builder(
               itemCount: controller.albums.length,
@@ -46,7 +46,7 @@ class AlbumsTab extends GetView<OfflineController> {
               controller: scrollController,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                    isSelected: controller.isSelected(index: index, isTracks: false),
+                    isSelected: controller.isSelected(index: index, songModels: controller.albums),
                     onTap: () => controller.selectedSong.value?.id == controller.albums[index].id
                       ? Get.toNamed(Routes.playerScreen)
                       : controller.playSong(songsModels: controller.albums, index: index),

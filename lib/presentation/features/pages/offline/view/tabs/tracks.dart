@@ -5,7 +5,8 @@ class TracksTab extends GetView<OfflineController> {
   final ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Scaffold(
+    return Obx(
+      () => Scaffold(
         appBar: AppBar(
           toolbarHeight: 0,
           bottom: PreferredSize(
@@ -33,23 +34,27 @@ class TracksTab extends GetView<OfflineController> {
             ).paddingSymmetric(horizontal: 24.r),
           ),
         ),
-        body: controller.obx(onLoading: Center(child: CircularProgressIndicator(color: context.iconColor)), (state) {
-          if (controller.tracks.isEmpty) {
-            return Center(child: Text('No songs found !', style: context.textTheme.headline1));
-          }
-          return ListView.builder(
-            itemCount: controller.tracks.length,
-            shrinkWrap: true,
-            controller: scrollController,
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
-                  isSelected: controller.isSelected(index: index, isTracks: true),
-                  onTap: () => controller.selectedSong.value?.id == controller.tracks[index].id
-                      ? Get.toNamed(Routes.playerScreen)
-                      : controller.playSong(songsModels: controller.tracks, index: index),
-                  songModel: controller.tracks[index],
-                )),
-          ).paddingSymmetric(vertical: 8.r);
-        })));
+        body: controller.obx(
+          onLoading: Center(child: Kwidgets.loading),
+          (state) {
+            if (controller.tracks.isEmpty) {
+              return Center(child: Kwidgets.isEmpty);
+            }
+            return ListView.builder(
+              itemCount: controller.tracks.length,
+              shrinkWrap: true,
+              controller: scrollController,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
+                    isSelected: controller.isSelected(index: index, songModels: controller.tracks),
+                    onTap: () =>
+                        controller.selectedSong.value?.id == controller.tracks[index].id ? Get.toNamed(Routes.playerScreen) : controller.playSong(songsModels: controller.tracks, index: index),
+                    songModel: controller.tracks[index],
+                  )),
+            ).paddingSymmetric(vertical: 8.r);
+          },
+        ),
+      ),
+    );
   }
 }
