@@ -35,7 +35,7 @@ class LikedSongsController extends GetxController with StateMixin {
       likedSongs
         ..clear()
         ..addAll(allSongs.where((e) => likedIds.contains(e.id)).toList());
-      change(null, status: RxStatus.success());
+      change(null, status: likedSongs.isEmpty ? RxStatus.empty(): RxStatus.success());
     });
     offlineSongsStorage.getAllLikedSongs();
   }

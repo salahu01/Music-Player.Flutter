@@ -98,7 +98,11 @@ class PlayerController extends GetxController {
 
   //* This methord for chack selected song contains in favourite
   void checkFavouriteExist() {
-    isFavourite.value = _offlineSongsStorage.checkFavouriteSong(id: selectedSong.value!.id);
+    try {
+      isFavourite.value = _offlineSongsStorage.checkFavouriteSong(id: selectedSong.value!.id);
+    } catch (e) {
+      write('can\'t check favorite song !');
+    }
   }
 
   //* This methord for store and remove song from favourite

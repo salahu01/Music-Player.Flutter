@@ -23,10 +23,7 @@ class RootScreen extends GetView<RootController> {
           ),
           actions: [
             IconButton(onPressed: () => Get.toNamed(Routes.search), icon: Icon(Icons.search, color: context.iconColor)),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(800),
-              child: Image.asset(appIcon),
-            ).paddingSymmetric(horizontal: 8.r, vertical: 8.r),
+            Kwidgets.userNoAvatar.paddingSymmetric(horizontal: 8.r, vertical: 8.r),
           ],
         ),
         body: controller.screens[controller.currentIndex.value],
