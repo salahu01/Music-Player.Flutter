@@ -1,8 +1,7 @@
 import 'package:music_app/imports_bindings.dart';
 
-class ArtistApiRepo implements ArtistApiImpl {
-  @override
-  Future<Either<AppErrors, TopArtistsEntity>> getArtists() async {
+class ArtistApiRepo {
+  Future<Either<AppErrors, TopArtistsEntity>> getTopArtists() async {
     try {
       return BaseRepository().apiCall(
         call: Dio().get(ApiUris.getTopArtists.uri, options: Options(headers: ApiUris.getTopArtists.headers)),

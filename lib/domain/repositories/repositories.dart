@@ -1,1 +1,1 @@
-export 'top_artist_api_impl.dart';
+export 'top_artists_api_repo.dart';
