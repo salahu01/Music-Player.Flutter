@@ -27,4 +27,20 @@ class AppData {
     IconTitleModel(icon: Icons.description_sharp, label: 'Details'),
     IconTitleModel(icon: Icons.favorite_border, label: 'UnLike'),
   ];
+  //*This variable contains current playing song details
+  static final List<SongDeatilsModel> selectedSongDetails = [
+    SongDeatilsModel(label: 'Title : ', value: Get.find<PlayerController>().selectedSong.value?.title ?? 'No title'),
+    SongDeatilsModel(label: 'Artist : ', value: Get.find<PlayerController>().selectedSong.value?.artist ?? 'Unknown'),
+    SongDeatilsModel(label: 'DateAdded : ', value: Get.find<PlayerController>().selectedSong.value?.dateAdded.toString() ?? 'No DateAdded'),
+    SongDeatilsModel(label: 'DateModified : ', value: Get.find<PlayerController>().selectedSong.value?.dateModified.toString() ?? 'No DateModified'),
+    SongDeatilsModel(label: 'Duration : ', value: Get.find<PlayerController>().selectedSong.value?.duration.toString() ?? 'Coudn\'t find'),
+    SongDeatilsModel(label: 'Composer : ', value: Get.find<PlayerController>().selectedSong.value?.composer ?? 'Unknown'),
+    SongDeatilsModel(label: 'Location : ', value: Get.find<PlayerController>().selectedSong.value?.displayName ?? 'Cound\'t find'),
+  ];
+  //*This variable contains diffrent theme modes
+  static const List<ThemeModeModel> themeModes = [
+    ThemeModeModel(themeMode: ThemeMode.system, label: 'System'),
+    ThemeModeModel(themeMode: ThemeMode.dark, label: 'Dark'),
+    ThemeModeModel(themeMode: ThemeMode.light, label: 'Light'),
+  ];
 }

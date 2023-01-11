@@ -190,6 +190,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.4"
+  dartz:
+    dependency: "direct main"
+    description:
+      name: dartz
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.1"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -338,6 +352,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  internet_connection_checker:
+    dependency: "direct main"
+    description:
+      name: internet_connection_checker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+1"
   io:
     dependency: transitive
     description:
@@ -353,12 +374,19 @@ packages:
     source: hosted
     version: "0.6.4"
   json_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.7.0"
+  json_serializable:
+    dependency: "direct dev"
+    description:
+      name: json_serializable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.5.4"
   just_audio:
     dependency: "direct main"
     description:

@@ -8,7 +8,41 @@ class PlayerScreen extends GetView<PlayerController> {
       appBar: AppBar(
         toolbarHeight: 50.h,
         leading: IconButton(onPressed: () => Get.back(), icon: Icon(Icons.arrow_back, color: context.iconColor)),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.more_vert, color: context.iconColor))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(32.r), topRight: Radius.circular(32.r)),
+                        child: ColoredBox(
+                          color: context.iconColor!,
+                          child: SizedBox(
+                            width: Get.width,
+                            height: Get.height * 0.4,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: AppData.selectedSongDetails
+                                  .map(
+                                    (e) => RichText(
+                                      text: TextSpan(
+                                        text: e.label,
+                                        style: const TextStyle(fontWeight: FontWeight.w900, color: Colors.black),
+                                        children: [TextSpan(text: e.value, style: const TextStyle(fontWeight: FontWeight.w500, color: Colors.black))],
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                            ).paddingOnly(left: 16.r, right: 8.r),
+                          ),
+                        ),
+                      );
+                    });
+              },
+              icon: Icon(Icons.more_vert, color: context.iconColor))
+        ],
       ),
       body: Obx(() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Spacer(),
@@ -52,7 +86,7 @@ class PlayerScreen extends GetView<PlayerController> {
                 progress: controller.progressBarTime.value?.position ?? Duration.zero, total: controller.progressBarTime.value?.total ?? Duration.zero, onSeek: controller.changeProgressPosition)),
             const Spacer(),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              IconButton(onPressed: controller.changeLoopMode, icon: Icon(repeateIcon(controller.loopMode.value), color: context.iconColor, size: 20.sp)),
+              Obx(() => IconButton(onPressed: controller.changeLoopMode, icon: Icon(repeateIcon(controller.loopMode.value), color: context.iconColor, size: 20.sp))),
               IconButton(onPressed: controller.skipToPrevious, icon: Icon(Icons.skip_previous, color: context.iconColor, size: 50.sp)),
               Obx(() =>
                   IconButton(onPressed: controller.playOrPause, icon: Icon(controller.isPlaying.value ? Icons.pause_circle_filled : Icons.play_circle_fill, color: context.iconColor, size: 60.sp))),

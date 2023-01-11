@@ -19,13 +19,15 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: (context, child) => GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: initialRoute,
-        getPages: Nav.routes,
-        themeMode: ThemeMode.dark,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
+      builder: (context, child) => Obx(
+        () => GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: initialRoute,
+          getPages: Nav.routes,
+          themeMode: Get.put<SettingsController>(SettingsController()).selectedTheme.value,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+        ),
       ),
     );
   }

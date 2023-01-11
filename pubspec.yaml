@@ -8,6 +8,8 @@ environment:
 dependencies:
   audio_video_progress_bar: ^0.11.0
   cupertino_icons: ^1.0.2
+  dartz: ^0.10.1
+  dio: ^4.0.6
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.5.4
@@ -15,6 +17,8 @@ dependencies:
   google_fonts: ^3.0.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  internet_connection_checker: ^1.0.0+1
+  json_annotation: ^4.7.0
   just_audio: ^0.9.31
   just_audio_background: ^0.0.1-beta.9
   on_audio_query: ^2.6.1
@@ -26,6 +30,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   hive_generator: ^2.0.0
+  json_serializable: ^6.5.4
 
 flutter:
   uses-material-design: true
