@@ -38,7 +38,7 @@ class TracksTab extends GetView<OfflineController> {
           onLoading: Center(child: Kwidgets.loading),
           (state) {
             if (controller.tracks.isEmpty) {
-              return Center(child: Kwidgets.isEmpty);
+              return Center(child: Kwidgets.noAudios);
             }
             return ListView.builder(
               itemCount: controller.tracks.length,

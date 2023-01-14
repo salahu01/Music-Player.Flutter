@@ -12,7 +12,7 @@ class OnlineScreen extends GetView<OnlineController> {
       ),
       body: Center(
         child: Text(
-          'OnlineScreen is working',
+          'Coming soon ...',
           style: context.textTheme.headline1,
         ),
       ),

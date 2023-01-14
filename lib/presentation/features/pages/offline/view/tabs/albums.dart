@@ -35,10 +35,10 @@ class AlbumsTab extends GetView<OfflineController> {
           ),
         ),
         body: controller.obx(
-        onLoading: Center(child: Kwidgets.loading),
+          onLoading: Center(child: Kwidgets.loading),
           (state) {
             if (controller.tracks.isEmpty) {
-              return Center(child: Kwidgets.isEmpty);
+              return Center(child: Kwidgets.noAudios);
             }
             return ListView.builder(
               itemCount: controller.albums.length,
@@ -48,8 +48,8 @@ class AlbumsTab extends GetView<OfflineController> {
               itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
                     isSelected: controller.playerController.isSelected(index: index, songModels: controller.albums),
                     onTap: () => controller.playerController.selectedSong.value?.id == controller.albums[index].id
-                      ? Get.toNamed(Routes.playerScreen)
-                      : controller.playerController.playSong(songsModels: controller.albums, index: index),
+                        ? Get.toNamed(Routes.playerScreen)
+                        : controller.playerController.playSong(songsModels: controller.albums, index: index),
                     songModel: controller.albums[index],
                   )),
             ).paddingSymmetric(vertical: 8.r);

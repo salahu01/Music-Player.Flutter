@@ -22,8 +22,8 @@ class SearchController extends GetxController with StateMixin {
 
   //*The variable using to store all search bar equalized tabsvies ( tan views means seach widget body returnig objects )
   final tabViews = const [
-    OfflineSearchView(),
     OnlineSearchView(),
+    OfflineSearchView(),
   ];
 
   //* This variable for store player controller instace for getting offline tracks

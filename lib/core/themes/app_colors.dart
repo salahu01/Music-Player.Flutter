@@ -5,4 +5,5 @@ abstract class AppColors {
   static const Color primary = Color.fromARGB(255, 255, 255, 255);
   static const Color primarySwatch = Color.fromARGB(255, 215, 35, 35);
   static const Color transparent = Colors.transparent;
+  static const Color grey = Colors.grey;
 }

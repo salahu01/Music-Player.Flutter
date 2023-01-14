@@ -7,9 +7,9 @@ class OfflineSearchView extends GetView<SearchController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: controller.obx(
-        onLoading: Center(child: Kwidgets.isEmpty),
-        onEmpty: Center(child: Kwidgets.isEmpty),
-        (state) =>  ListView.builder(
+        onLoading: Center(child: Kwidgets.noAudios),
+        onEmpty: Center(child: Kwidgets.noAudios),
+        (state) => ListView.builder(
           itemCount: controller.searchedSongs.length,
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),

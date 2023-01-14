@@ -21,9 +21,16 @@ class SingleArtistModel {
   @JsonKey(name: 'id')
   String? artistId;
   @JsonKey(name: 'visuals')
-  Avatar? avatar;
-  SingleArtistModel({this.artistName, this.artistId, this.avatar});
+  Visuals? visuals;
+  SingleArtistModel({this.artistName, this.artistId, this.visuals});
   factory SingleArtistModel.fromJson(Map<String, dynamic> json) => _$SingleArtistModelFromJson(json);
+}
+
+@JsonSerializable()
+class Visuals {
+  Visuals(this.avatar);
+  List<Avatar?>? avatar;
+  factory Visuals.fromJson(Map<String, dynamic> json) => _$VisualsFromJson(json);
 }
 
 @JsonSerializable()

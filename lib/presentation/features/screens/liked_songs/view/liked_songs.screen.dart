@@ -11,7 +11,7 @@ class LikedSongsScreen extends GetView<LikedSongsController> {
       ),
       body: controller.obx(
         onLoading: Center(child: Kwidgets.loading),
-        onEmpty: Center(child: Kwidgets.isEmpty),
+        onEmpty: Center(child: Kwidgets.noAudios),
         (state) => ListView.builder(
           itemCount: controller.likedSongs.length,
           shrinkWrap: true,
