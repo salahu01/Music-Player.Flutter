@@ -12,7 +12,7 @@ class OfflineSongsStorage with ChangeNotifier {
   //* This named constructor for create object for this class
   OfflineSongsStorage._internel() {
     Hive.openBox<num>(StorageKeys.offlineFavouriteKey).then((_) => {_favoriteStorageBox = _, getAllLikedSongs()});
-    Hive.openBox<Map<String, dynamic>>(StorageKeys.offlinePlayListKey).then((_) => _playListsStorageBox = _);
+    Hive.openBox<Map>(StorageKeys.offlinePlayListKey).then((_) => {_playListsStorageBox = _, getAllPlayLists()});
   }
 
   //* This variable for store this class object globally
@@ -26,6 +26,9 @@ class OfflineSongsStorage with ChangeNotifier {
 
   //* This variable for store liked songIds
   final ValueNotifier<List<num>> likedIds = ValueNotifier([]);
+
+  //* This variable for store all play Lists
+  final ValueNotifier<List<PlayListModel>> playLists = ValueNotifier([]);
 
   //* This methord for check favourite song
   checkFavouriteSong({required num id}) {
@@ -53,24 +56,25 @@ class OfflineSongsStorage with ChangeNotifier {
   }
 
   //* This methord for get all playlists
-  PlayListModel getPlayLists() {
-    return PlayListModel.fromMap(_playListsStorageBox.values.toList());
+  void getAllPlayLists() {
+     write('called me');
+    playLists.value
+      ..clear()
+      ..addAll(_playListsStorageBox.values.isEmpty ? [] : _playListsStorageBox.values.toList().map((e) => PlayListModel.fromMap(e)).toList());
+     write('called me');
+    playLists.notifyListeners();
+    write('called me');
   }
 
   //* This methord for store play lists to loacl storage
-  Future<void> storePlayListsSong({required String playListName, required num id}) async {
-    var playList = _playListsStorageBox.values.toList().singleWhere((e) => e['playlist_name'] == playListName, orElse: () => {});
-    if (playList['playlist_name'] == null) {
-      _playListsStorageBox.add({
-        'playlist_name': playListName,
-        'ids': [id]
-      });
-      return;
+  Future<void> storePlayListsSong({required String playListName, num? id}) async {
+    if (id == null) {
+      await _playListsStorageBox.add({'playlist_name': playListName, 'ids': []});
+    } else {
+      var playList = _playListsStorageBox.values.toList().singleWhere((e) => e['playlist_name'] == playListName, orElse: () => {});
+      (playList['ids'] as List<dynamic>).add(id);
     }
-    _playListsStorageBox.add({
-      'playlist_name': playListName,
-      'ids': playList['ids'] + [id]
-    });
+    getAllPlayLists();
   }
 
   // //* This methord for remove song from playlists storage

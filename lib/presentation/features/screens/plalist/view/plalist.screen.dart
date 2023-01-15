@@ -10,30 +10,65 @@ class PlalistScreen extends GetView<PlalistController> {
         centerTitle: true,
         actions: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              final title = TextEditingController();
+              final formKey = GlobalKey<FormState>();
+              Get.dialog(
+                Form(
+                  key: formKey,
+                  child: AlertDialog(
+                    backgroundColor: Get.iconColor,
+                    title: TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        controller: title,
+                        validator: (t) => t!.isEmpty ? 'This field is required !' : null,
+                        decoration: InputDecoration(
+                            hintText: 'PlayList Title ....', fillColor: Get.theme.scaffoldBackgroundColor, hintStyle: Get.theme.inputDecorationTheme.hintStyle!.copyWith(color: Get.iconColor))),
+                    actions: [
+                      TextButton(onPressed: () => Get.back(), child: Text('Cancel', style: AppStyles.headline2.copyWith(color: Get.theme.scaffoldBackgroundColor, fontWeight: FontWeight.bold))),
+                      TextButton(
+                          onPressed: () => {
+                                formKey.currentState!.validate() ? {controller.createPlayList(title.text), Get.back()} : null
+                              },
+                          child: Text('Save', style: AppStyles.headline2.copyWith(color: Get.theme.scaffoldBackgroundColor, fontWeight: FontWeight.bold))),
+                    ],
+                  ),
+                ),
+              );
+            },
             child: Icon(Icons.playlist_add, size: 30.sp).paddingOnly(right: 16.r),
           ),
         ],
       ),
-      body: controller.obx(
-        onEmpty: Center(child: Kwidgets.noPlayLists),
-        onLoading: Center(child: Kwidgets.loading),
-        (state) => ListView.builder(
-          itemCount: 10,
-          itemBuilder: (BuildContext context, int index) {
-            return Card(
-              color: context.iconColor,
-              margin: EdgeInsets.symmetric(horizontal: 32.r, vertical: 16.r),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-              child: Center(
-                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Flexible(child: Text('True Musician', style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
-                  Icon(Icons.queue_music, color: context.theme.scaffoldBackgroundColor, size: 30.sp)
-                ]).paddingSymmetric(horizontal: 16.r, vertical: 20.r),
-              ),
-            );
-          },
-        ),
+      body: Obx(
+        () {
+          if (controller.playLists.value.isEmpty) {
+            return Center(child: Kwidgets.noPlayLists);
+          }
+          return ListView.builder(
+            itemCount: controller.playLists.value.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {},
+                child: Card(
+                  color: context.iconColor,
+                  margin: EdgeInsets.symmetric(horizontal: 16.r, vertical: 8.r),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+                  child: Center(
+                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                      Flexible(
+                          child: Text(controller.playLists.value[index].title,
+                              style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
+                      GestureDetector(
+                        onTap: (){},
+                        child: Icon(Icons.more_vert, color: context.theme.scaffoldBackgroundColor, size: 30.sp))
+                    ]).paddingSymmetric(horizontal: 16.r, vertical: 12.r),
+                  ),
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }
