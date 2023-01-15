@@ -93,7 +93,7 @@ class PlayerScreen extends GetView<PlayerController> {
                 Obx(() => IconButton(
                     onPressed: controller.addOrRemoveFavourite,
                     icon: Icon(controller.isFavourite.value ? Icons.favorite_outlined : Icons.favorite_border_outlined, color: context.iconColor, size: 20.sp))),
-                IconButton(onPressed:controller.showOrHideVolume, icon: Icon(Icons.volume_up, color: context.iconColor, size: 20.sp)),
+                IconButton(onPressed: controller.showOrHideVolume, icon: Icon(Icons.volume_up, color: context.iconColor, size: 20.sp)),
               ],
             ).paddingSymmetric(vertical: 8.r),
             Obx(() => ProgressBar(
