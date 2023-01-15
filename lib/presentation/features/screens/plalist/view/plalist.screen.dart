@@ -15,21 +15,25 @@ class PlalistScreen extends GetView<PlalistController> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            color: context.iconColor,
-            margin: EdgeInsets.symmetric(horizontal: 32.r, vertical: 16.r),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-            child: Center(
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Flexible(child: Text('True Musician', style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
-                Icon(Icons.queue_music, color: context.theme.scaffoldBackgroundColor, size: 30.sp)
-              ]).paddingSymmetric(horizontal: 16.r, vertical: 20.r),
-            ),
-          );
-        },
+      body: controller.obx(
+        onEmpty: Center(child: Kwidgets.noPlayLists),
+        onLoading: Center(child: Kwidgets.loading),
+        (state) => ListView.builder(
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return Card(
+              color: context.iconColor,
+              margin: EdgeInsets.symmetric(horizontal: 32.r, vertical: 16.r),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+              child: Center(
+                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                  Flexible(child: Text('True Musician', style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
+                  Icon(Icons.queue_music, color: context.theme.scaffoldBackgroundColor, size: 30.sp)
+                ]).paddingSymmetric(horizontal: 16.r, vertical: 20.r),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

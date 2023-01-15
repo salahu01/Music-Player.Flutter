@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:music_app/imports_bindings.dart';
 
-class OfflineSongsStorage with ChangeNotifier{
+class OfflineSongsStorage with ChangeNotifier {
   //* This constructor body for creating singleton widget
   factory OfflineSongsStorage() {
     _offlineSongsStorage == null ? {_offlineSongsStorage = OfflineSongsStorage._internel()} : null;
@@ -34,7 +34,9 @@ class OfflineSongsStorage with ChangeNotifier{
 
   //* This methord for get all liked songs
   void getAllLikedSongs() {
-    likedIds.value..clear()..addAll(_favoriteStorageBox.values.toList().toSet().toList());
+    likedIds.value
+      ..clear()
+      ..addAll(_favoriteStorageBox.values.toList().toSet().toList());
     likedIds.notifyListeners();
   }
 
@@ -46,8 +48,13 @@ class OfflineSongsStorage with ChangeNotifier{
 
   //* This methord for remove song from favourite storage
   void removeSongFromFavourite({num? id, int? index}) {
-     id != null ? _favoriteStorageBox.deleteAt(_favoriteStorageBox.values.toList().indexWhere((e) => e == id)) : _favoriteStorageBox.deleteAt(index!);
+    id != null ? _favoriteStorageBox.deleteAt(_favoriteStorageBox.values.toList().indexWhere((e) => e == id)) : _favoriteStorageBox.deleteAt(index!);
     getAllLikedSongs();
+  }
+
+  //* This methord for get all playlists
+  PlayListModel getPlayLists() {
+    return PlayListModel.fromMap(_playListsStorageBox.values.toList());
   }
 
   //* This methord for store play lists to loacl storage

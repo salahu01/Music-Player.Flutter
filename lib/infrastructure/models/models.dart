@@ -6,3 +6,4 @@ export 'icon_tile_model.dart';
 export 'song_details_model.dart';
 export 'theme_mode_model.dart';
 export 'api_uri_model.dart';
+export 'playlist_model.dart';
