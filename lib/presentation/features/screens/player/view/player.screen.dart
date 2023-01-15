@@ -48,59 +48,40 @@ class PlayerScreen extends GetView<PlayerController> {
       ),
       body: Obx(() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Spacer(),
-            Stack(
-              children: [
-                Center(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(Get.width * 10.r),
-                    child: GestureDetector(
-                      onHorizontalDragEnd: controller.drargAction,
-                      child: SizedBox(
-                        height: Get.width * 0.7,
-                        width: Get.width * 0.7,
-                        child: FutureBuilder(
-                          future: OnAudioQuery.platform.queryArtwork(controller.selectedSong.value!.id, ArtworkType.AUDIO),
-                          builder: (context, snapshot) {
-                            if (snapshot.data == null || (snapshot.data?.isEmpty ?? false)) {
-                              return Image.asset(appIcon, fit: BoxFit.cover);
-                            } else {
-                              return Image.memory(snapshot.data!, fit: BoxFit.cover);
-                            }
-                          },
-                        ),
+            Stack(children: [
+              Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(Get.width * 10.r),
+                  child: GestureDetector(
+                    onHorizontalDragEnd: controller.drargAction,
+                    child: SizedBox(
+                      height: Get.width * 0.7,
+                      width: Get.width * 0.7,
+                      child: FutureBuilder(
+                        future: OnAudioQuery.platform.queryArtwork(controller.selectedSong.value!.id, ArtworkType.AUDIO),
+                        builder: (context, snapshot) {
+                          if (snapshot.data == null || (snapshot.data?.isEmpty ?? false)) {
+                            return Image.asset(appIcon, fit: BoxFit.cover);
+                          } else {
+                            return Image.memory(snapshot.data!, fit: BoxFit.cover);
+                          }
+                        },
                       ),
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RotatedBox(
-                      quarterTurns: 3,
-                      child: Obx(
-                        () => Slider(
-                          value: controller.currentVolume.value,
-                          onChanged: controller.changeVolume,
-                          min: 0, //
-                          max: 1,
-                          divisions: 100,
-                        ),
-                      ),
-                    ),
-                    RotatedBox(
-                      quarterTurns: 3,
-                      child: Slider(
-                        value: 0.1,
-                        onChanged: (newvol) {},
-                        min: 0, //
-                        max: 1,
-                        divisions: 100,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Obx(() => Visibility(
+                      visible: controller.isVolumeShow.value,
+                      child: RotatedBox(quarterTurns: 3, child: Slider(value: controller.volume.value, onChanged: controller.changeVolume, min: 0, max: 1, divisions: 100)),
+                    )),
+                Obx(() => Visibility(
+                      visible: controller.isSpeedShow.value,
+                      child: RotatedBox(quarterTurns: 3, child: Slider(value: controller.speed.value, onChanged: controller.changeSpeed, min: 0, max: 2, divisions: 10)),
+                    ))
+              ])
+            ]),
             const Spacer(),
             Text(controller.selectedSong.value?.title ?? 'Not found !', style: AppStyles.headline1.copyWith(fontSize: 20.sp, overflow: TextOverflow.ellipsis), maxLines: 1)
                 .paddingSymmetric(vertical: 8.r),
@@ -112,7 +93,7 @@ class PlayerScreen extends GetView<PlayerController> {
                 Obx(() => IconButton(
                     onPressed: controller.addOrRemoveFavourite,
                     icon: Icon(controller.isFavourite.value ? Icons.favorite_outlined : Icons.favorite_border_outlined, color: context.iconColor, size: 20.sp))),
-                IconButton(onPressed: () {}, icon: Icon(Icons.volume_up, color: context.iconColor, size: 20.sp)),
+                IconButton(onPressed:controller.showOrHideVolume, icon: Icon(Icons.volume_up, color: context.iconColor, size: 20.sp)),
               ],
             ).paddingSymmetric(vertical: 8.r),
             Obx(() => ProgressBar(
@@ -124,7 +105,7 @@ class PlayerScreen extends GetView<PlayerController> {
               Obx(() =>
                   IconButton(onPressed: controller.playOrPause, icon: Icon(controller.isPlaying.value ? Icons.pause_circle_filled : Icons.play_circle_fill, color: context.iconColor, size: 60.sp))),
               IconButton(onPressed: controller.skipToNext, icon: Icon(Icons.skip_next, color: context.iconColor, size: 50.sp)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.speed, color: context.iconColor, size: 20.sp)),
+              IconButton(onPressed: controller.showOrHideSpeed, icon: Icon(Icons.speed, color: context.iconColor, size: 20.sp)),
             ]),
             const Spacer(),
           ])).paddingAll(16.r),

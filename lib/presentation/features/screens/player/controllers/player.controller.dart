@@ -17,7 +17,6 @@ class PlayerController extends GetxController {
   @override
   void onInit() {
     selectedSong.value = _playerServices.playingSongModel.value;
-    currentVolume.value = _playerServices.player.volume; //* This process for store current systtem volume
     changeCurrentSong();
     changeProgressBarTime();
     super.onInit();
@@ -51,7 +50,16 @@ class PlayerController extends GetxController {
   Rx<LoopMode> loopMode = Rx(LoopMode.off);
 
   //*This variable for store current sound
-  Rx<double> currentVolume = Rx(0.0);
+  Rx<double> volume = Rx(0.0);
+
+  //*This variable for store current player speed
+  Rx<double> speed = Rx<double>(0.0);
+
+  //*This variable for hide/show volume slider
+  Rx<bool> isVolumeShow = Rx<bool>(false);
+
+  //*This variable for hide/show speed slider
+  Rx<bool> isSpeedShow = Rx<bool>(false);
 
   //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
   bool isSelected({required int index, required List<SongModel> songModels}) {
@@ -97,6 +105,12 @@ class PlayerController extends GetxController {
       })
       ..loopModeStream.listen((isLoopMode) {
         loopMode.value = isLoopMode;
+      })
+      ..volumeStream.listen((currentVolume) {
+        volume.value = currentVolume;
+      })
+      ..speedStream.listen((currentSpeed) {
+        speed.value = currentSpeed;
       });
   }
 
@@ -150,8 +164,22 @@ class PlayerController extends GetxController {
   }
 
   //* This methord for change current system volume based on volume slider
-  void changeVolume( double volume) {
+  void changeVolume(double volume) {
     _playerServices.setVolume(volume: volume);
-    currentVolume.value = volume;
+  }
+
+  //* This methord for change current system volume based on volume slider
+  void changeSpeed(double speed) {
+    _playerServices.setSpeed(speed: speed);
+  }
+
+  //* This methord for show/hidden volume slider
+  void showOrHideVolume() {
+    isVolumeShow.value = (isVolumeShow.value == true ? false : true);
+  }
+
+  //* This methord for show/hidden speed slider
+  void showOrHideSpeed() {
+    isSpeedShow.value = (isSpeedShow.value == true ? false : true);
   }
 }
