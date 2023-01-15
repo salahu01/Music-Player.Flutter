@@ -59,9 +59,13 @@ class PlalistScreen extends GetView<PlalistController> {
                       Flexible(
                           child: Text(controller.playLists.value[index].title,
                               style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
-                      GestureDetector(
-                        onTap: (){},
-                        child: Icon(Icons.more_vert, color: context.theme.scaffoldBackgroundColor, size: 30.sp))
+                      PopupMenuButton<String>(
+                          child: Icon(Icons.more_vert, color: context.theme.scaffoldBackgroundColor, size: 30.sp),
+                          itemBuilder: (context) => AppData.playListMore
+                              .map((e) => PopupMenuItem<String>(
+                                  value: e.label,
+                                  child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
+                              .toList()).paddingSymmetric(horizontal: 8.r),
                     ]).paddingSymmetric(horizontal: 16.r, vertical: 12.r),
                   ),
                 ),

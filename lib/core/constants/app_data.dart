@@ -27,6 +27,11 @@ class AppData {
     IconTitleModel(icon: Icons.description_sharp, label: 'Details'),
     IconTitleModel(icon: Icons.favorite_border, label: 'UnLike'),
   ];
+  //*This variable contains offline play list tile more datas
+  static const List<IconTitleModel> playListMore = [
+    IconTitleModel(icon: Icons.edit, label: 'Rename'),
+    IconTitleModel(icon: Icons.delete, label: 'Delete'),
+  ];
   //*This variable contains current playing song details
   static final List<SongDeatilsModel> selectedSongDetails = [
     SongDeatilsModel(label: 'Title : ', value: Get.find<PlayerController>().selectedSong.value?.title ?? 'No title'),
