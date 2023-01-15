@@ -17,6 +17,7 @@ class PlayerController extends GetxController {
   @override
   void onInit() {
     selectedSong.value = _playerServices.playingSongModel.value;
+    currentVolume.value = _playerServices.player.volume; //* This process for store current systtem volume
     changeCurrentSong();
     changeProgressBarTime();
     super.onInit();
@@ -48,6 +49,9 @@ class PlayerController extends GetxController {
 
   //*This varaible for store loop mode
   Rx<LoopMode> loopMode = Rx(LoopMode.off);
+
+  //*This variable for store current sound
+  Rx<double> currentVolume = Rx(0.0);
 
   //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
   bool isSelected({required int index, required List<SongModel> songModels}) {
@@ -143,5 +147,11 @@ class PlayerController extends GetxController {
     } else if (dragDownDetails.primaryVelocity! > 0) {
       skipToPrevious();
     }
+  }
+
+  //* This methord for change current system volume based on volume slider
+  void changeVolume( double volume) {
+    _playerServices.setVolume(volume: volume);
+    currentVolume.value = volume;
   }
 }
