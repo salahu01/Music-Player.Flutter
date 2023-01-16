@@ -13,6 +13,7 @@ class Routes {
   static const auth = '/auth';
   static const search = '/search';
   static const playerScreen = '/player-screen';
-  static const playList = '/playlist';
+  static const playLists = '/PlayLists';
+  static const playList = '/PlayList';
   static const likedSongs = '/liked-songs';
 }

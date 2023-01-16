@@ -13,6 +13,7 @@ export 'package:flutter/cupertino.dart' show CupertinoActionSheet,CupertinoActio
 export 'package:flutter/foundation.dart';
 export 'dart:convert';
 export 'package:flutter/services.dart';
+export 'dart:math';
 import 'dart:developer' as dev;
 
 //*================[ externel packages ]=============================//

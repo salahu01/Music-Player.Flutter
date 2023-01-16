@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:music_app/imports_bindings.dart';
 
 class PlayerScreen extends GetView<PlayerController> {
@@ -54,6 +52,7 @@ class PlayerScreen extends GetView<PlayerController> {
                   borderRadius: BorderRadius.circular(Get.width * 10.r),
                   child: GestureDetector(
                     onHorizontalDragEnd: controller.drargAction,
+                    onTap: controller.hideAll,
                     child: SizedBox(
                       height: Get.width * 0.7,
                       width: Get.width * 0.7,

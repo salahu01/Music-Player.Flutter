@@ -6,7 +6,7 @@ class AppData {
   //*This variable contains offline other screen options
   static final List<OfflineOtherModel> offlineOters = [
     OfflineOtherModel(onTap: () => Get.toNamed(Routes.likedSongs), otherName: 'Liked Songs'),
-    OfflineOtherModel(onTap: () => Get.toNamed(Routes.playList), otherName: 'Play Lists')
+    OfflineOtherModel(onTap: () => Get.toNamed(Routes.playLists), otherName: 'Play Lists')
   ];
   //*This variable contains offline screen sorting model datas
   static const List<SortTypeModel> sortTypeOptions = [
@@ -21,7 +21,7 @@ class AppData {
   ];
   //*This variable contains offline song tile more datas
   static const List<IconTitleModel> offlineSongMore = [
-    IconTitleModel(icon: Icons.favorite, label: 'Liked'),
+    IconTitleModel(icon: Icons.favorite, label: 'Like'),
     IconTitleModel(icon: Icons.edit, label: 'Rename'),
     IconTitleModel(icon: Icons.delete, label: 'Delete'),
     IconTitleModel(icon: Icons.description_sharp, label: 'Details'),

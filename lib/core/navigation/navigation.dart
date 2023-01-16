@@ -38,8 +38,13 @@ class Nav {
       binding: PlayerControllerBinding(),
     ),
     GetPage(
+      name: Routes.playLists,
+      page: () => const PlaListsScreen(),
+      binding: PlalistControllerBinding(),
+    ),
+    GetPage(
       name: Routes.playList,
-      page: () => const PlalistScreen(),
+      page: () => const PlayListScreen(),
       binding: PlalistControllerBinding(),
     ),
     GetPage(

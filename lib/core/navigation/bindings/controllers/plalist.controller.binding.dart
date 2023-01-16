@@ -5,8 +5,8 @@ import '../../../../../presentation/features/screens/plalist/controllers/plalist
 class PlalistControllerBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<PlalistController>(
-      () => PlalistController(),
+    Get.lazyPut<PlaListController>(
+      () => PlaListController(),
     );
   }
 }

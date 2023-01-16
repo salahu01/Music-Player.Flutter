@@ -1,12 +1,13 @@
 import 'package:music_app/imports_bindings.dart';
 
-class PlalistScreen extends GetView<PlalistController> {
-  const PlalistScreen({Key? key}) : super(key: key);
+class PlayListScreen extends GetView<PlaListController> {
+  const PlayListScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Play Lists', style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
+        title: Text(controller.selectedPlayList.title, style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
         centerTitle: true,
         actions: [
           GestureDetector(
@@ -36,14 +37,14 @@ class PlalistScreen extends GetView<PlalistController> {
                 ),
               );
             },
-            child: Icon(Icons.playlist_add, size: 30.sp).paddingOnly(right: 16.r),
+            child: Icon(Icons.add, size: 30.sp).paddingOnly(right: 16.r),
           ),
         ],
       ),
       body: Obx(
         () {
-          if (controller.playLists.value.isEmpty) {
-            return Center(child: Kwidgets.noPlayLists);
+          if (controller.selectedPlayList.playListIds.isEmpty) {
+            return Center(child: Kwidgets.noAudios);
           }
           return ListView.builder(
             itemCount: controller.playLists.value.length,

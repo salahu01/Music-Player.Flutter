@@ -1,3 +1,4 @@
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:music_app/imports_bindings.dart';
 
 class PlayerController extends GetxController {
@@ -181,5 +182,11 @@ class PlayerController extends GetxController {
   //* This methord for show/hidden speed slider
   void showOrHideSpeed() {
     isSpeedShow.value = (isSpeedShow.value == true ? false : true);
+  }
+
+  //*This methord for show/hide all (speed && volume)
+  void hideAll() {
+    isSpeedShow.value = false;
+    isVolumeShow.value = false;
   }
 }
