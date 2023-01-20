@@ -57,34 +57,43 @@ class OfflineSongsStorage with ChangeNotifier {
 
   //* This methord for get all playlists
   void getAllPlayLists() {
-     write('called me');
     playLists.value
       ..clear()
       ..addAll(_playListsStorageBox.values.isEmpty ? [] : _playListsStorageBox.values.toList().map((e) => PlayListModel.fromMap(e)).toList());
-     write('called me');
     playLists.notifyListeners();
-    write('called me');
   }
 
-  //* This methord for store play lists to loacl storage
-  Future<void> storePlayListsSong({required String playListName, num? id}) async {
-    if (id == null) {
-      await _playListsStorageBox.add({'playlist_name': playListName, 'ids': []});
-    } else {
-      var playList = _playListsStorageBox.values.toList().singleWhere((e) => e['playlist_name'] == playListName, orElse: () => {});
-      (playList['ids'] as List<dynamic>).add(id);
-    }
+  //* This methord for store playlists to local storage
+  Future<void> createPlayList({required String playListName}) async {
+    await _playListsStorageBox.add({'playlist_name': playListName, 'ids': []});
     getAllPlayLists();
   }
 
-  // //* This methord for remove song from playlists storage
-  // Future<void> removeSongFormPlayLists({required String playListName, int? index}) async {
-  //  var playList  = _playListsStorageBox.values.toList().singleWhere((e) => e['playlist_name'] == playListName,orElse: () => {});
-  //  if(playList['playlist_name'] == null){
-  //   _playListsStorageBox.add({'playlist_name': playListName, 'ids':[id]});
-  //   return;
-  //  }
-  //   _playListsStorageBox.add({'playlist_name': playListName, 'ids': playList['ids']+[id]});
-  // }
+  //* This methord for store songs to playlists
+  Future<void> addSongsToPlayList({required int index, required List ids}) async {
+    var playlist = _playListsStorageBox.getAt(index);
+    if (playlist == null) {
+      return;
+    }
+    playlist['ids'] = ids;
+    await _playListsStorageBox.putAt(index, playlist);
+    getAllPlayLists();
+  }
 
+  //* This methord for remove song from playlists storage
+  Future<void> removePlayList({required int index}) async {
+    await _playListsStorageBox.deleteAt(index);
+    getAllPlayLists();
+  }
+
+  //* This methord for update play list name
+  Future<void> renamePlayList({required String playListName, required int index}) async {
+    var playlist = _playListsStorageBox.getAt(index);
+    if (playlist == null) {
+      return;
+    }
+    playlist['playlist_name'] = playListName;
+    await _playListsStorageBox.putAt(index, playlist);
+    getAllPlayLists();
+  }
 }
