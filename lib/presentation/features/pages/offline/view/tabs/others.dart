@@ -23,12 +23,7 @@ class OthersTab extends GetView<OfflineController> {
                     color: context.iconColor,
                     margin: EdgeInsets.all(16.r),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-                    child: Center(
-                      child: Text(
-                        AppData.offlineOters[index].otherName,
-                        style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor),
-                      ),
-                    ),
+                    child: Center(child: Text(AppData.offlineOters[index].otherName, style: AppStyles.trueMusition.copyWith(color: context.theme.scaffoldBackgroundColor))),
                   ),
                 );
               },
