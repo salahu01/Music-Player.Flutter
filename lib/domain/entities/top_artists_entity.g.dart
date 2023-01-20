@@ -18,14 +18,6 @@ TopArtistsEntity _$TopArtistsEntityFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$TopArtistsEntityToJson(TopArtistsEntity instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'title': instance.title,
-      'id': instance.id,
-      'artists': instance.artists,
-    };
-
 SingleArtistModel _$SingleArtistModelFromJson(Map<String, dynamic> json) =>
     SingleArtistModel(
       artistName: json['name'] as String?,
@@ -34,13 +26,6 @@ SingleArtistModel _$SingleArtistModelFromJson(Map<String, dynamic> json) =>
         ? null
         : Visuals.fromJson(json['visuals'] as Map<String, dynamic>);
 
-Map<String, dynamic> _$SingleArtistModelToJson(SingleArtistModel instance) =>
-    <String, dynamic>{
-      'name': instance.artistName,
-      'id': instance.artistId,
-      'visuals': instance.visuals,
-    };
-
 Visuals _$VisualsFromJson(Map<String, dynamic> json) => Visuals(
       (json['avatar'] as List<dynamic>?)
           ?.map((e) =>
@@ -48,14 +33,6 @@ Visuals _$VisualsFromJson(Map<String, dynamic> json) => Visuals(
           .toList(),
     );
 
-Map<String, dynamic> _$VisualsToJson(Visuals instance) => <String, dynamic>{
-      'avatar': instance.avatar,
-    };
-
 Avatar _$AvatarFromJson(Map<String, dynamic> json) => Avatar(
       img: json['url'] as String?,
     );
-
-Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
-      'url': instance.img,
-    };

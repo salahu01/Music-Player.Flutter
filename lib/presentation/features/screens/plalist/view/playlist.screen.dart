@@ -20,7 +20,7 @@ class PlayListScreen extends GetView<PlaListController> {
                   width: Get.width,
                   child: Column(
                     children: [
-                      IconButton(onPressed: ()=> controller.addSongs(ids), icon: const Icon(Icons.save)),
+                      IconButton(onPressed: () => controller.addSongs(ids), icon: const Icon(Icons.save)),
                       controller.allSongs.isEmpty
                           ? Center(child: Kwidgets.noAudios)
                           : ListView.builder(
@@ -57,8 +57,7 @@ class PlayListScreen extends GetView<PlaListController> {
             itemCount: songs.length,
             itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
                   isSelected: controller.playerController.isSelected(index: index, songModels: songs),
-                  onTap: () =>
-                      controller.playerController.selectedSong.value?.id == songs[index].id ? Get.toNamed(Routes.playerScreen) : controller.playerController.playSong(songsModels: songs, index: index),
+                  onTap: () => controller.playerController.selectedSong.value?.id == songs[index].id ? Get.toNamed(Routes.playerScreen) : controller.playerController.playSong(songsModels: songs, index: index),
                   songModel: songs[index],
                 )),
           ).paddingSymmetric(vertical: 8.r);
