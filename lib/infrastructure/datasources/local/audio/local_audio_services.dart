@@ -2,9 +2,8 @@ import 'package:music_app/imports_bindings.dart';
 
 class LocalAudios {
   final _audioQuery = OnAudioQuery();
-  bool _permissionStatus = false;
   Future<List<SongModel>> getSongs({required SongSortType sortType}) async {
-    _permissionStatus = await _requestPermission();
+    await _requestPermission();
     return _audioQuery.querySongs(
       sortType: sortType,
       orderType: OrderType.ASC_OR_SMALLER,

@@ -1,4 +1,3 @@
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:music_app/imports_bindings.dart';
 
 class PlayerController extends GetxController {
