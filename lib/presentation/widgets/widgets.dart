@@ -6,3 +6,5 @@ export 'common/kwidgets.dart';
 export 'common/image_network.dart';
 //online widgets
 export './online/popular_artists.dart';
+//plylist
+export './playlist/add.song.to.playlist.songtile.dart';

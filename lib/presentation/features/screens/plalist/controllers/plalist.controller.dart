@@ -14,7 +14,13 @@ class PlaListController extends GetxController with StateMixin {
   Rx<List<PlayListModel>> playLists = Rx([]);
 
   //* This varible for store selected play list songs
-  PlayListModel selectedPlayList = PlayListModel(title: '', playListIds: []);
+  int selectedPlayList = 0;
+
+  //* This variable for store all songs
+  final allSongs = Get.find<OfflineController>().tracks;
+
+  //* This variable for store player controller instace for getting player fuction
+  PlayerController playerController = Get.put(PlayerController());
 
   //* This methord for listen playlist storage
   void listenPlayList() {
@@ -29,6 +35,12 @@ class PlaListController extends GetxController with StateMixin {
     _offlineSongsStorage.createPlayList(playListName: title);
   }
 
+  //* This methord for store songs to playList
+  Future<void> addSongs(List<num> ids) async {
+    await _offlineSongsStorage.addSongsToPlayList(index: selectedPlayList, ids: ids);
+    Get.back();
+  }
+
   //* This methord for rename a playList
   void renamePlayList(int index, String title) {
     _offlineSongsStorage.renamePlayList(index: index, playListName: title);
@@ -41,7 +53,7 @@ class PlaListController extends GetxController with StateMixin {
 
   //* This methord for navigate selected playList screen
   void toPlayListScreen(int index) {
-    selectedPlayList = playLists.value[index];
+    selectedPlayList = index;
     Get.toNamed(Routes.playList);
   }
 }
