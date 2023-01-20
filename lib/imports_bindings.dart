@@ -14,6 +14,7 @@ export 'package:flutter/foundation.dart';
 export 'dart:convert';
 export 'package:flutter/services.dart';
 export 'dart:math';
+export 'dart:io' show File;
 import 'dart:developer' as dev;
 
 //*================[ externel packages ]=============================//

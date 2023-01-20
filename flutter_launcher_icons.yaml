@@ -1,0 +1,8 @@
+#! run command ---[ flutter pub run flutter_launcher_icons -f flutter_launcher_icons.yaml ]----
+
+flutter_icons:
+  android: "launcher_icon"
+  # ios: true
+  image_path: "assets/dev/splash_img.png"
+  adaptive_icon_background: "android/app/src/main/res/drawable/background.png"
+  adaptive_icon_foreground: "android/app/src/main/res/drawable-hdpi/splash.png"

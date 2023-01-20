@@ -69,7 +69,11 @@ class SongTile extends StatelessWidget {
             )
           : PopupMenuButton<String>(
               child: const Icon(Icons.more_vert),
-              onSelected: (value) {},
+              onSelected: (value) async {
+                if (value == 'Delete' || value == 'Rename') {
+                  Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .');
+                }
+              },
               itemBuilder: (context) => AppData.offlineSongMore
                   .map((e) => PopupMenuItem<String>(
                       value: e.label, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))

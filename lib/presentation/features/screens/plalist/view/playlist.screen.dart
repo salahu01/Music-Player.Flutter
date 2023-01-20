@@ -15,17 +15,18 @@ class PlayListScreen extends GetView<PlaListController> {
               List<num> ids = [];
               bool selected = false;
               Get.bottomSheet(
-                SizedBox(
-                  height: Get.height / 2,
-                  width: Get.width,
+                SingleChildScrollView(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      IconButton(onPressed: () => controller.addSongs(ids), icon: const Icon(Icons.save)),
+                      IconButton(onPressed: () => controller.addSongs(ids), icon: const Icon(Icons.save)).paddingOnly(right: 32.r),
                       controller.allSongs.isEmpty
                           ? Center(child: Kwidgets.noAudios)
                           : ListView.builder(
                               itemCount: controller.allSongs.length,
                               shrinkWrap: true,
+                              primary: false,
                               itemBuilder: (BuildContext context, int index) => Obx(() {
                                 selected = controller.playLists.value[controller.selectedPlayList].playListIds.contains(controller.allSongs[index].id);
                                 selected ? ids.add(controller.allSongs[index].id) : null;
@@ -40,7 +41,7 @@ class PlayListScreen extends GetView<PlaListController> {
                   ),
                 ),
                 backgroundColor: Get.theme.scaffoldBackgroundColor,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(16.r), topRight: Radius.circular(16.r)), side: BorderSide(color: Get.iconColor!, width: 1)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(16.r), topRight: Radius.circular(16.r))),
               );
             },
             child: Icon(Icons.add, size: 30.sp).paddingOnly(right: 16.r),
@@ -57,7 +58,8 @@ class PlayListScreen extends GetView<PlaListController> {
             itemCount: songs.length,
             itemBuilder: (BuildContext context, int index) => Obx(() => SongTile(
                   isSelected: controller.playerController.isSelected(index: index, songModels: songs),
-                  onTap: () => controller.playerController.selectedSong.value?.id == songs[index].id ? Get.toNamed(Routes.playerScreen) : controller.playerController.playSong(songsModels: songs, index: index),
+                  onTap: () =>
+                      controller.playerController.selectedSong.value?.id == songs[index].id ? Get.toNamed(Routes.playerScreen) : controller.playerController.playSong(songsModels: songs, index: index),
                   songModel: songs[index],
                 )),
           ).paddingSymmetric(vertical: 8.r);
