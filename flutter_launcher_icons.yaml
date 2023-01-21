@@ -3,6 +3,6 @@
 flutter_icons:
   android: "launcher_icon"
   # ios: true
-  image_path: "assets/dev/splash_img.png"
+  image_path: "assets/dev/splash_icon_white.png"
   adaptive_icon_background: "android/app/src/main/res/drawable/background.png"
   adaptive_icon_foreground: "android/app/src/main/res/drawable-hdpi/splash.png"
