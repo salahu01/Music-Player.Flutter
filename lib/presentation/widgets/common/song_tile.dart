@@ -55,11 +55,9 @@ class SongTile extends StatelessWidget {
   }
 
   Widget trailing(bool isSelected, BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        isSelected ? PlayerServices().pauseOrPlay() : null;
-      },
-      icon: isSelected
+    return InkWell(
+      onTap: () => isSelected ? PlayerServices().pauseOrPlay() : null,
+      child: isSelected
           ? StreamBuilder(
               stream: PlayerServices().player.playingStream,
               builder: (context, snapshot) => Icon(
@@ -75,16 +73,17 @@ class SongTile extends StatelessWidget {
                 value == 'Like' ? OfflineSongsStorage().storeFavouriteSong(id: songModel.id) : OfflineSongsStorage().removeSongFromFavourite(id: songModel.id);
               },
               itemBuilder: (context) => List.generate(4, (i) {
-                    var id = i == 0 ? OfflineSongsStorage().likedIds.value.indexWhere((e) => e == songModel.id) : null;
-                    var index = id == null || id == -1 ? i : 4;
-                    return PopupMenuItem<String>(
-                        value: AppData.offlineSongMore[index].label,
-                        child: Button.label(
-                            label: AppData.offlineSongMore[index].label,
-                            icon: AppData.offlineSongMore[index].icon,
-                            iconColor: context.theme.scaffoldBackgroundColor,
-                            labelColor: context.theme.scaffoldBackgroundColor));
-                  })).paddingSymmetric(horizontal: 8.r),
+                var id = i == 0 ? OfflineSongsStorage().likedIds.value.indexWhere((e) => e == songModel.id) : null;
+                var index = id == null || id == -1 ? i : 4;
+                return PopupMenuItem<String>(
+                    value: AppData.offlineSongMore[index].label,
+                    child: Button.label(
+                        label: AppData.offlineSongMore[index].label,
+                        icon: AppData.offlineSongMore[index].icon,
+                        iconColor: context.theme.scaffoldBackgroundColor,
+                        labelColor: context.theme.scaffoldBackgroundColor));
+              }),
+            ).paddingSymmetric(horizontal: 8.r),
     );
   }
 }
