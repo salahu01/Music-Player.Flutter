@@ -40,7 +40,7 @@ class AppData {
     SongDeatilsModel(label: 'DateModified : ', value: Get.find<PlayerController>().selectedSong.value?.dateModified.toString() ?? 'No DateModified'),
     SongDeatilsModel(label: 'Duration : ', value: Get.find<PlayerController>().selectedSong.value?.duration.toString() ?? 'Coudn\'t find'),
     SongDeatilsModel(label: 'Composer : ', value: Get.find<PlayerController>().selectedSong.value?.composer ?? 'Unknown'),
-    SongDeatilsModel(label: 'Location : ', value: Get.find<PlayerController>().selectedSong.value?.displayName ?? 'Cound\'t find'),
+    SongDeatilsModel(label: 'Location : ', value: Get.find<PlayerController>().selectedSong.value?.data ?? 'Cound\'t find'),
   ];
   //*This variable contains diffrent theme modes
   static const List<ThemeModeModel> themeModes = [

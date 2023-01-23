@@ -73,6 +73,9 @@ class SongTile extends StatelessWidget {
                 if (value == 'Delete' || value == 'Rename') {
                   Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .');
                 }
+                if (value == 'Details') {
+                  Kwidgets.songDetails;
+                }
               },
               itemBuilder: (context) => AppData.offlineSongMore
                   .map((e) => PopupMenuItem<String>(

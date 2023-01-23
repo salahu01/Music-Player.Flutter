@@ -8,41 +8,7 @@ class PlayerScreen extends GetView<PlayerController> {
       appBar: AppBar(
         toolbarHeight: 50.h,
         leading: IconButton(onPressed: () => Get.back(), icon: Icon(Icons.arrow_back, color: context.iconColor)),
-        actions: [
-          IconButton(
-              onPressed: () {
-                showCupertinoModalPopup(
-                    context: context,
-                    builder: (context) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(32.r), topRight: Radius.circular(32.r)),
-                        child: ColoredBox(
-                          color: context.iconColor!,
-                          child: SizedBox(
-                            width: Get.width,
-                            height: Get.height * 0.4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: AppData.selectedSongDetails
-                                  .map(
-                                    (e) => RichText(
-                                      text: TextSpan(
-                                        text: e.label,
-                                        style: const TextStyle(fontWeight: FontWeight.w900, color: Colors.black),
-                                        children: [TextSpan(text: e.value, style: const TextStyle(fontWeight: FontWeight.w500, color: Colors.black))],
-                                      ),
-                                    ),
-                                  )
-                                  .toList(),
-                            ).paddingOnly(left: 16.r, right: 8.r),
-                          ),
-                        ),
-                      );
-                    });
-              },
-              icon: Icon(Icons.more_vert, color: context.iconColor))
-        ],
+        actions: [IconButton(onPressed: () => Kwidgets.songDetails, icon: Icon(Icons.more_vert, color: context.iconColor))],
       ),
       body: Obx(() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Spacer(),
