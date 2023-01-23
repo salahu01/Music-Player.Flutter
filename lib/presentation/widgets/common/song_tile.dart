@@ -31,7 +31,7 @@ class SongTile extends StatelessWidget {
           },
         ),
       ),
-      trailing: trailing(isSelected),
+      trailing: trailing(isSelected, context),
       title: Text(
         songModel.title,
         style: context.textTheme.headline2!.copyWith(color: isSelected ? context.theme.colorScheme.background : context.theme.colorScheme.primary, overflow: TextOverflow.ellipsis),
@@ -54,7 +54,7 @@ class SongTile extends StatelessWidget {
         : appIcon;
   }
 
-  Widget trailing(bool isSelected) {
+  Widget trailing(bool isSelected, BuildContext context) {
     return IconButton(
       onPressed: () {
         isSelected ? PlayerServices().pauseOrPlay() : null;
@@ -74,7 +74,7 @@ class SongTile extends StatelessWidget {
                   Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .');
                 }
                 if (value == 'Details') {
-                  Kwidgets.songDetails;
+                  Kwidgets.songDetails(context);
                 }
               },
               itemBuilder: (context) => AppData.offlineSongMore

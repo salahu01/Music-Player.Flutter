@@ -6,8 +6,8 @@ class Kwidgets {
   static final noPlayLists = Text('No playlists found !', style: Get.textTheme.headline1);
   static const isEmpty = SizedBox();
   static final userNoAvatar = CircleAvatar(backgroundColor: Get.iconColor, child: Icon(Icons.person, color: Get.theme.scaffoldBackgroundColor, size: 30.r));
-  static final songDetails = showCupertinoModalPopup(
-      context: Get.context!,
+  static songDetails(BuildContext context) => showCupertinoModalPopup(
+      context: context,
       builder: (context) {
         return ClipRRect(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(32.r), topRight: Radius.circular(32.r)),

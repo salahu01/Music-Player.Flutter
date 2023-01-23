@@ -8,7 +8,7 @@ class PlayerScreen extends GetView<PlayerController> {
       appBar: AppBar(
         toolbarHeight: 50.h,
         leading: IconButton(onPressed: () => Get.back(), icon: Icon(Icons.arrow_back, color: context.iconColor)),
-        actions: [IconButton(onPressed: () => Kwidgets.songDetails, icon: Icon(Icons.more_vert, color: context.iconColor))],
+        actions: [IconButton(onPressed: () => Kwidgets.songDetails(context), icon: Icon(Icons.more_vert, color: context.iconColor))],
       ),
       body: Obx(() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Spacer(),
