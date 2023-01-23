@@ -13,7 +13,7 @@ class Kwidgets {
           color: context.theme.scaffoldBackgroundColor,
           child: SizedBox(
             width: Get.width,
-            height: Get.height * 0.4,
+            height: Get.height * 0.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,8 +22,8 @@ class Kwidgets {
                     (e) => RichText(
                       text: TextSpan(
                         text: e.label,
-                        style: const TextStyle(fontWeight: FontWeight.w900, color: Colors.white),
-                        children: [TextSpan(text: e.value, style: const TextStyle(fontWeight: FontWeight.w500, color: Colors.white))],
+                        style: TextStyle(fontWeight: FontWeight.w900, color: Get.iconColor!),
+                        children: [TextSpan(text: e.value, style: TextStyle(fontWeight: FontWeight.w500, color: Get.iconColor!))],
                       ),
                     ),
                   )

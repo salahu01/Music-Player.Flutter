@@ -36,10 +36,13 @@ class AppData {
   static List<SongDeatilsModel> selectedSongDetails(SongModel s) => [
         SongDeatilsModel(label: 'Title : ', value: s.title),
         SongDeatilsModel(label: 'Artist : ', value: s.artist ?? 'Unknown'),
+        SongDeatilsModel(label: 'FileExtension : ', value: s.fileExtension),
         SongDeatilsModel(label: 'DateAdded : ', value: s.dateAdded.toString()),
         SongDeatilsModel(label: 'DateModified : ', value: s.dateModified.toString()),
+        SongDeatilsModel(label: 'FileSize : ', value: s.size.toString()),
         SongDeatilsModel(label: 'Duration : ', value: s.duration.toString()),
         SongDeatilsModel(label: 'Composer : ', value: s.composer ?? 'Unknown'),
+        SongDeatilsModel(label: 'Uri : ', value: s.uri ?? 'Not found'),
         SongDeatilsModel(label: 'Location : ', value: s.data),
       ];
   //*This variable contains diffrent theme modes
