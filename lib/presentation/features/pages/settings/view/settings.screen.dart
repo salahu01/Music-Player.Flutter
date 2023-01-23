@@ -29,7 +29,9 @@ class SettingsScreen extends GetView<SettingsController> {
                     onChanged: controller.changeTheme,
                   )),
             ],
-          ).paddingSymmetric(vertical: 8.r)
+          ).paddingSymmetric(vertical: 8.r),
+          const Spacer(),
+          Text('v0.0.1', style: TextStyle(fontSize: 15.sp))
         ],
       ).paddingAll(16.r),
     );

@@ -65,7 +65,7 @@ class SongTile extends StatelessWidget {
                 color: context.theme.scaffoldBackgroundColor,
               ),
             )
-          : PopupMenuButton<String>(
+          : PopupMenuButton(
               child: const Icon(Icons.more_vert),
               onSelected: (value) async {
                 value == 'Delete' || value == 'Rename' ? Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .') : null;
@@ -75,7 +75,7 @@ class SongTile extends StatelessWidget {
               itemBuilder: (context) => List.generate(4, (i) {
                 var id = i == 0 ? OfflineSongsStorage().likedIds.value.indexWhere((e) => e == songModel.id) : null;
                 var index = id == null || id == -1 ? i : 4;
-                return PopupMenuItem<String>(
+                return PopupMenuItem(
                     value: AppData.offlineSongMore[index].label,
                     child: Button.label(
                         label: AppData.offlineSongMore[index].label,
