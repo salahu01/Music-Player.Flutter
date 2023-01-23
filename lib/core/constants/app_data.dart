@@ -33,15 +33,15 @@ class AppData {
     IconTitleModel(icon: Icons.delete, label: 'Delete'),
   ];
   //*This variable contains current playing song details
-  static final List<SongDeatilsModel> selectedSongDetails = [
-    SongDeatilsModel(label: 'Title : ', value: Get.find<PlayerController>().selectedSong.value?.title ?? 'No title'),
-    SongDeatilsModel(label: 'Artist : ', value: Get.find<PlayerController>().selectedSong.value?.artist ?? 'Unknown'),
-    SongDeatilsModel(label: 'DateAdded : ', value: Get.find<PlayerController>().selectedSong.value?.dateAdded.toString() ?? 'No DateAdded'),
-    SongDeatilsModel(label: 'DateModified : ', value: Get.find<PlayerController>().selectedSong.value?.dateModified.toString() ?? 'No DateModified'),
-    SongDeatilsModel(label: 'Duration : ', value: Get.find<PlayerController>().selectedSong.value?.duration.toString() ?? 'Coudn\'t find'),
-    SongDeatilsModel(label: 'Composer : ', value: Get.find<PlayerController>().selectedSong.value?.composer ?? 'Unknown'),
-    SongDeatilsModel(label: 'Location : ', value: Get.find<PlayerController>().selectedSong.value?.data ?? 'Cound\'t find'),
-  ];
+  static List<SongDeatilsModel> selectedSongDetails(SongModel s) => [
+        SongDeatilsModel(label: 'Title : ', value: s.title),
+        SongDeatilsModel(label: 'Artist : ', value: s.artist ?? 'Unknown'),
+        SongDeatilsModel(label: 'DateAdded : ', value: s.dateAdded.toString()),
+        SongDeatilsModel(label: 'DateModified : ', value: s.dateModified.toString()),
+        SongDeatilsModel(label: 'Duration : ', value: s.duration.toString()),
+        SongDeatilsModel(label: 'Composer : ', value: s.composer ?? 'Unknown'),
+        SongDeatilsModel(label: 'Location : ', value: s.data),
+      ];
   //*This variable contains diffrent theme modes
   static const List<ThemeModeModel> themeModes = [
     ThemeModeModel(themeMode: ThemeMode.system, label: 'System'),

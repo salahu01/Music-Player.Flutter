@@ -71,7 +71,7 @@ class SongTile extends StatelessWidget {
               child: const Icon(Icons.more_vert),
               onSelected: (value) async {
                 value == 'Delete' || value == 'Rename' ? Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .') : null;
-                value == 'Details' ? Kwidgets.songDetails(context) : null;
+                value == 'Details' ? Kwidgets.songDetails(context, songModel) : null;
                 value == 'Like' ? OfflineSongsStorage().storeFavouriteSong(id: songModel.id) : OfflineSongsStorage().removeSongFromFavourite(id: songModel.id);
               },
               itemBuilder: (context) => List.generate(4, (i) {
