@@ -70,17 +70,21 @@ class SongTile extends StatelessWidget {
           : PopupMenuButton<String>(
               child: const Icon(Icons.more_vert),
               onSelected: (value) async {
-                if (value == 'Delete' || value == 'Rename') {
-                  Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .');
-                }
-                if (value == 'Details') {
-                  Kwidgets.songDetails(context);
-                }
+                value == 'Delete' || value == 'Rename' ? Get.snackbar(snackPosition: SnackPosition.BOTTOM, 'Oops !', 'Can\'t make action right now .') : null;
+                value == 'Details' ? Kwidgets.songDetails(context) : null;
+                value == 'Like' ? OfflineSongsStorage().storeFavouriteSong(id: songModel.id) : OfflineSongsStorage().removeSongFromFavourite(id: songModel.id);
               },
-              itemBuilder: (context) => AppData.offlineSongMore
-                  .map((e) => PopupMenuItem<String>(
-                      value: e.label, child: Button.label(label: e.label, icon: e.icon, iconColor: context.theme.scaffoldBackgroundColor, labelColor: context.theme.scaffoldBackgroundColor)))
-                  .toList()).paddingSymmetric(horizontal: 8.r),
+              itemBuilder: (context) => List.generate(4, (i) {
+                    var id = i == 0 ? OfflineSongsStorage().likedIds.value.indexWhere((e) => e == songModel.id) : null;
+                    var index = id == null || id == -1 ? i : 4;
+                    return PopupMenuItem<String>(
+                        value: AppData.offlineSongMore[index].label,
+                        child: Button.label(
+                            label: AppData.offlineSongMore[index].label,
+                            icon: AppData.offlineSongMore[index].icon,
+                            iconColor: context.theme.scaffoldBackgroundColor,
+                            labelColor: context.theme.scaffoldBackgroundColor));
+                  })).paddingSymmetric(horizontal: 8.r),
     );
   }
 }
