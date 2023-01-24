@@ -5,6 +5,7 @@ export 'infrastructure/infrastructure.dart';
 export 'core/core.dart';
 export 'presentation/presentation.dart';
 export 'domain/domain.dart';
+export 'generated/locales.g.dart';
 
 //*================[ internel packages  ]=============================//
 

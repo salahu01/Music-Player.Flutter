@@ -22,6 +22,12 @@ class LocaleKeys {
   static const normal = 'normal';
   static const reversed = 'reversed';
   static const continueText = 'continueText';
+  static const languages = 'languages';
+  static const dateAdded = 'dateAdded';
+  static const size = 'size';
+  static const playLists = 'playLists';
+  static const playListTitle = 'playListTitle';
+  static const likedSongs = 'likedSongs';
 }
 
 class Locales {
@@ -36,6 +42,12 @@ class Locales {
     'normal': 'Normal',
     'reversed': 'Reversed',
     'continueText': 'Continue',
+    'languages': 'Languages',
+    'dateAdded': 'Date Added',
+    'size': 'Size',
+    'playLists': 'Play Lists',
+    'playListTitle': 'PlayLists Title ...',
+    'likedSongs': 'Liked Songs',
   };
   static const ml = {
     'settings': 'ക്രമീകരണങ്ങൾ',
@@ -48,6 +60,12 @@ class Locales {
     'normal': 'സാധാരണ',
     'reversed': 'വിപരീതമായി',
     'continueText': 'തുടരുക',
+    'languages': 'ഭാഷകൾ',
+    'dateAdded': 'ചേർത്ത തീയതി',
+    'size': 'വലിപ്പം',
+    'playLists': 'പ്ലേലിസ്റ്റുകൾ',
+    'playListTitle': 'പ്ലേലിസ്റ്റുകളുടെ ശീർഷകം ...',
+    'likedSongs': 'ഇഷ്ടപ്പെട്ട പാട്ടുകൾ',
   };
   static const hi = {
     'settings': 'समायोजन',
@@ -60,5 +78,11 @@ class Locales {
     'normal': 'सामान्य',
     'reversed': 'औंधा',
     'continueText': 'जारी रखें',
+    'languages': 'भाषाओं',
+    'dateAdded': 'जोड़ी गई तारीख',
+    'size': 'आकार',
+    'playLists': 'प्लेलिस्ट',
+    'playListTitle': 'प्लेलिस्ट शीर्षक ...',
+    'likedSongs': 'पसंद किए गए गाने',
   };
 }

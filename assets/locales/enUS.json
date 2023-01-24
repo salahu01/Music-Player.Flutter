@@ -8,5 +8,12 @@
     "title":"Title",
     "normal":"Normal",
     "reversed":"Reversed",
-    "continueText":"Continue"
+    "continueText":"Continue",
+    "languages":"Languages",
+    "dateAdded":"Date Added",
+    "size":"Size",
+    "playLists":"Play Lists",
+    "playListTitle":"PlayLists Title ...",
+    "likedSongs":"Liked Songs"
+    
 }

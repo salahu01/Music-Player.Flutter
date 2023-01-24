@@ -8,5 +8,12 @@
     "title":"തലക്കെട്ട്",
     "normal":"സാധാരണ",
     "reversed":"വിപരീതമായി",
-    "continueText":"തുടരുക"
+    "continueText":"തുടരുക",
+    "languages":"ഭാഷകൾ",
+    "dateAdded":"ചേർത്ത തീയതി",
+    "size":"വലിപ്പം",
+    "playLists":"പ്ലേലിസ്റ്റുകൾ",
+    "playListTitle":"പ്ലേലിസ്റ്റുകളുടെ ശീർഷകം ...",
+    "likedSongs":"ഇഷ്ടപ്പെട്ട പാട്ടുകൾ"
+
 }

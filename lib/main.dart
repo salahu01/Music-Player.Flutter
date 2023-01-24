@@ -21,10 +21,13 @@ class Main extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, child) => Obx(
         () => GetMaterialApp(
+          translationsKeys: AppTranslation.translations,
+          locale: const Locale('enUS'),
+          defaultTransition: Transition.cupertino,
           debugShowCheckedModeBanner: false,
           initialRoute: initialRoute,
           getPages: Nav.routes,
-          themeMode: Get.put<SettingsController>(SettingsController()).selectedTheme.value,
+          themeMode: Get.put(SettingsController()).selectedTheme.value,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
         ),

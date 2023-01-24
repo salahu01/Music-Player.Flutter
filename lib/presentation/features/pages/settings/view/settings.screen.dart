@@ -10,7 +10,7 @@ class SettingsScreen extends GetView<SettingsController> {
         title: Row(
           children: [
             Flexible(child: Divider(color: context.iconColor, thickness: 1.r)),
-            Text('Settings', style: context.textTheme.headline1!.copyWith(fontSize: 25.sp)).paddingSymmetric(horizontal: 5.r),
+            Text(LocaleKeys.settings.tr, style: context.textTheme.headline1!.copyWith(fontSize: 25.sp)).paddingSymmetric(horizontal: 5.r),
             Flexible(child: Divider(color: context.iconColor, thickness: 1.r)),
           ],
         ),
@@ -21,12 +21,24 @@ class SettingsScreen extends GetView<SettingsController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Theme', style: AppStyles.headline1.copyWith(fontSize: 18.sp)),
+              Text(LocaleKeys.theme.tr, style: AppStyles.headline1.copyWith(fontSize: 18.sp)),
               Obx(() => DropdownButton(
                     value: controller.selectedTheme.value,
                     underline: const SizedBox(),
                     items: AppData.themeModes.map((e) => DropdownMenuItem(value: e.themeMode, child: Text(e.label, style: AppStyles.headline2))).toList(),
                     onChanged: controller.changeTheme,
+                  )),
+            ],
+          ).paddingSymmetric(vertical: 8.r),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(LocaleKeys.languages.tr, style: AppStyles.headline1.copyWith(fontSize: 18.sp)),
+              Obx(() => DropdownButton(
+                    value: controller.selectedLanguage.value,
+                    underline: const SizedBox(),
+                    items: AppData.languages.map((e) => DropdownMenuItem(value: e.value, child: Text(e.label, style: AppStyles.headline2))).toList(),
+                    onChanged: controller.changeLanguage,
                   )),
             ],
           ).paddingSymmetric(vertical: 8.r),

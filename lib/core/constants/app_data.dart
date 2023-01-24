@@ -2,18 +2,18 @@ import 'package:music_app/imports_bindings.dart';
 
 class AppData {
   //*This variable contains offline tab titles
-  static const offlineTabs = ['Tracks', 'Albums', 'Others'];
+  static List<String> get offlineTabs => [LocaleKeys.tracks.tr, LocaleKeys.albums.tr, LocaleKeys.other.tr];
   //*This variable contains offline other screen options
   static final List<OfflineOtherModel> offlineOters = [
     OfflineOtherModel(onTap: () => Get.toNamed(Routes.likedSongs), otherName: 'Liked Songs'),
     OfflineOtherModel(onTap: () => Get.toNamed(Routes.playLists), otherName: 'Play Lists')
   ];
   //*This variable contains offline screen sorting model datas
-  static const List<SortTypeModel> sortTypeOptions = [
-    SortTypeModel(label: 'Title', icon: Icons.sort, sortType: SongSortType.TITLE),
-    SortTypeModel(label: 'Date Added', icon: Icons.date_range_outlined, sortType: SongSortType.DATE_ADDED),
-    SortTypeModel(label: 'Size', icon: Icons.storage_outlined, sortType: SongSortType.SIZE),
-  ];
+  static List<SortTypeModel> get sortTypeOptions => [
+        SortTypeModel(label: LocaleKeys.title.tr, icon: Icons.sort, sortType: SongSortType.TITLE),
+        const SortTypeModel(label: 'Date Added', icon: Icons.date_range_outlined, sortType: SongSortType.DATE_ADDED),
+        const SortTypeModel(label: 'Size', icon: Icons.storage_outlined, sortType: SongSortType.SIZE),
+      ];
   //*This variable contains offline screen sorting datats
   static const List<SortOrderModel> sortOrderOPtions = [
     SortOrderModel(label: 'Normal', icon: Icons.arrow_drop_down, isNormal: true),
@@ -50,5 +50,11 @@ class AppData {
     ThemeModeModel(themeMode: ThemeMode.system, label: 'System'),
     ThemeModeModel(themeMode: ThemeMode.dark, label: 'Dark'),
     ThemeModeModel(themeMode: ThemeMode.light, label: 'Light'),
+  ];
+  //*This variable contains diffrent languages
+  static const List<SongDeatilsModel> languages = [
+    SongDeatilsModel(label: 'English', value: 'enUS'),
+    SongDeatilsModel(label: 'Hindi', value: 'hi'),
+    SongDeatilsModel(label: 'Malayalam', value: 'ml'),
   ];
 }

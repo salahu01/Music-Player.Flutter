@@ -8,5 +8,11 @@
     "title":"शीर्षक",
     "normal":"सामान्य",
     "reversed":"औंधा",
-    "continueText":"जारी रखें"
+    "continueText":"जारी रखें",
+    "languages":"भाषाओं",
+    "dateAdded":"जोड़ी गई तारीख",
+    "size":"आकार",
+    "playLists":"प्लेलिस्ट",
+    "playListTitle":"प्लेलिस्ट शीर्षक ...",
+    "likedSongs":"पसंद किए गए गाने"
 }
