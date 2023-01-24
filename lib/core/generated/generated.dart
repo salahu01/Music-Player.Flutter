@@ -1,0 +1,1 @@
+export 'locales.g.dart';
