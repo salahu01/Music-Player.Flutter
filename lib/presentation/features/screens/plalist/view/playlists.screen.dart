@@ -7,7 +7,7 @@ class PlaListsScreen extends GetView<PlaListController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Play Lists', style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
+        title: Text(LocaleKeys.playLists.tr, style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
         centerTitle: true,
         actions: [
           GestureDetector(
@@ -66,7 +66,7 @@ class PlaListsScreen extends GetView<PlaListController> {
                   controller: title,
                   validator: (t) => t!.isEmpty ? 'This field is required !' : null,
                   decoration: InputDecoration(
-                      hintText: 'PlayList ${purpose == Purpose.create ? '' : 'new '}Title ....',
+                      hintText: '${LocaleKeys.playListTitle.tr} ....',
                       fillColor: Get.theme.scaffoldBackgroundColor,
                       hintStyle: Get.theme.inputDecorationTheme.hintStyle!.copyWith(color: Get.iconColor))),
           actions: [

@@ -6,7 +6,7 @@ class LikedSongsScreen extends GetView<LikedSongsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Liked Songs', style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
+        title: Text(LocaleKeys.likedSongs.tr, style: AppStyles.headlineLarge.copyWith(fontSize: 20.sp)),
         centerTitle: true,
       ),
       body: controller.obx(

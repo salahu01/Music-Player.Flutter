@@ -4,21 +4,21 @@ class AppData {
   //*This variable contains offline tab titles
   static List<String> get offlineTabs => [LocaleKeys.tracks.tr, LocaleKeys.albums.tr, LocaleKeys.other.tr];
   //*This variable contains offline other screen options
-  static final List<OfflineOtherModel> offlineOters = [
-    OfflineOtherModel(onTap: () => Get.toNamed(Routes.likedSongs), otherName: 'Liked Songs'),
-    OfflineOtherModel(onTap: () => Get.toNamed(Routes.playLists), otherName: 'Play Lists')
-  ];
+  static List<OfflineOtherModel> get offlineOters => [
+        OfflineOtherModel(onTap: () => Get.toNamed(Routes.likedSongs), otherName: LocaleKeys.likedSongs.tr),
+        OfflineOtherModel(onTap: () => Get.toNamed(Routes.playLists), otherName: LocaleKeys.playLists.tr)
+      ];
   //*This variable contains offline screen sorting model datas
   static List<SortTypeModel> get sortTypeOptions => [
         SortTypeModel(label: LocaleKeys.title.tr, icon: Icons.sort, sortType: SongSortType.TITLE),
-        const SortTypeModel(label: 'Date Added', icon: Icons.date_range_outlined, sortType: SongSortType.DATE_ADDED),
-        const SortTypeModel(label: 'Size', icon: Icons.storage_outlined, sortType: SongSortType.SIZE),
+        SortTypeModel(label: LocaleKeys.dateAdded.tr, icon: Icons.date_range_outlined, sortType: SongSortType.DATE_ADDED),
+        SortTypeModel(label: LocaleKeys.size.tr, icon: Icons.storage_outlined, sortType: SongSortType.SIZE),
       ];
   //*This variable contains offline screen sorting datats
-  static const List<SortOrderModel> sortOrderOPtions = [
-    SortOrderModel(label: 'Normal', icon: Icons.arrow_drop_down, isNormal: true),
-    SortOrderModel(label: 'Reversed', icon: Icons.arrow_drop_up, isNormal: false),
-  ];
+  static List<SortOrderModel> get sortOrderOPtions => [
+        SortOrderModel(label: LocaleKeys.normal.tr, icon: Icons.arrow_drop_down, isNormal: true),
+        SortOrderModel(label: LocaleKeys.reversed.tr, icon: Icons.arrow_drop_up, isNormal: false),
+      ];
   //*This variable contains offline song tile more datas
   static const List<IconTitleModel> offlineSongMore = [
     IconTitleModel(icon: Icons.favorite, label: 'Like'),
