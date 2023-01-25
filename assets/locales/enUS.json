@@ -14,6 +14,25 @@
     "size":"Size",
     "playLists":"Play Lists",
     "playListTitle":"PlayLists Title ...",
-    "likedSongs":"Liked Songs"
-    
+    "likedSongs":"Liked Songs",
+    "noAudiosFound":"No audios found !",
+    "noPlaylistsFound":"No playlists found !",
+    "rename":"Rename",
+    "delete":"Delete",
+    "details":"Details",
+    "unLike":"UnLike",
+    "like":"Like",
+    "artist":"Artist",
+    "fileExtension":"FileExtension",
+    "unknown":"Unknown",
+    "notFound":"Not found",
+    "dateModified":"DateModified",
+    "fileSize":"FileSize",
+    "duration":"Duration",
+    "composer":"Composer",
+    "uri":"Uri",
+    "system":"System",
+    "dark":"Dark",
+    "light":"Light",
+    "location":"Location"
 }

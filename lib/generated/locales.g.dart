@@ -28,6 +28,26 @@ class LocaleKeys {
   static const playLists = 'playLists';
   static const playListTitle = 'playListTitle';
   static const likedSongs = 'likedSongs';
+  static const noAudiosFound = 'noAudiosFound';
+  static const noPlaylistsFound = 'noPlaylistsFound';
+  static const rename = 'rename';
+  static const delete = 'delete';
+  static const details = 'details';
+  static const unLike = 'unLike';
+  static const like = 'like';
+  static const artist = 'artist';
+  static const fileExtension = 'fileExtension';
+  static const unknown = 'unknown';
+  static const notFound = 'notFound';
+  static const dateModified = 'dateModified';
+  static const fileSize = 'fileSize';
+  static const duration = 'duration';
+  static const composer = 'composer';
+  static const uri = 'uri';
+  static const system = 'system';
+  static const dark = 'dark';
+  static const light = 'light';
+  static const location = 'location';
 }
 
 class Locales {
@@ -48,6 +68,26 @@ class Locales {
     'playLists': 'Play Lists',
     'playListTitle': 'PlayLists Title ...',
     'likedSongs': 'Liked Songs',
+    'noAudiosFound': 'No audios found !',
+    'noPlaylistsFound': 'No playlists found !',
+    'rename': 'Rename',
+    'delete': 'Delete',
+    'details': 'Details',
+    'unLike': 'UnLike',
+    'like': 'Like',
+    'artist': 'Artist',
+    'fileExtension': 'FileExtension',
+    'unknown': 'Unknown',
+    'notFound': 'Not found',
+    'dateModified': 'DateModified',
+    'fileSize': 'FileSize',
+    'duration': 'Duration',
+    'composer': 'Composer',
+    'uri': 'Uri',
+    'system': 'System',
+    'dark': 'Dark',
+    'light': 'Light',
+    'location': 'Location',
   };
   static const ml = {
     'settings': 'ക്രമീകരണങ്ങൾ',
@@ -66,6 +106,26 @@ class Locales {
     'playLists': 'പ്ലേലിസ്റ്റുകൾ',
     'playListTitle': 'പ്ലേലിസ്റ്റുകളുടെ ശീർഷകം ...',
     'likedSongs': 'ഇഷ്ടപ്പെട്ട പാട്ടുകൾ',
+    'noAudiosFound': 'ഓഡിയോകളൊന്നും കണ്ടെത്തിയില്ല!',
+    'noPlaylistsFound': 'പ്ലേലിസ്റ്റുകളൊന്നും കണ്ടെത്തിയില്ല!',
+    'rename': 'പേരുമാറ്റുക',
+    'delete': 'ഇല്ലാതാക്കുക',
+    'details': 'വിശദാംശങ്ങൾ',
+    'unLike': 'അൺലൈക്ക്',
+    'like': 'ഇഷ്ടപ്പെട്ടു',
+    'artist': 'കലാകാരൻ',
+    'fileExtension': 'ഫയൽ എക്സ്റ്റൻഷൻ',
+    'unknown': 'അജ്ഞാതം',
+    'notFound': 'കണ്ടെത്താനായില്ല',
+    'dateModified': 'പുതുക്കിയ തീയതി',
+    'fileSize': 'ഫയൽ വലുപ്പം',
+    'duration': 'ദൈർഘ്യം',
+    'composer': 'കമ്പോസർ',
+    'uri': 'യുആർഐ',
+    'system': 'സിസ്റ്റം',
+    'dark': 'ഇരുട്ട്',
+    'light': 'വെളിച്ചം',
+    'location': 'സ്ഥാനം',
   };
   static const hi = {
     'settings': 'समायोजन',
@@ -84,5 +144,25 @@ class Locales {
     'playLists': 'प्लेलिस्ट',
     'playListTitle': 'प्लेलिस्ट शीर्षक ...',
     'likedSongs': 'पसंद किए गए गाने',
+    'noAudiosFound': 'कोई ऑडियो नहीं मिला!',
+    'noPlaylistsFound': 'कोई प्लेलिस्ट नहीं मिली!',
+    'rename': 'नाम बदलें',
+    'delete': 'हटाएं',
+    'details': 'विवरण',
+    'unLike': 'अनलाइक',
+    'like': 'पसंद किया',
+    'artist': 'कलाकार',
+    'fileExtension': 'फ़ाइल एक्सटेंशन',
+    'unknown': 'अज्ञात',
+    'notFound': 'नहीं मिला',
+    'dateModified': 'तारीख संशोधित',
+    'fileSize': 'फ़ाइल आकार',
+    'duration': 'अवधि',
+    'composer': 'संगीतकार',
+    'uri': 'उरी',
+    'system': 'सिस्टम',
+    'dark': 'डार्क',
+    'light': 'प्रकाश',
+    'location': 'स्थान',
   };
 }

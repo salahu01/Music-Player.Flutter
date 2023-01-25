@@ -20,41 +20,41 @@ class AppData {
         SortOrderModel(label: LocaleKeys.reversed.tr, icon: Icons.arrow_drop_up, isNormal: false),
       ];
   //*This variable contains offline song tile more datas
-  static const List<IconTitleModel> offlineSongMore = [
-    IconTitleModel(icon: Icons.favorite, label: 'Like'),
-    IconTitleModel(icon: Icons.edit, label: 'Rename'),
-    IconTitleModel(icon: Icons.delete, label: 'Delete'),
-    IconTitleModel(icon: Icons.description_sharp, label: 'Details'),
-    IconTitleModel(icon: Icons.favorite_border, label: 'UnLike'),
+  static List<IconTitleModel> get offlineSongMore => [
+    IconTitleModel(icon: Icons.favorite, label: LocaleKeys.like.tr),
+    IconTitleModel(icon: Icons.edit, label: LocaleKeys.rename.tr),
+    IconTitleModel(icon: Icons.delete, label: LocaleKeys.delete.tr),
+    IconTitleModel(icon: Icons.description_sharp, label: LocaleKeys.details.tr),
+    IconTitleModel(icon: Icons.favorite_border, label: LocaleKeys.unLike.tr),
   ];
   //*This variable contains offline play list tile more datas
-  static const List<IconTitleModel> playListMore = [
-    IconTitleModel(icon: Icons.edit, label: 'Rename'),
-    IconTitleModel(icon: Icons.delete, label: 'Delete'),
-  ];
+  static List<IconTitleModel> get playListMore => [
+        IconTitleModel(icon: Icons.edit, label: LocaleKeys.rename.tr),
+        IconTitleModel(icon: Icons.delete, label: LocaleKeys.delete.tr),
+      ];
   //*This variable contains current playing song details
   static List<SongDeatilsModel> selectedSongDetails(SongModel s) => [
-        SongDeatilsModel(label: 'Title : ', value: s.title),
-        SongDeatilsModel(label: 'Artist : ', value: s.artist ?? 'Unknown'),
-        SongDeatilsModel(label: 'FileExtension : ', value: s.fileExtension),
-        SongDeatilsModel(label: 'DateAdded : ', value: s.dateAdded.toString()),
-        SongDeatilsModel(label: 'DateModified : ', value: s.dateModified.toString()),
-        SongDeatilsModel(label: 'FileSize : ', value: s.size.toString()),
-        SongDeatilsModel(label: 'Duration : ', value: s.duration.toString()),
-        SongDeatilsModel(label: 'Composer : ', value: s.composer ?? 'Unknown'),
-        SongDeatilsModel(label: 'Uri : ', value: s.uri ?? 'Not found'),
-        SongDeatilsModel(label: 'Location : ', value: s.data),
+        SongDeatilsModel(label: '${LocaleKeys.title.tr} : ', value: s.title),
+        SongDeatilsModel(label: '${LocaleKeys.artist.tr} : ', value: s.artist ?? LocaleKeys.unknown.tr),
+        SongDeatilsModel(label: '${LocaleKeys.fileExtension.tr} : ', value: s.fileExtension),
+        SongDeatilsModel(label: '${LocaleKeys.dateAdded.tr} : ', value: s.dateAdded.toString()),
+        SongDeatilsModel(label: '${LocaleKeys.dateModified.tr} : ', value: s.dateModified.toString()),
+        SongDeatilsModel(label: '${LocaleKeys.size.tr} : ', value: s.size.toString()),
+        SongDeatilsModel(label: '${LocaleKeys.duration.tr} : ', value: s.duration.toString()),
+        SongDeatilsModel(label: '${LocaleKeys.unknown.tr} : ', value: s.composer ?? LocaleKeys.unknown.tr),
+        SongDeatilsModel(label: '${LocaleKeys.uri.tr} : ', value: s.uri ?? LocaleKeys.notFound.tr),
+        SongDeatilsModel(label: '${LocaleKeys.location.tr} : ', value: s.data),
       ];
   //*This variable contains diffrent theme modes
-  static const List<ThemeModeModel> themeModes = [
-    ThemeModeModel(themeMode: ThemeMode.system, label: 'System'),
-    ThemeModeModel(themeMode: ThemeMode.dark, label: 'Dark'),
-    ThemeModeModel(themeMode: ThemeMode.light, label: 'Light'),
-  ];
+  static List<ThemeModeModel> get themeModes => [
+        ThemeModeModel(themeMode: ThemeMode.system, label: LocaleKeys.system.tr),
+        ThemeModeModel(themeMode: ThemeMode.dark, label: LocaleKeys.dark.tr),
+        ThemeModeModel(themeMode: ThemeMode.light, label: LocaleKeys.light.tr),
+      ];
   //*This variable contains diffrent languages
-  static const List<SongDeatilsModel> languages = [
-    SongDeatilsModel(label: 'English', value: 'enUS'),
-    SongDeatilsModel(label: 'Hindi', value: 'hi'),
-    SongDeatilsModel(label: 'Malayalam', value: 'ml'),
-  ];
+  static List<SongDeatilsModel> get languages => [
+        SongDeatilsModel(label: 'English', value: 'enUS'),
+        SongDeatilsModel(label: 'Hindi', value: 'hi'),
+        SongDeatilsModel(label: 'Malayalam', value: 'ml'),
+      ];
 }
