@@ -5,16 +5,22 @@ class SettingsController extends GetxController {
   Rx<ThemeMode?> selectedTheme = Rx(AppSettingsStorage().retriveTheme());
 
   //* This variable for store current themeMode (purpose : controlling app theme)
-  Rx<String> selectedLanguage = Rx(Get.locale?.languageCode ?? 'enUS');
+  Rx<String> selectedLanguage = Rx(AppSettingsStorage().retriveLanguage());
+
+  //* This variable
+  final _appSettingsStorage = AppSettingsStorage();
 
   //* This methord for change theme when user change
   void changeTheme(ThemeMode? themeMode) {
     selectedTheme.value = themeMode ?? selectedTheme.value;
+    _appSettingsStorage.storeTheme(themeMode ?? ThemeMode.system);
   }
 
   //* his methord for change language when user change
   void changeLanguage(String? language) {
-    Get.updateLocale(Locale(language ?? 'enUS'));
-    selectedLanguage.value = language ?? 'enUS';
+    _appSettingsStorage.storeLanguage(language ?? 'enUS').then((value) {
+      Get.updateLocale(Locale(language ?? 'enUS'));
+      selectedLanguage.value = language ?? 'enUS';
+    });
   }
 }

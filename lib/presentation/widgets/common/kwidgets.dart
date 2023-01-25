@@ -2,8 +2,8 @@ import 'package:music_app/imports_bindings.dart';
 
 class Kwidgets {
   static Widget get loading => CircularProgressIndicator(color: Get.iconColor);
-  static Widget get noAudios => Text('No audios found !', style: Get.textTheme.headline1);
-  static Widget get noPlayLists => Text('No playlists found !', style: Get.textTheme.headline1);
+  static Widget get noAudios => Text(LocaleKeys.noAudiosFound.tr, style: Get.textTheme.headline1);
+  static Widget get noPlayLists => Text(LocaleKeys.noPlaylistsFound.tr, style: Get.textTheme.headline1);
   static const isEmpty = SizedBox();
   static Widget get userNoAvatar => CircleAvatar(backgroundColor: Get.iconColor, child: Icon(Icons.person, color: Get.theme.scaffoldBackgroundColor, size: 30.r));
   static songDetails(BuildContext context, SongModel s) => showCupertinoModalPopup(
