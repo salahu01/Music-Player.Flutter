@@ -38,13 +38,6 @@ class OfflineController extends GetxController with StateMixin {
   //* This variable using to store current albums sort order ( eg : A - Z , Z - A )
   Rx<SortOrderModel> albumsSortOrder = Rx(AppData.sortOrderOPtions[0]);
 
-  //* This variable using to store offline screens tabbar views Or screens
-  final tabViews = [
-    TracksTab(scrollController: Get.find<RootController>().offlineTracksController.value),
-    AlbumsTab(scrollController: Get.find<RootController>().offlineAlbumCotroller.value),
-    const OthersTab()
-  ];
-
   //* This methord using to fetch audion from internel storage
   void getSongs() async {
     change(null, status: RxStatus.loading());

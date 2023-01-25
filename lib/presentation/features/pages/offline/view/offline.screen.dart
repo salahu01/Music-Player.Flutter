@@ -5,7 +5,7 @@ class OfflineScreen extends GetView<OfflineController> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: controller.tabViews.length,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 0,
@@ -13,7 +13,13 @@ class OfflineScreen extends GetView<OfflineController> {
             tabs: AppData.offlineTabs.map((e) => Tab(text: e)).toList(),
           ),
         ),
-        body: TabBarView(children: controller.tabViews),
+        body: TabBarView(
+          children: [
+            TracksTab(scrollController: Get.find<RootController>().offlineTracksController.value),
+            AlbumsTab(scrollController: Get.find<RootController>().offlineAlbumCotroller.value),
+            const OthersTab()
+          ],
+        ),
       ),
     );
   }
