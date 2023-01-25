@@ -21,12 +21,12 @@ class AppData {
       ];
   //*This variable contains offline song tile more datas
   static List<IconTitleModel> get offlineSongMore => [
-    IconTitleModel(icon: Icons.favorite, label: LocaleKeys.like.tr),
-    IconTitleModel(icon: Icons.edit, label: LocaleKeys.rename.tr),
-    IconTitleModel(icon: Icons.delete, label: LocaleKeys.delete.tr),
-    IconTitleModel(icon: Icons.description_sharp, label: LocaleKeys.details.tr),
-    IconTitleModel(icon: Icons.favorite_border, label: LocaleKeys.unLike.tr),
-  ];
+        IconTitleModel(icon: Icons.favorite, label: LocaleKeys.like.tr),
+        IconTitleModel(icon: Icons.edit, label: LocaleKeys.rename.tr),
+        IconTitleModel(icon: Icons.delete, label: LocaleKeys.delete.tr),
+        IconTitleModel(icon: Icons.description_sharp, label: LocaleKeys.details.tr),
+        IconTitleModel(icon: Icons.favorite_border, label: LocaleKeys.unLike.tr),
+      ];
   //*This variable contains offline play list tile more datas
   static List<IconTitleModel> get playListMore => [
         IconTitleModel(icon: Icons.edit, label: LocaleKeys.rename.tr),
@@ -52,9 +52,9 @@ class AppData {
         ThemeModeModel(themeMode: ThemeMode.light, label: LocaleKeys.light.tr),
       ];
   //*This variable contains diffrent languages
-  static List<SongDeatilsModel> get languages => [
-        SongDeatilsModel(label: 'English', value: 'enUS'),
-        SongDeatilsModel(label: 'Hindi', value: 'hi'),
-        SongDeatilsModel(label: 'Malayalam', value: 'ml'),
-      ];
+  static const List<SongDeatilsModel> languages = [
+    SongDeatilsModel(label: 'English', value: 'enUS'),
+    SongDeatilsModel(label: 'Hindi', value: 'hi'),
+    SongDeatilsModel(label: 'Malayalam', value: 'ml'),
+  ];
 }
