@@ -2,7 +2,7 @@ import 'package:music_app/imports_bindings.dart';
 
 class SettingsController extends GetxController {
   //* This variable for store current themeMode (purpose : controlling app theme)
-  Rx<ThemeMode> selectedTheme = Rx<ThemeMode>(ThemeMode.dark);
+  Rx<ThemeMode?> selectedTheme = Rx(AppSettingsStorage().retriveTheme());
 
   //* This variable for store current themeMode (purpose : controlling app theme)
   Rx<String> selectedLanguage = Rx(Get.locale?.languageCode ?? 'enUS');

@@ -8,6 +8,7 @@ void main() async {
     androidNotificationChannelName: 'Audio playback',
     androidNotificationOngoing: true,
   );
+  AppSettingsStorage();
   var initialRoute = await Routes.initialRoute;
   runApp(Main(initialRoute));
 }
@@ -22,12 +23,12 @@ class Main extends StatelessWidget {
       builder: (context, child) => Obx(
         () => GetMaterialApp(
           translationsKeys: AppTranslation.translations,
-          locale: const Locale('enUS'),
+          locale: Locale(AppSettingsStorage().retriveLanguage()),
           defaultTransition: Transition.cupertino,
           debugShowCheckedModeBanner: false,
           initialRoute: initialRoute,
           getPages: Nav.routes,
-          themeMode: Get.put(SettingsController()).selectedTheme.value,
+          themeMode: Get.put(SettingsController()).selectedTheme.value ?? AppSettingsStorage().retriveTheme(),
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
         ),
