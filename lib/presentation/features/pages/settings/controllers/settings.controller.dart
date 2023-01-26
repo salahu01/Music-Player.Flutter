@@ -12,8 +12,10 @@ class SettingsController extends GetxController {
 
   //* This methord for change theme when user change
   void changeTheme(ThemeMode? themeMode) {
-    selectedTheme.value = themeMode ?? selectedTheme.value;
-    _appSettingsStorage.storeTheme(themeMode ?? ThemeMode.system);
+    _appSettingsStorage.storeTheme(themeMode ?? ThemeMode.system).then((_) {
+      selectedTheme.value = themeMode ?? selectedTheme.value;
+      Get.changeThemeMode(themeMode ?? ThemeMode.system);
+    });
   }
 
   //* his methord for change language when user change
