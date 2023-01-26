@@ -21,7 +21,7 @@ class SettingsScreen extends GetView<SettingsController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(LocaleKeys.theme.tr, style: AppStyles.headline1.copyWith(fontSize: 18.sp)),
+              Text(LocaleKeys.theme.tr, style: AppStyles.headline1.copyWith(fontSize: 16.sp)),
               Obx(() => DropdownButton(
                     value: controller.selectedTheme.value,
                     underline: const SizedBox(),
@@ -33,7 +33,7 @@ class SettingsScreen extends GetView<SettingsController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(LocaleKeys.languages.tr, style: AppStyles.headline1.copyWith(fontSize: 18.sp)),
+              Text(LocaleKeys.languages.tr, style: AppStyles.headline1.copyWith(fontSize: 16.sp)),
               Obx(() => DropdownButton(
                     value: controller.selectedLanguage.value,
                     underline: const SizedBox(),

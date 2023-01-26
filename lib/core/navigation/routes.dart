@@ -1,6 +1,8 @@
+import 'package:music_app/imports_bindings.dart';
+
 class Routes {
   static Future<String> get initialRoute async {
-    return auth;
+    return await SessionSource().openBox().then((_) => SessionSource().retriveSession().isEmpty ? Routes.auth : Routes.root);
   }
 
   static const details = '/details';

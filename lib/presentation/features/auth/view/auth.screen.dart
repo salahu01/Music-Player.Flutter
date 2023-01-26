@@ -32,20 +32,13 @@ class AuthScreen extends GetView<AuthController> {
                 TextFormField(
                   autocorrect: false,
                   enableSuggestions: false,
+                  controller: controller.name,
+                  onFieldSubmitted: (value) => controller.storeSession(),
                   decoration: const InputDecoration(hintText: 'user name ?'),
                   style: AppStyles.headline1.copyWith(color: context.theme.scaffoldBackgroundColor),
                   cursorColor: context.theme.scaffoldBackgroundColor,
                 ).paddingSymmetric(vertical: 16.r, horizontal: 16.r),
-                Button.loading(
-                  onPressed: () {
-                    Get.offAndToNamed(Routes.root);
-                  },
-                  text: 'Continue',
-                  isLoading: false,
-                  height: 40.h,
-                  width: double.maxFinite,
-                  loadingSize: 25.r,
-                ).paddingSymmetric(horizontal: 16.r),
+                controller.obx(onLoading: button(true), (state) => button(false)),
                 const Spacer(flex: 2),
               ],
             ),
@@ -53,5 +46,16 @@ class AuthScreen extends GetView<AuthController> {
         ),
       ),
     );
+  }
+
+  Widget button(bool isLoading) {
+    return Button.loading(
+      onPressed: controller.storeSession,
+      text: 'Continue',
+      isLoading: isLoading,
+      height: 40.h,
+      width: double.maxFinite,
+      loadingSize: 22.r,
+    ).paddingSymmetric(horizontal: 16.r);
   }
 }
