@@ -36,6 +36,8 @@
   />
 </p>
 
-## Feedback
+### 🎯 Overview
+Musician is built flutter is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc.
 
+### ✍️ Feedback
 If you have any feedback, please reach out to us at cvsalahu12@gmail.com
