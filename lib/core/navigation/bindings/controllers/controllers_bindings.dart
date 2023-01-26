@@ -7,3 +7,4 @@ export 'package:music_app/core/navigation/bindings/controllers/player.controller
 export 'package:music_app/core/navigation/bindings/controllers/search.controller.binding.dart'; 
 export 'package:music_app/core/navigation/bindings/controllers/liked_songs.controller.binding.dart'; 
 export 'package:music_app/core/navigation/bindings/controllers/plalist.controller.binding.dart'; 
+export 'package:music_app/core/navigation/bindings/controllers/all_artists.controller.binding.dart'; 

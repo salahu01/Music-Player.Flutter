@@ -37,8 +37,21 @@ class PopularArtists extends GetView<OnlineController> {
             width: Get.width,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: r.artists?.length ?? 0,
+              itemCount: 11,
               itemBuilder: (context, index) {
+                if (index == 10) {
+                  return InkWell(
+                    onTap: () => Get.toNamed(Routes.allArtists),
+                    child: CircleAvatar(
+                      backgroundColor: context.iconColor,
+                      radius: 24.r,
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: context.theme.scaffoldBackgroundColor,
+                      ),
+                    ),
+                  );
+                }
                 return CircleAvatar(
                   backgroundColor: context.iconColor,
                   radius: 28.h,

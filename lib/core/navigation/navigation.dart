@@ -52,5 +52,10 @@ class Nav {
       page: () => const LikedSongsScreen(),
       binding: LikedSongsControllerBinding(),
     ),
+    GetPage(
+      name: Routes.allArtists,
+      page: () => const AllArtistsScreen(),
+      binding: AllArtistsControllerBinding(),
+    ),
   ];
 }

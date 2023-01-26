@@ -18,4 +18,5 @@ class Routes {
   static const playLists = '/PlayLists';
   static const playList = '/PlayList';
   static const likedSongs = '/liked-songs';
+  static const allArtists = '/all-artists';
 }
