@@ -11,4 +11,13 @@ class ApiUris {
       'X-RapidAPI-Host': _apiHost,
     },
   );
+  //* Get Artist Detalis
+  static const ApiUriModel getArtistDetails = ApiUriModel(
+    uri: 'https://spotify-scraper.p.rapidapi.com/v1/artist/overview',
+    headers: {
+      'X-RapidAPI-Key': _apiKey,
+      'X-RapidAPI-Host': _apiHost,
+    },
+    queryParameters: {'artistId': '6eUKZXaKkcviH0Ku9w2n3V'},
+  );
 }

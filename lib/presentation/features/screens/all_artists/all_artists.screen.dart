@@ -15,7 +15,7 @@ class AllArtistsScreen extends StatelessWidget {
         itemCount: artistModel.artists?.length ?? 0,
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
-            onTap: () {},
+            onTap: () => Get.toNamed(Routes.singleArtist, arguments: {'singleArtistEntity': artistModel.artists?[index]}),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

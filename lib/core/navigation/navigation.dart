@@ -56,5 +56,10 @@ class Nav {
       name: Routes.allArtists,
       page: () => AllArtistsScreen(),
     ),
+    GetPage(
+      name: Routes.singleArtist,
+      page: () => const ArtistDetailsScreen(),
+      binding: SingleArtistControllerBinding(),
+    ),
   ];
 }

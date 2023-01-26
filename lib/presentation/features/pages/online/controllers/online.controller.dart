@@ -14,6 +14,7 @@ class OnlineController extends GetxController {
   Rx<Either<String, TopArtistsEntity>?> topArtists = Rx(null);
 
   void getTopArtist() async {
+    topArtists.value = null;
     topArtists.value = await _artistApiRepo.getTopArtists();
     topArtists.value!.fold((l) => Get.snackbar('Oops!', l), (r){});
   }

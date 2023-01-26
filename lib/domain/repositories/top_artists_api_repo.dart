@@ -13,6 +13,7 @@ class ArtistApiRepo {
   //* This variable for store this class object globally
   static ArtistApiRepo? _artistApiRepo;
 
+  //* This methord for get Top Artists
   Future<Either<String, TopArtistsEntity>> getTopArtists() async {
     try {
       return BaseRepository().apiCall(
