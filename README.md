@@ -17,21 +17,21 @@
 
 <p align="center">
   <img
-    title="Followed streams section"
-    alt="iOS screenshot of the Followed Streams section."
-    src="https://user-images.githubusercontent.com/54859075/185780262-a3ba5ecf-a710-4511-a583-94e0d0ce0156.png"
+    title="Offline Tracks"
+    alt="Android offline tracks screen"
+    src="https://ik.imagekit.io/vun0le607a/Github/Musician/musicia_screen_shots/tracks_eIwvyVBmw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674731316682"
     width="32%"
   />
   <img
-    title="Channel (video/chat) view"
-    alt="iOS screenshot of xQc's channel with the stream and chat."
-    src="https://user-images.githubusercontent.com/54859075/185780260-0f7f3247-2cb5-431d-8714-e88e9fcb72f5.png"
+    title="Offline Others"
+    alt="Android offline others screen"
+    src="https://ik.imagekit.io/vun0le607a/Github/Musician/musicia_screen_shots/other_G4W5-vnX2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674731316600"
     width="32%"
   />
   <img
-    title="Search section"
-    alt='iOS screenshot of the search section with results from the query "pokelaw".'
-    src="https://user-images.githubusercontent.com/54859075/185780261-4301f180-04dc-4328-8a4c-4f035a5ec796.png"
+    title="App settings"
+    alt='Android app settings screen'
+    src="https://ik.imagekit.io/vun0le607a/Github/Musician/musicia_screen_shots/settings_3yIz2FMmF.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674731316557"
     width="32%"
   />
 </p>
