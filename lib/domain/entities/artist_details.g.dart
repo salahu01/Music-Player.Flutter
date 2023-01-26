@@ -58,12 +58,17 @@ Visuals _$VisualsFromJson(Map<String, dynamic> json) => Visuals(
           ?.map((e) => Avatar.fromJson(e as Map<String, dynamic>))
           .toList(),
       gallery: (json['gallery'] as List<dynamic>?)
-          ?.map((e) => e as List<dynamic>)
+          ?.map((e) => (e as List<dynamic>)
+              .map((e) => Avatar.fromJson(e as Map<String, dynamic>))
+              .toList())
           .toList(),
-    );
+    )..header = (json['header'] as List<dynamic>?)
+        ?.map((e) => Avatar.fromJson(e as Map<String, dynamic>))
+        .toList();
 
 Map<String, dynamic> _$VisualsToJson(Visuals instance) => <String, dynamic>{
       'avatar': instance.avatar,
+      'header': instance.header,
       'gallery': instance.gallery,
     };
 

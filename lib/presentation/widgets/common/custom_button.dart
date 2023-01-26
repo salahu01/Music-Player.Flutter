@@ -41,4 +41,32 @@ class Button {
           )
         ],
       );
+
+  static Widget coloredText({
+    required String text,
+    Color? buttonColor,
+    Color? textColor,
+    double? textSize,
+    double? height,
+    double? width,
+    double? radius,
+    FontWeight? fontWeight,
+    void Function()? onTap,
+  }) =>
+      ClipRRect(
+        borderRadius: BorderRadius.circular(radius ?? 16.r),
+        child: InkWell(
+          onTap: onTap,
+          child: ColoredBox(
+            color: buttonColor ?? Get.iconColor!,
+            child: SizedBox(
+              height: height,
+              width: width,
+              child: Center(
+                child: Text(text, style: Get.textTheme.headline2!.copyWith(fontSize: textSize, color: textColor ?? Get.theme.scaffoldBackgroundColor, fontWeight: fontWeight ?? FontWeight.bold)),
+              ),
+            ),
+          ),
+        ),
+      );
 }

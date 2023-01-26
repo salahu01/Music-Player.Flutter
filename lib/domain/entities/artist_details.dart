@@ -30,7 +30,8 @@ class Stats {
 @JsonSerializable()
 class Visuals {
   List<Avatar>? avatar;
-  List<List>? gallery;
+  List<Avatar>? header;
+  List<List<Avatar>>? gallery;
 
   Visuals({this.avatar, this.gallery});
 
