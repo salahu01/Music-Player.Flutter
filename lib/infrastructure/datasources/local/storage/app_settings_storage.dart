@@ -23,20 +23,23 @@ class AppSettingsStorage {
 
   //* This methord for store app current theme prefence
   Future<void> storeTheme(ThemeMode mode) async {
+    var theme = mode == ThemeMode.dark ? 'dark' : ThemeMode.light == mode ? 'light' : 'system';
     try {
-      await _appSettings.putAt(0, mode);
+      await _appSettings.putAt(0, theme);
     } catch (e) {
-      await _appSettings.add(mode);
+      await _appSettings.add(theme);
     }
   }
 
   //* This methord for get stored current theme
   ThemeMode retriveTheme() {
+    late String theme;
     try {
-      return (_appSettings.getAt(0) as ThemeMode?) ?? ThemeMode.system;
+      theme = (_appSettings.getAt(0) as String?) ?? 'system';
     } catch (e) {
-      return ThemeMode.system;
+      theme = 'system';
     }
+    return theme == 'dark'? ThemeMode.dark : theme == 'light' ? ThemeMode.light : ThemeMode.system;
   }
 
   //* This methord for store app current theme prefence
