@@ -35,3 +35,7 @@
     width="32%"
   />
 </p>
+
+## Feedback
+
+If you have any feedback, please reach out to us at cvsalahu12@gmail.com
