@@ -8,22 +8,22 @@ class TopArtistsEntity {
   final bool? status;
   final String? title;
   final String? id;
-  final List<SingleArtistModel?>? artists;
+  final List<SingleArtistEntity?>? artists;
   TopArtistsEntity({this.status, this.title, this.id, this.artists});
 
   factory TopArtistsEntity.fromJson(Map<String, dynamic> json) => _$TopArtistsEntityFromJson(json);
 }
 
 @JsonSerializable()
-class SingleArtistModel {
+class SingleArtistEntity {
   @JsonKey(name: 'name')
   String? artistName;
   @JsonKey(name: 'id')
   String? artistId;
   @JsonKey(name: 'visuals')
   Visuals? visuals;
-  SingleArtistModel({this.artistName, this.artistId, this.visuals});
-  factory SingleArtistModel.fromJson(Map<String, dynamic> json) => _$SingleArtistModelFromJson(json);
+  SingleArtistEntity({this.artistName, this.artistId, this.visuals});
+  factory SingleArtistEntity.fromJson(Map<String, dynamic> json) => _$SingleArtistEntityFromJson(json);
 }
 
 @JsonSerializable()

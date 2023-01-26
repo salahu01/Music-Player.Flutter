@@ -54,8 +54,7 @@ class Nav {
     ),
     GetPage(
       name: Routes.allArtists,
-      page: () => const AllArtistsScreen(),
-      binding: AllArtistsControllerBinding(),
+      page: () => AllArtistsScreen(),
     ),
   ];
 }

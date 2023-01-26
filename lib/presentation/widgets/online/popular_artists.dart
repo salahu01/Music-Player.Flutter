@@ -41,7 +41,7 @@ class PopularArtists extends GetView<OnlineController> {
               itemBuilder: (context, index) {
                 if (index == 10) {
                   return InkWell(
-                    onTap: () => Get.toNamed(Routes.allArtists),
+                    onTap: () => Get.toNamed(Routes.allArtists,arguments: {'artists':r}),
                     child: CircleAvatar(
                       backgroundColor: context.iconColor,
                       radius: 24.r,
