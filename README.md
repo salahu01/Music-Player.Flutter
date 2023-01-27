@@ -40,4 +40,4 @@
 Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc.
 
 ### ✍️ Feedback
-If you have any feedback, please reach out to us at cvsalahu12@gmail.com
+If you have any feedback, please reach out to me at cvsalahu12@gmail.com
