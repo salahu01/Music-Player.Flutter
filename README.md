@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  An Open Source Music Player Built with
+   An Open Source Music Player Built with
   <a href="https://flutter.dev/">Flutter</a> .
 </p>
 
@@ -37,9 +37,11 @@
 </p>
 
 ### 🎯 Overview
-It is an offline music player built on the Flutter framework. First of all thanks to Google
- Gives us a wonderful framework. You can use this app like any other music app. This application includes unique user interfaces. In the current version you get limited online support.Currently you can check artists, their details and best tracks. This app may contain issues and bugs. I hope you will report issues . I will send a response to reported issues within 2-3 days.
+##### It is an offline music player built on the Flutter framework. First of all thanks to Google Gives us a wonderful framework. You can use this app like any other music app. This application includes unique user interfaces. In the current version you get limited online support.Currently you can check artists, their details and best tracks. This app may contain issues and bugs. I hope you will report issues . I will send a response to reported issues within 2-3 days.
 <!-- Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc. -->
 
+### 💪 Motivation
+##### Musician's main motivation My first project was a music player. 
+
 ### ✍️ Feedback
-If you have any feedback, please reach out to me at cvsalahu12@gmail.com
+##### If you have any feedback, please reach out to me at cvsalahu12@gmail.com
