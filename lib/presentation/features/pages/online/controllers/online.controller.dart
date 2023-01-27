@@ -11,11 +11,11 @@ class OnlineController extends GetxController {
   final ArtistApiRepo _artistApiRepo = Get.put(ArtistApiRepo());
 
   //* This variable using to store TopArtists
-  Rx<Either<String, TopArtistsEntity>?> topArtists = Rx(null);
+  Rx<Either<String, TopArtistsEntity>> topArtists = Rx(right(TopArtistsEntity()));
 
   void getTopArtist() async {
-    topArtists.value = null;
+    topArtists.value = right(TopArtistsEntity());
     topArtists.value = await _artistApiRepo.getTopArtists();
-    topArtists.value!.fold((l) => Get.snackbar('Oops!', l), (r){});
+    topArtists.value.fold((l) => Kwidgets.showSnackBar('Oops!', l), (r) {});
   }
 }

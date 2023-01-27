@@ -16,7 +16,7 @@ class BaseRepository with ApiException {
   //* This  methord for to create api call easly ( just  like middleware for handling api calls )
   Future<T> apiCall<R, T>({required Future<R> call, required T Function(R data) onSuccess}) async {
     final json = await call.catchError((e) async {
-      e is DioError ? write(e.toString()) : write(e.toString());
+      // e is DioError ? write(e.toString()) : write(e.toString());
       throw await handle(e);
     });
     return onSuccess(json);

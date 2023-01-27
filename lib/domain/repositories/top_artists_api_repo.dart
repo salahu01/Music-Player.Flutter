@@ -16,7 +16,7 @@ class ArtistApiRepo {
   //* This methord for get Top Artists
   Future<Either<String, TopArtistsEntity>> getTopArtists() async {
     try {
-      return BaseRepository().apiCall(
+      return await BaseRepository().apiCall(
         call: Dio().get(ApiUris.getTopArtists.uri, options: Options(headers: ApiUris.getTopArtists.headers)),
         onSuccess: (json) => right(TopArtistsEntity.fromJson(json.data)),
       );

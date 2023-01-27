@@ -44,11 +44,10 @@ class ImageNetwork extends StatelessWidget {
       errorWidget: (_, __, error) {
         return errorWidget ??
             Center(
-              child: Image.asset(
-                appIcon,
-                height: height,
-                width: width,
-                fit: BoxFit.fill,
+              child: Shimmer.fromColors(
+                baseColor: context.theme.scaffoldBackgroundColor,
+                highlightColor: context.iconColor!,
+                child: Image.asset(appIcon, width: width, height: height),
               ),
             );
       },

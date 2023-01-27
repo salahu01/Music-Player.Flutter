@@ -19,24 +19,22 @@ class ArtistDetailsScreen extends GetView<ArtistDetailsController> {
             (l) => const Center(child: Kwidgets.isEmpty),
             (r) => SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(32.r),
                       child: ImageNetwork(
-                        imageUrl: r.visuals?.header?[0].url ?? r.visuals?.avatar?[0].url ?? '',
+                        imageUrl: r.visuals?.avatar?[0].url ?? r.visuals?.header?[0].url ?? '',
                         height: 180.h,
                         width: 180.h,
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Button.coloredText(text: 'Play All', height: 60.h, width: 120.w, radius: 24.r, textSize: 18.sp),
-                      Button.coloredText(text: 'Details', height: 60.h, width: 120.w, radius: 24.r, textSize: 18.sp),
-                    ],
-                  ).paddingSymmetric(horizontal: 32.r, vertical: 16.r),
+                  Text('Overview : ', style: AppStyles.headline2.copyWith(fontWeight: FontWeight.bold, fontSize: 15.sp)).paddingOnly(top: 16.r, left: 12.r, right: 12.r),
+                  Text(r.biography ?? '', style: AppStyles.headline2.copyWith(fontWeight: FontWeight.bold, color: Get.iconColor!.withOpacity(0.7)), overflow: TextOverflow.ellipsis, maxLines: 5)
+                      .paddingOnly(top: 8.r, left: 12.r, right: 12.r),
+                  Text('Popular Tracks : ', style: AppStyles.headline2.copyWith(fontWeight: FontWeight.bold, fontSize: 15.sp)).paddingOnly(top: 16.r, left: 12.r, right: 12.r),
                   ListView.builder(
                     itemCount: r.discography?.topTracks?.length ?? 0,
                     shrinkWrap: true,

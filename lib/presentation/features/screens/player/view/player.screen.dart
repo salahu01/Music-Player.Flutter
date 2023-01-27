@@ -8,7 +8,7 @@ class PlayerScreen extends GetView<PlayerController> {
       appBar: AppBar(
         toolbarHeight: 50.h,
         leading: IconButton(onPressed: () => Get.back(), icon: Icon(Icons.arrow_back, color: context.iconColor)),
-        actions: [IconButton(onPressed: () => Kwidgets.songDetails(context,PlayerController().selectedSong.value!), icon: Icon(Icons.more_vert, color: context.iconColor))],
+        actions: [IconButton(onPressed: () => Kwidgets.offlineSongDetails(context, PlayerController().selectedSong.value!), icon: Icon(Icons.more_vert, color: context.iconColor))],
       ),
       body: Obx(() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Spacer(),
@@ -67,7 +67,8 @@ class PlayerScreen extends GetView<PlayerController> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Obx(() => IconButton(onPressed: controller.changeLoopMode, icon: Icon(repeateIcon(controller.loopMode.value), color: context.iconColor, size: 20.sp))),
               IconButton(onPressed: controller.skipToPrevious, icon: Icon(Icons.skip_previous, color: context.iconColor, size: 50.sp)),
-              Obx(() =>IconButton(onPressed: controller.playOrPause, icon: Icon(controller.isPlaying.value ? Icons.pause_circle_filled : Icons.play_circle_fill, color: context.iconColor, size: 60.sp))),
+              Obx(() =>
+                  IconButton(onPressed: controller.playOrPause, icon: Icon(controller.isPlaying.value ? Icons.pause_circle_filled : Icons.play_circle_fill, color: context.iconColor, size: 60.sp))),
               IconButton(onPressed: controller.skipToNext, icon: Icon(Icons.skip_next, color: context.iconColor, size: 50.sp)),
               IconButton(onPressed: controller.showOrHideSpeed, icon: Icon(Icons.speed, color: context.iconColor, size: 20.sp)),
             ]),

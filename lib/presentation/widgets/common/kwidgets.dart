@@ -5,8 +5,9 @@ class Kwidgets {
   static Widget get noAudios => Text(LocaleKeys.noAudiosFound.tr, style: Get.textTheme.headline1);
   static Widget get noPlayLists => Text(LocaleKeys.noPlaylistsFound.tr, style: Get.textTheme.headline1);
   static const isEmpty = SizedBox();
+  static showSnackBar(String title, String message) => Get.snackbar(title, message, snackPosition: SnackPosition.BOTTOM);
   static Widget get userNoAvatar => CircleAvatar(backgroundColor: Get.iconColor, child: Icon(Icons.person, color: Get.theme.scaffoldBackgroundColor, size: 30.r));
-  static songDetails(BuildContext context, SongModel s) => showCupertinoModalPopup(
+  static offlineSongDetails(BuildContext context, SongModel s) => showCupertinoModalPopup(
         context: context,
         builder: (context) {
           return ColoredBox(
