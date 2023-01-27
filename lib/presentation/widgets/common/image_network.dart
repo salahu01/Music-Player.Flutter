@@ -42,12 +42,22 @@ class ImageNetwork extends StatelessWidget {
             );
       },
       errorWidget: (_, __, error) {
+        if (imageUrl.isEmpty) {
+          return Center(
+            child: Shimmer.fromColors(
+              baseColor: context.theme.scaffoldBackgroundColor,
+              highlightColor: context.iconColor!,
+              child: Image.asset(appIcon, width: width, height: height),
+            ),
+          );
+        }
         return errorWidget ??
             Center(
-              child: Shimmer.fromColors(
-                baseColor: context.theme.scaffoldBackgroundColor,
-                highlightColor: context.iconColor!,
-                child: Image.asset(appIcon, width: width, height: height),
+              child: Image.asset(
+                appIcon,
+                height: height,
+                width: width,
+                fit: BoxFit.fill,
               ),
             );
       },
