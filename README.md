@@ -37,7 +37,9 @@
 </p>
 
 ### 🎯 Overview
-Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc.
+It is an offline music player built on the Flutter framework. First of all thanks to Google
+ Gives us a wonderful framework. You can use this app like any other music app. This application includes unique user interfaces. In the current version you get limited online support.Currently you can check artists, their details and best tracks. This app may contain issues and bugs. I hope you will report issues . I will send a response to reported issues within 2-3 days.
+<!-- Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc. -->
 
 ### ✍️ Feedback
 If you have any feedback, please reach out to me at cvsalahu12@gmail.com
