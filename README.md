@@ -41,7 +41,7 @@
 <!-- Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc. -->
 
 ### 💪 Motivation
-##### Musician's main motivation My first project was a music player. 
+##### The main motivation for doing this project was that I was having issues with my favorite music player and the project had no structured code. 
 
 ### ✍️ Feedback
 ##### If you have any feedback, please reach out to me at cvsalahu12@gmail.com
