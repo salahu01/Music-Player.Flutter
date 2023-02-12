@@ -50,11 +50,11 @@
 
 ### 📚 Wiki
 
-Checkout [wiki](https://github.com/salahu01/Music-Player.Flutter/wiki) for more info
+##### Checkout [wiki](https://github.com/salahu01/Music-Player.Flutter/wiki) for more info
 
 ### 📍 Conclusion
 
-I will be happy to answer any questions that you may have on this approach, and if you want to lend a hand with the boilerplate then please feel free to submit an issue and/or pull request 🙂
+##### I will be happy to answer any questions that you may have on this approach, and if you want to lend a hand with the boilerplate then please feel free to submit an issue and/or pull request 🙂
 
-Again to note, This is the one of the best architecture followed open source project . If you liked my work, don’t forget to ⭐ star the repo to show your support.
+##### Again to note, This is the one of the best architecture followed open source project . If you liked my work, don’t forget to ⭐ star the repo to show your support.
 
