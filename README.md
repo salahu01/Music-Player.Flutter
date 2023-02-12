@@ -50,7 +50,7 @@
 
 ### 📚 Wiki
 
-Checkout [wiki](https://github.com/zubairehman/flutter-boilerplate-project/wiki) for more info
+Checkout [wiki](https://github.com/salahu01/Music-Player.Flutter/wiki) for more info
 
 ### 📍 Conclusion
 
