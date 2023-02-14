@@ -58,7 +58,7 @@
 
 ### ⚠️ Warning
 
-##### This project not compatible for Material 3 ( supports 3.4 / 3.5 Fultter )
+##### This project is not suitable for Material 3 ( supports 3.4 / 3.5 Fultter )
 
 ### 🔑 License
 
