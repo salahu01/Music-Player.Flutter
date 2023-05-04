@@ -8,7 +8,11 @@ class PlayerScreen extends GetView<PlayerController> {
       appBar: AppBar(
         toolbarHeight: 50.h,
         leading: IconButton(onPressed: () => Get.back(), icon: Icon(Icons.arrow_back, color: context.iconColor)),
-        actions: [IconButton(onPressed: () => Kwidgets.offlineSongDetails(context, PlayerController().selectedSong.value!), icon: Icon(Icons.more_vert, color: context.iconColor))],
+        actions: [
+          Visibility(
+              visible: controller.onlineTrack != null,
+              child: IconButton(onPressed: () => Kwidgets.offlineSongDetails(context, PlayerController().selectedSong.value!), icon: Icon(Icons.more_vert, color: context.iconColor)))
+        ],
       ),
       body: Obx(() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Spacer(),
@@ -22,15 +26,20 @@ class PlayerScreen extends GetView<PlayerController> {
                     child: SizedBox(
                       height: Get.width * 0.7,
                       width: Get.width * 0.7,
-                      child: FutureBuilder(
-                        future: OnAudioQuery.platform.queryArtwork(controller.selectedSong.value!.id, ArtworkType.AUDIO),
-                        builder: (context, snapshot) {
-                          if (snapshot.data == null || (snapshot.data?.isEmpty ?? false)) {
-                            return Image.asset(appIcon, fit: BoxFit.cover);
-                          } else {
-                            return Image.memory(snapshot.data!, fit: BoxFit.cover);
-                          }
-                        },
+                      child: Visibility(
+                        visible: controller.onlineTrack == null,
+                        replacement: ImageNetwork(imageUrl: controller.onlineTrackDetails?.album?.cover?[0].url ?? ''),
+                        child: FutureBuilder(
+                          future: OnAudioQuery.platform.queryArtwork(controller.selectedSong.value?.id ?? 0, ArtworkType.AUDIO),
+                          builder: (context, snapshot) {
+                            write('hey');
+                            if (snapshot.data == null || (snapshot.data?.isEmpty ?? false)) {
+                              return Image.asset(appIcon, fit: BoxFit.cover);
+                            } else {
+                              return Image.memory(snapshot.data!, fit: BoxFit.cover);
+                            }
+                          },
+                        ),
                       ),
                     ),
                   ),

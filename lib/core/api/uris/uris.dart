@@ -20,4 +20,13 @@ class ApiUris {
     },
     queryParameters: {'artistId': '6eUKZXaKkcviH0Ku9w2n3V'},
   );
+  //* Get Songs By Track
+  static const ApiUriModel downloadTrack = ApiUriModel(
+        uri: 'https://spotify-scraper.p.rapidapi.com/v1/track/download',
+        headers: {
+          'X-RapidAPI-Key': _apiKey,
+          'X-RapidAPI-Host': _apiHost,
+        },
+        queryParameters: {'track': ''},
+      );
 }

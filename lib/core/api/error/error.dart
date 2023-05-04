@@ -9,7 +9,7 @@ mixin ApiException {
         return 'Please make sure about your connection !';
       }
     } else if (e.response != null) {
-      return jsonDecode(e.response.toString())['errors'] ?? '';
+      return jsonDecode(e.response.toString())['message'] ?? 'Something went wrong ! Please try again later ';
     }
     return 'Something went wrong ! Please try again later ';
   }

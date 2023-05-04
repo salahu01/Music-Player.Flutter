@@ -41,7 +41,7 @@ class ArtistDetailsScreen extends GetView<ArtistDetailsController> {
                     primary: true,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (BuildContext context, int index) => ListTile(
-                      onTap: () {},
+                      onTap: () => controller.downloadTrack(index),
                       leading: ClipRRect(
                           borderRadius: BorderRadius.circular(8.r),
                           child: ImageNetwork(imageUrl: r.discography?.topTracks?[index].album?.cover?[0].url ?? '', height: 40.h, width: 40.h, fit: BoxFit.cover)),
@@ -50,6 +50,7 @@ class ArtistDetailsScreen extends GetView<ArtistDetailsController> {
                         style: context.textTheme.headline2!.copyWith(color: context.theme.colorScheme.primary, overflow: TextOverflow.ellipsis, fontWeight: FontWeight.bold),
                         maxLines: 1,
                       ),
+                      trailing: Obx(() => Visibility(visible: controller.selectedIndex.value == index, child: CircularProgressIndicator(color: Get.iconColor))),
                       subtitle: Text(
                         r.discography?.topTracks?[index].durationText ?? 'unknown',
                         style: context.textTheme.headline2!.copyWith(color: context.theme.colorScheme.primary, fontWeight: FontWeight.w900, overflow: TextOverflow.ellipsis),

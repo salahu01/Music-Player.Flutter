@@ -1,3 +1,4 @@
+import 'package:music_app/domain/entities/artist_details.dart';
 import 'package:music_app/imports_bindings.dart';
 
 class PlayerController extends GetxController {
@@ -19,6 +20,10 @@ class PlayerController extends GetxController {
     selectedSong.value = _playerServices.playingSongModel.value;
     changeCurrentSong();
     changeProgressBarTime();
+    try {
+      onlineTrack = Get.arguments['track'];
+      onlineTrackDetails = Get.arguments['track_details'];
+    } catch (e) {}
     super.onInit();
   }
 
@@ -60,6 +65,12 @@ class PlayerController extends GetxController {
 
   //*This variable for hide/show speed slider
   Rx<bool> isSpeedShow = Rx<bool>(false);
+
+  //*This variable for store online track
+  DownloadTrackEntity? onlineTrack;
+
+  //*This variable for store online track detailers
+  TopTracks? onlineTrackDetails;
 
   //* This methord using to check current playing songs ListTile ( for highlight selected song tile )
   bool isSelected({required int index, required List<SongModel> songModels}) {

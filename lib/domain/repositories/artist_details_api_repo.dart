@@ -16,7 +16,7 @@ class ArtistDetailsApiRepo {
   //* This methord for get Artist Details
   Future<Either<String, ArtistDetailsEntity>> getArtistDetails(String artistId) async {
     try {
-      return BaseRepository().apiCall(
+      return await BaseRepository().apiCall(
         call: Dio().get(ApiUris.getArtistDetails.uri, options: Options(headers: ApiUris.getArtistDetails.headers), queryParameters: {'artistId': artistId}),
         onSuccess: (json) => right(ArtistDetailsEntity.fromJson(json.data)),
       );
