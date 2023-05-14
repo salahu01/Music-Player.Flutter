@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <a align="center" href="https://frostyapp.io">
+  <a align="center" href="">
     <img
       src="https://ik.imagekit.io/vun0le607a/Github/Musician/app_icons/splash_icon_white_Ldfg7FfO-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674728487749"
       width="180px"
