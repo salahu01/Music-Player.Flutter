@@ -1,6 +1,6 @@
 import 'package:music_app/imports_bindings.dart';
 
-class SearchScreen extends GetView<SearchController> {
+class SearchScreen extends GetView<SearchCtrl> {
   const SearchScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

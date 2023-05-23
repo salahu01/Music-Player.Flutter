@@ -5,8 +5,8 @@ import '../../../../../presentation/features/screens/search/controllers/search.c
 class SearchControllerBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<SearchController>(
-      () => SearchController(),
+    Get.lazyPut<SearchCtrl>(
+      () => SearchCtrl(),
     );
   }
 }

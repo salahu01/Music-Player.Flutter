@@ -1,17 +1,17 @@
 import 'package:music_app/imports_bindings.dart';
 
-class SearchController extends GetxController with StateMixin {
+class SearchCtrl extends GetxController with StateMixin {
   //* This constructor body for creating singleton widget
-  factory SearchController() {
-    _searchController == null ? {_searchController = SearchController._internel()} : null;
+  factory SearchCtrl() {
+    _searchController == null ? {_searchController = SearchCtrl._internel()} : null;
     return _searchController!;
   }
 
   //* This named constructor for create object for this class
-  SearchController._internel();
+  SearchCtrl._internel();
 
   //* This variable for store this class object globally
-  static SearchController? _searchController;
+  static SearchCtrl? _searchController;
 
   //*The onInit() is a method that is called when an object for OfflineController is created and inserted inside the widget tree
   @override

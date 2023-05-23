@@ -1,6 +1,6 @@
 import 'package:music_app/imports_bindings.dart';
 
-class OfflineSearchView extends GetView<SearchController> {
+class OfflineSearchView extends GetView<SearchCtrl> {
   const OfflineSearchView({super.key});
 
   @override
