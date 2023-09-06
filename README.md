@@ -3,11 +3,11 @@
 <p align="center">
   <a align="center" href="">
     <img
-      src="https://ik.imagekit.io/vun0le607a/Github/Musician/app_icons/splash_icon_white_Ldfg7FfO-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674728487749"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA/FBMVEX19fXydW/3+PotRFT39/cNLEjs7Ozy8vLp6env7+/yc2z3///yaWL1ycfyiIP3/f////9jcXsAP1H5eXMmP0+1ys7rgX3GztABKEa6wsU5Sl0MJkLjjIkGLD//fHQAJEQmPk+HWF0AIELpcWvyZl/yeXTyb2jzl5PzvrzqcWnjc23yqaTxfXb06+vxX1gAIEX05OI+UmH009JhQlJVaXTzsq7039/0z830paP0kIv/gnfNaGaoXF+JUlh6SVa5ZGRzTFs9M0pVPFA3NE/WbmuxYWFcQFPUdnWQU1omNE6hYGRLSVYjK0gzMUxVcX1ib3qcb3SxW2BsgIVkUFy1lg8AAAAN7klEQVR4nO1dgVrbOBJ2giLZlkkoptS77dmcY5skJIGFDVCgpFDaZTl6e9d7/3e5kRNITGzHsp0h3c8/7dfS4si/ZjQjjUYaRalQoUKFChUqVKhQoUKFCikg8IXaHgC7QVyKhKoMtT2mUtwupYqG2CK0RInKECkSQpmmaYgNMkUlKmKXqqqmKngNgooylVC8HiWgohpDbC9UUQ1PSUWPaowpWKaNwIBAVFHCmEbZtEGERomiQVsqQ1NR8EkwJJiCqKKh/DQ810Q0YdQY3gwDrDYNjRpaeyoQpHjzGaaqjCF6QqJpBDoU0y8R4ekRrSgDhjDo0ZoUDCnoaIEGsz8pjAylVKVKkemaxKMkVFEVxmGh/pRpEWai0Bot5Jlkng0FWHgUSshQTA2Voo5e5mHw9ARaxRoSMC2kMBlFBMx9Keb6BfSToK6XxGBgmGtQJuw2KkMNBmGxj5B9AKwoZoNg0jTkQEmhBWGOR4UIkSkW0Zk8r1qowQoVKlSoUKFChQoVKpSO19iQxlz3EI1SxCA1ADmeozCNKoVCnLKgTGwXITaoMRYG40sDabU4oEXI5E8e/WwRhcfcAFeE0oheLYUi4ZwMjjdH+83dvl+r+f3d5v6oczwgvNV6akBsFjFUGYpxWIYIgZ1yfPAx8Dwj0GcIAsPzgubBGeO8PvlJGPfFm5N6tRL6ExTyaNQEKnotHoEx3B2d8lBjkU13GSB8MPKHQQK5J+iBpx8c8Xr9tV9XGpwfN4eJwnshymF/k/OfS4atekf3stGbSNIIRgp/7bfODt7qBIYEvwlHY0R+Eo4tflYz5OhNYASdn0JV+aDp5eEXcuyfrr0Y63y01HymQB+er7kY+aCfW4BTMeprLUa+KWNAk8Q44si7R5lB+HlBAU7gfVxThnVlN5cJXUTgD+I1FXvvM9pefRAUMDFR6MbiYMSOOSxsJ7eOsgxBv5+Ro3f8kiJTMWMA0J1UYfMpAfw0yxD0a76fkeLwbJ6iSK3aQt2hJyJRZi6PBAhmkKDu+5kZLlCk+Enpc5Gj+lEWCfb7Egz12nCmqARUlFKsTCASJsRq2lzKQ50tn2frMio6gXEkFo1hkFEkpecxpXmSOUROo6ZRbT6lmdey+HlflqIeDOqTpT9Tc6povmSOMCWdzTXIPy53E0I9+5IyhHEr9JSKLH81X9Qol1qLdGZ13hny0fJBqIshqNfsKUwh8wxyD/Z5mE6JmvALKsoi6amt4+HyV/V1077oXV59uj45Obn+9HDZm9JcAq/TCg/2YFpREUeN5t8Gy8VxYffHnxuu6ziWZTmW48DfTq56F+ZyigOqhWn+aAQVjUSPg/H9pYPQvBifOA3Lca2b25Pr6+vPtzeWCzzd23HNXvJs0OMKw5SgODcRyWjmZ0sGoW6a4y8gNev26s5/Goe2f/f15D0I8vFhCce20eEU6+gLEaF3VaN0flSQJRLU7csvTsO5+dq/iFIBlpffHMd5/zWNYrfd9gasWMZodjAS5sNGDknyg/QFk3nx2Wq4t3/Y5qKjME279/nQcm57iRzbguQ+xxqFYEU1SiKnGOqDdDtq371vOF/+sBMsEbiP3jfXOkwSYxe+xDIDKR4uUlPVcMNt3tenWlH76rDhPqRbTHvsWIfXsX0gCLaFL+U4a18w2jBTi7RUP0oVoX1/2PjzLkY/oz/Vu3WcbzG9IOQn1LRmbLYQ+ImphfYyozldhPYn17npm7VlUzXdvj60bmMotmvt9uRvSNE38vLkN0ldM9n3rnNiw2QU3l1PAtgbPRS2+NFYKQp4x1jHQ6JTC5Li7HUxBq2TC/H6D9tp+Fd32hvXyRTDkYhDMTr/TVsVmnegeeE7t7c30rB9b4v+uHbdqySnAYvho1cILxKlNUrxhReW9TgZgL15hr9NMfuXnX+GxC6+We5d4qfp568SB+cpJsT+7Lh39iLDH28Efvy+94KhXvMfre8XiZ9nvEaImKRE18xL13lSugjDvQl2FmQoHnEfEic33tkr7ILzg+QpqX1jfX9629723g5gL/x6gmA5/bcpQxC75SRqhb7/CmqaEpwxx457+eTgev/+6683KfjPU1f0HedTohANfIJpztD8Yn17ele9uZWOzSd7Zd87bqIQ0VziDLyT7Awv3cO7JxHqTV5PQ+uZYc10nYekOWyAb01TZmz2iXXzrG6ZGYJT/GQ9mnr8x+I5/RnDZCX1HeerPEP40Z7rXiZ9qDfA3npKHobm2LX6z5KQYFizvyfbGgN7IJLNxAkNmP3b2XvKMDTvre+JA3GEs4R6Bj9PHoaWc5WTIUwUeknxgI8xA3GVcWLejF2Vi8UAjKa5GaYMQ3CJ7jhBiHrMIlHk3BY5g5vaQTzOV3QBIAjH8mf0MzL0w403+4tznzgQF+JRsJorEoZbcm8Gj4lftLtiRWdeOTdzb5mZodghhgn75ySGi8Y0vD0h/55iOkMSF2Rrt4Wa2p8cMDTPbi0jwzA9WrcfIr0TleGCMWVMK3L/W/p1QLELi3a7C2K0r52Tu/GH/jQzIyNDPeh/GI9rD86fiTLcfPlC4vq3lQWL+XGcs+h227CWvW1Yrvv27dvJpCcbQ333l7fvNg7dx0YiQ6OzaGqA4KqsKU9yh2b/xmo0Gu/f/fL2gxTDt7+8+xUebDhJEfBgFGNMV+ctEufd7feCYE6G4aPuXby/CA5QZ6atTrwM/e/hW0ozrM0YWlb8Emo9GMISr5GL4ZwMG1a8w0BnGK+lk3csxrDh9taWoTl2ymDoxEZOkRnGLy3s+1JkaMVF+GNt6SoZxvpD+7ochrexDDuoy6f4YCmsDMtg2IhlaGyihkxj56Ui0LI6LcWOtpE4hiu1NMYpLkMe6w/9UmR42IsLNi+uD1fMMDadGVZOJXj8WCWt6cjhxKQ4zWO+Wds8w8NYhw+fg8uwHj9tM3tOrpn33Lz08DJ25h0cIMfakvbWzN6Na+WXoeU8JiwtjIUF8MopJkSETfvqi3vowAp4V0qGsAL+1XW/P5gJsTYPfaOb95MCpqbZG//3w65kFMPof/g67pnJSW7oW6StUUrOnmkGkpEoEalJEl/4v/hbpGmb3JFXk4kIJ8PYzMewyG0irWynnEpi6OXz94XGbobk4AWGCtW0fAzzeMPwluYC+cWt4yDLMa0IQ7qlslwM40KJGcDC8gF5GRKS6bhohCFIkOZi6A3yvKG4VbhImj8/DzKcEJkxVChl8CsXw7ittaUEQUW1Qrdsk6Ms7zZjSOuqktPSDHOsDcVV8FrBa5Li9xCTGGqUbr00M1kZBtIiJGHWfdF7qMlxBpcYMtxSNKZtaYxt5WJoyIdoVBgPWvFTp8kzt3mGVE1FQvR8Dn4OEWrlHJaqLztOItCz/pGKuMzZwiIMCQoVLUoyLQHzmeH2xsbeXHbiztw3c7mJKdBlpyZh5QBSyqnhLOfWptmXU147v//4IckwkPX25Lm+RQkUM5jTiAz3gOCPH3syDH2/JVffglBKNRbeq1VCBY/4uOlLhrOE2QlDGRn6w9O61IsKFZ1cjZab3jxDhaclez/LcMbwNyD4RkKGfdmkxLBSAaNKeWf3uZ+up9277Z0IxTe/Zx+Huu8HcqoGKgp2NLSgZVFcchS/a7YjDDd2diLfbmwnppTWxBj0jqU8BdEY/Cr53D5Pc9ndds2+2pjldwO9nZ3Id/9L6R5fNnGWKKoouFZ2SZvUw+rdblu3zRQk6yio6OS4usz7wWS0/DO1pJV28Vy3nSKkJejnSZstdL1kwrPpLqMAQ+9UeroGb7iCQ8Mk05H8HATzhS5WAr5ZygVRLwjibtwvAe+UTtE74HKTmRVDUCx8kVmE4NpdTcc7pY5FkOCaERS3K5RIcbhGRmaGVqa7ojLBO1tHgsIv+qXc2BboR+tJUMwIxLWCRQVpfGTIG9oSIMWvhtTXyw0uolXgftZQgP7aaugThBhzj0Zxs+faOYlFtJTzfBz14T5bdwFOwQf78lft6sPmKaYASfRWPdmn+dFHOTkGXvMUrwZzCBFyLFArETieG5nv9DaM81POUOs+h/UtikXkCFc2m8lFA2baaXj9jsLF3T6YxRGIxuCraMyqxQed5tBLOLws2OnesD8a8Ja4B05Bq2YfgqhhHZbCWhOWt+h7Q1HdIspNVLjwz88UoCdC8RqMe9waqWFNlLJKlPAjUaGkBpyGAM8z9Ob+weYpmSuIAGPipy4gGhaXqXM2CMEm3/6ENTsyYJp/97fkVqFChQoVKlSokAXY9TtKzOfI1qKGHANQiubkSELki6IuPsQ96ZhVPIko44lZNRQWcypBXNBBW8WS0qWhiqwOvIEYqijFqjMj7rumoYqiFNSYnOuhOZPS8zYoqlvkuvomX0ENIUGKV8FDnNIQ+Y14KqqpCox5vEgjmeRQI1pREfTDtDFhyRdECRKqMlBSrObCqj2kpAzqbICZDG4NFmFCX95cvtIGRcYvXjkyAuqiUcTpGlHBbItSQUjticxGJupboM1lqFBRtoKM0QQQsf3FGBo/UZcIfhO0Ah5CRVEL9KkUxgTmqhBsDFUQHSFYUVTHK2oSEcweFSaboBaUJ+JMH+Z2Efh6FTdyQXAX9eGiF/t2ZDwzOmmvnAN2cm3+zdurUKFChQoVKlSo8LdAesGItWtQ/mFCtSKbmNINEq1QQXki3T9EFLPOvyjPIQ8qTt/nb1C6T6FLCcu9a5rjcjzGGClW30KWocpo/i2iPAzDO0xwkwk01GR0omlFxmGeFuXlXrDBKgpQocJPhP8DbG1XfSM1t80AAAAASUVORK5CYII="
       width="180px"
       alt="Musician light logo "
     />
-    <h1 align="center">Musician</h1>
+    <h1 align="center">Music Player</h1>
   </a>
 </p>
 
@@ -38,43 +38,12 @@
   />
 </p>
 
-### 🎯 Overview
-##### It is an offline music player built on the Flutter framework. First of all thanks to Google Gives us a wonderful framework. You can use this app like any other music app. This application includes unique user interfaces. In the current version you get limited online support.Currently you can check artists, their details and best tracks. This app may contain issues and bugs. I hope you will report issues . I will send a response to reported issues within 2-3 days.
-<!-- Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc. -->
+@@@  INTRO:-
+It is an offline music player built on the Flutter framework. First of all thanks to Google Gives us a wonderful framework. You can use this app like any other music app. This application includes unique user interfaces. In the current version you get limited online support.Currently you can check artists, their details and best tracks. This app may contain issues and bugs. I hope you will report issues . I will send a response to reported issues within 2-3 days.
 
-### 💪 Motivation
-##### The main motivation for doing this project was that I was having issues with my favorite music player and the project had no structured code. 
+ 
 
 ### ✍️ Feedback
-##### If you have any feedback, please reach out to me at cvsalahu12@gmail.com
+##### If you have any feedback, please reach out to me at akashnigam0001@gmail.com
 
-### 📚 Wiki
-
-##### Checkout [wiki](https://github.com/salahu01/Music-Player.Flutter/wiki) for more info
-
-### 💰 Donate
-
-<a href="https://www.buymeacoffee.com/salahu" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-### ⚠️ Warning
-
-##### This project is not suitable for Material 3 ( supports 3.4 / 3.5 Fultter )
-
-### 🔑 License
-
-
-##### Copyright (c) 2023 Salahu01-Music-Player.Flutter
-
-
-##### Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
-
-##### The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-
-##### THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-### 📍 Conclusion
-
-##### I will be happy to answer any questions that you may have on this approach, and if you want to lend a hand with the boilerplate then please feel free to submit an issue and/or pull request 🙂
-
-##### Again to note, This is the one of the best architecture followed open source project . If you liked my work, don’t forget to ⭐ star the repo to show your support.
+ 
